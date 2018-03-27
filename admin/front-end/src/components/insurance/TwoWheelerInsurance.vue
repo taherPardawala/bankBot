@@ -1,7 +1,6 @@
 <template>
     <div class="life">
         <div class="twowheeler">
-            <h2>Two Insurance Policies</h2>
             <ul class="responsive-table">
                 <li class="table-header">
                     <div class="col col-1">Two wheeler Insurance provider</div>
@@ -100,6 +99,9 @@
                     }
                 ]
             }
+        },
+        created() {
+            this.$emit('title', 'Two Wheeler Insurance');
         }
     }
 </script>

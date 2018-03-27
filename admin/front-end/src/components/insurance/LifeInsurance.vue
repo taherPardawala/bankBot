@@ -1,7 +1,6 @@
 <template>
     <div class="life">
         <div class="container">
-            <h2>Life Insurance Policies</h2>
             <ul class="responsive-table">
                 <li class="table-header">
                     <div class="col col-1">Insurance Provider</div>
@@ -142,6 +141,9 @@
                     }
                 ]
             }
+        },
+        created() {
+            this.$emit('title', 'Life Insurance');
         }
     }
 </script>
