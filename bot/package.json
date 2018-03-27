@@ -13,7 +13,6 @@
     "express": "^4.15.5",
     "install": "^0.10.1",
     "mongodb": "^2.2.31",
-    "ngrok": "^3.0.1",
     "request": "^2.85.0"
   },
   "author": "",
