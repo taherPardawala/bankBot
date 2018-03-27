@@ -10,31 +10,28 @@
                 <v-list-group prepend-icon="restaurant" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
-                            <v-list-tile-title>Insaurance</v-list-tile-title>
+                            <v-list-tile-title>Insurance</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
                     <v-list-tile @click="">
                         <v-list-tile-content>
-                            <v-list-tile-title>List Item</v-list-tile-title>
-                        </v-list-tile-content>
-                        <v-list-tile-action>
-                            <v-icon>restaurant</v-icon>
-                        </v-list-tile-action>
-                    </v-list-tile>
-                </v-list-group>
-                <v-list-group prepend-icon="restaurant" no-action>
-                    <v-list-tile slot="activator">
-                        <v-list-tile-content>
-                            <v-list-tile-title>Insaurance</v-list-tile-title>
+                            <v-list-tile-title>Life Insurance</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
                     <v-list-tile @click="">
                         <v-list-tile-content>
-                            <v-list-tile-title>List Item</v-list-tile-title>
+                            <v-list-tile-title>Car Insurance</v-list-tile-title>
                         </v-list-tile-content>
-                        <v-list-tile-action>
-                            <v-icon>restaurant</v-icon>
-                        </v-list-tile-action>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Two wheeler Insurance</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Health Insurance</v-list-tile-title>
+                        </v-list-tile-content>
                     </v-list-tile>
                 </v-list-group>
                 <v-list-group prepend-icon="school" no-action>
@@ -44,19 +41,35 @@
                         </v-list-tile-content>
                     </v-list-tile>
                     <v-list-tile @click="">
-                        <v-list-tile-action>
-                            <v-icon></v-icon>
-                        </v-list-tile-action>
                         <v-list-tile-content>
-                            <v-list-tile-title>List Item</v-list-tile-title>
+                            <v-list-tile-title>Home Loan</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
                     <v-list-tile @click="">
-                        <v-list-tile-action>
-                            <v-icon></v-icon>
-                        </v-list-tile-action>
                         <v-list-tile-content>
-                            <v-list-tile-title>List Item 2</v-list-tile-title>
+                            <v-list-tile-title>Car Loan</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Used Car Loan</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Personal Loan</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                </v-list-group>
+                <v-list-group prepend-icon="school" no-action>
+                    <v-list-tile slot="activator">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Card</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Credit Card</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list-group>
@@ -114,37 +127,6 @@
         name: 'Application',
         data() {
             return {
-                icons: ['fab fa-facebook', 'fab fa-twitter', 'fab fa-google-plus', 'fab fa-linkedin', 'fab fa-instagram'],
-                items: [{
-                        action: 'restaurant',
-                        title: 'Loans',
-                        active: false,
-                        items: [{
-                                title: 'Breakfast & brunch'
-                            },
-                            {
-                                title: 'New American'
-                            },
-                            {
-                                title: 'Sushi'
-                            }
-                        ]
-                    },
-                    {
-                        action: 'school',
-                        title: 'Insurance',
-                        items: [{
-                            title: 'List Item',
-                        }]
-                    },
-                    {
-                        action: 'directions_run',
-                        title: 'Account',
-                        items: [{
-                            title: 'List Item'
-                        }]
-                    }
-                ],
                 drawer: null,
                 title: ''
             }
@@ -155,7 +137,7 @@
             }
         },
         created() {
-            router.replace('/hello');
+            router.replace('/app/hello');
         }
     }
 </script>
