@@ -9,8 +9,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Application',
-      component: Application
+      component: Application,
+      children: [
+        {
+          path: 'hello',
+          name: 'HelloWorld',
+          component: HelloWorld,
+        }    
+      ]
     }
   ]
 })
