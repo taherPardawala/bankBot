@@ -6,18 +6,18 @@
                 <li class="table-header">
                     <div class="col col-1">Health Insurance Companies</div>
                     <div class="col col-2">Incurred Claim Ratio</div>
-                    <div class="col col-3">Grievances Solved"</div>
-                    <div class="col col-4">Network Hospitals"</div>
-                    <div class="col col-5">Number of Policies </div>
-                    <div class="col col-6">Number of Persons</div>
+                    <div class="col col-3">Grievances Solved</div>
+                    <div class="col col-4">Network Hospitals</div>
+                    <div class="col col-5">Number of Policies Issued</div>
+                    <div class="col col-6">Number of Persons Covered</div>
                 </li>
                 <li class="table-row" v-for="(item, key) in data" :key=key>
-                    <div class="col col-1" data-label="Job Id">{{item[insuranceProvider]}}</div>
-                    <div class="col col-2" data-label="Customer Name">{{item[grieviencesSolved]}}</div>
-                    <div class="col col-3" data-label="Amount">{{item[claimSettlement]}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{item[maxCover]}}</div>
-                    <div class="col col-5" data-label="Payment Status">{{item[newBuisnessPremium]}}</div>
-                    <div class="col col-6" data-label="Payment Status">{{item[maxMaurityAge]}}</div>
+                    <div class="col col-1" data-label="Job Id">{{item['Health Insurance Companies']}}</div>
+                    <div class="col col-2" data-label="Customer Name">{{item['Incurred Claim Ratio']}}</div>
+                    <div class="col col-3" data-label="Amount">{{item['Grievances Solved']}}</div>
+                    <div class="col col-4" data-label="Payment Status">{{item['Network Hospitals']}}</div>
+                    <div class="col col-5" data-label="Payment Status">{{item['Number of Policies Issued']}}</div>
+                    <div class="col col-6" data-label="Payment Status">{{item['Number of Persons Covered']}}</div>
                 </li>
             </ul>
         </div>

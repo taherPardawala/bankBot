@@ -13,22 +13,22 @@
                             <v-list-tile-title>Insurance</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="">
+                    <v-list-tile @click="updatePath('/app/lifeinsurance')">
                         <v-list-tile-content>
                             <v-list-tile-title>Life Insurance</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="">
+                    <v-list-tile @click="updatePath('/app/carinsurance')">
                         <v-list-tile-content>
                             <v-list-tile-title>Car Insurance</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="">
+                    <v-list-tile @click="updatePath('/app/twowheelerinsurance')">
                         <v-list-tile-content>
                             <v-list-tile-title>Two wheeler Insurance</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="">
+                    <v-list-tile @click="updatePath('/app/healthinsurance')">
                         <v-list-tile-content>
                             <v-list-tile-title>Health Insurance</v-list-tile-title>
                         </v-list-tile-content>
@@ -134,6 +134,9 @@
         methods: {
             updateTitle(data) {
                 this.title = data;
+            },
+            updatePath(path) {
+                router.replace(path);    
             }
         },
         created() {

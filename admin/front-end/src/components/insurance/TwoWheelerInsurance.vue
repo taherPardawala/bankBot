@@ -4,20 +4,20 @@
             <h2>Two Insurance Policies</h2>
             <ul class="responsive-table">
                 <li class="table-header">
-                    <div class="col col-1">Insurance Provider</div>
-                    <div class="col col-2">Grieviences Solved</div>
-                    <div class="col col-3">Claim Settlement</div>
-                    <div class="col col-4">Max Cover</div>
-                    <div class="col col-5">New Buisness Premium</div>
-                    <div class="col col-6">Max MaurityAge</div>
+                    <div class="col col-1">Two wheeler Insurance provider</div>
+                    <div class="col col-2">Cashless Network Garages</div>
+                    <div class="col col-3">Third Party Insurance Cover</div>
+                    <div class="col col-4">Personal Accident Coverage</div>
+                    <div class="col col-5">Incurred Claim Ratio - Motor Insurance</div>
+                    <div class="col col-6">Policy Term</div>
                 </li>
                 <li class="table-row" v-for="(item, key) in data" :key=key>
-                    <div class="col col-1" data-label="Job Id">{{item.insuranceProvider}}</div>
-                    <div class="col col-2" data-label="Customer Name">{{item.grieviencesSolved}}</div>
-                    <div class="col col-3" data-label="Amount">{{item.claimSettlement}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{item.maxCover}}</div>
-                    <div class="col col-5" data-label="Payment Status">{{item.newBuisnessPremium}}</div>
-                    <div class="col col-6" data-label="Payment Status">{{item.maxMaurityAge}}</div>
+                    <div class="col col-1" data-label="Job Id">{{item['Two wheeler Insurance provider']}}</div>
+                    <div class="col col-2" data-label="Customer Name">{{item['Cashless Network Garages']}}</div>
+                    <div class="col col-3" data-label="Amount">{{item['Third Party Insurance Cover']}}</div>
+                    <div class="col col-4" data-label="Payment Status">{{item['Personal Accident Coverage']}}</div>
+                    <div class="col col-5" data-label="Payment Status">{{item['Incurred Claim Ratio - Motor Insurance']}}</div>
+                    <div class="col col-6" data-label="Payment Status">{{item['Policy Term']}}</div>
                 </li>
             </ul>
         </div>
@@ -29,116 +29,74 @@
         data() {
             return {
                 data: [{
-                        "insuranceProvider": "ICICI Prudential Life Insurance  ",
-                        "grieviencesSolved": "99.96% ",
-                        "claimSettlement": "96.68% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "6765.75 Crs",
-                        "maxMaurityAge": "75 Years"
+                        "Two wheeler Insurance provider": "Bajaj Allianz Two Wheeler Insurance",
+                        "Cashless Network Garages": "Available",
+                        "Third Party Insurance Cover": "Available",
+                        "Personal Accident Coverage": "Coverage up to Rs.1 lakh for the owner-driver",
+                        "Incurred Claim Ratio - Motor Insurance": "69.19 %",
+                        "Policy Term": "1-3 years",
+                        "No Claim Bonus": "No Claim Bonus (NCB) benefits",
+                        "Bike Insurance Online Renewal": "Available"
                     },
                     {
-                        "insuranceProvider": "PNB Metlife Insurance  ",
-                        "grieviencesSolved": "98.41%",
-                        "claimSettlement": "87.14% ",
-                        "maxCover": "10 crores  ",
-                        "newBuisnessPremium": "1003.71 Crs",
-                        "maxMaurityAge": "75 Years"
+                        "Two wheeler Insurance provider": "Bharti AXA Two Wheeler Insurance",
+                        "Cashless Network Garages": "2,500+",
+                        "Third Party Insurance Cover": "Available",
+                        "Personal Accident Coverage": "Available as an add-on cover for owner-driver and the co-passenger",
+                        "Incurred Claim Ratio - Motor Insurance": "89.09%",
+                        "Policy Term": "1-3 years",
+                        "No Claim Bonus": "NCB of up to 50% and Up to 2.5% discount for installation of security devices",
+                        "Bike Insurance Online Renewal": "Available"
                     },
                     {
-                        "insuranceProvider": "Aegon Life Insurance  ",
-                        "grieviencesSolved": "100.00%",
-                        "claimSettlement": "97.11% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "136.33Crs",
-                        "maxMaurityAge": "80 Years"
+                        "Two wheeler Insurance provider": "HDFC ERGO Two Wheeler Insurance",
+                        "Cashless Network Garages": "4,800+",
+                        "Third Party Insurance Cover": "Available",
+                        "Personal Accident Coverage": "Available for the owner-driver under comprehensive motor insurance",
+                        "Incurred Claim Ratio - Motor Insurance": "89.43%",
+                        "Policy Term": "1-3 years",
+                        "No Claim Bonus": "Premium discount for long-term two-wheeler insurance plan",
+                        "Bike Insurance Online Renewal": "Available"
                     },
                     {
-                        "insuranceProvider": "HDFC Life Insurance  ",
-                        "grieviencesSolved": "99.89%",
-                        "claimSettlement": "97.62% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "6487.22 Crs",
-                        "maxMaurityAge": "75 Years"
+                        "Two wheeler Insurance provider": "Reliance Two Wheeler Insurance",
+                        "Cashless Network Garages": "430+",
+                        "Third Party Insurance Cover": "Available",
+                        "Personal Accident Coverage": "Available as add-on coverage",
+                        "Incurred Claim Ratio - Motor Insurance": "91.39%",
+                        "Policy Term": "1 year",
+                        "No Claim Bonus": "NCB benefits",
+                        "Bike Insurance Online Renewal": "Available"
                     },
                     {
-                        "insuranceProvider": "Max Life Insurance  ",
-                        "grieviencesSolved": "100.00%",
-                        "claimSettlement": "97.81% ",
-                        "maxCover": "100 crores ",
-                        "newBuisnessPremium": "2881.71 Crs",
-                        "maxMaurityAge": "75 Years"
+                        "Two wheeler Insurance provider": "Liberty Videocon Two Wheeler Insurance",
+                        "Cashless Network Garages": "Available",
+                        "Third Party Insurance Cover": "Available",
+                        "Personal Accident Coverage": "Available for the owner-driver",
+                        "Incurred Claim Ratio - Motor Insurance": "77.29%",
+                        "Policy Term": "1-3 years",
+                        "No Claim Bonus": "Discounts at renewal                                 and NCB benefits",
+                        "Bike Insurance Online Renewal": "Available"
                     },
                     {
-                        "insuranceProvider": "Bajaj Allianz Life Insurance  ",
-                        "grieviencesSolved": "100.00%",
-                        "claimSettlement": "91.67% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "2884.52 Crs",
-                        "maxMaurityAge": "75 Years"
+                        "Two wheeler Insurance provider": "IFFCO Tokio Two Wheeler Insurance",
+                        "Cashless Network Garages": "Available",
+                        "Third Party Insurance Cover": "Available",
+                        "Personal Accident Coverage": "Available",
+                        "Incurred Claim Ratio - Motor Insurance": "84.37%",
+                        "Policy Term": "1-3 years",
+                        "No Claim Bonus": "NCB benefits",
+                        "Bike Insurance Online Renewal": "Available"
                     },
                     {
-                        "insuranceProvider": "Birla Sun Life Insurance  ",
-                        "grieviencesSolved": "99.84% ",
-                        "claimSettlement": "94.69% ",
-                        "maxCover": "10 crores ",
-                        "newBuisnessPremium": "2220.31 Crs",
-                        "maxMaurityAge": "80Years"
-                    },
-                    {
-                        "insuranceProvider": "Edelweiss Tokio Life Insurance  ",
-                        "grieviencesSolved": "100.00% ",
-                        "claimSettlement": "93.29% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "183.59 Crs",
-                        "maxMaurityAge": "80Years"
-                    },
-                    {
-                        "insuranceProvider": "Future Generali Life Insurance  ",
-                        "grieviencesSolved": "99.70% ",
-                        "claimSettlement": "89.53% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "255.59 Crs",
-                        "maxMaurityAge": "75Years"
-                    },
-                    {
-                        "insuranceProvider": "SBI Life Insurance  ",
-                        "grieviencesSolved": "99.98%",
-                        "claimSettlement": "96.69% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "7106.58 Crs",
-                        "maxMaurityAge": "70 Years"
-                    },
-                    {
-                        "insuranceProvider": "Aviva Life Insurance.  ",
-                        "grieviencesSolved": "100.00%",
-                        "claimSettlement": "90.60% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "320.80 Crs",
-                        "maxMaurityAge": "70 Years"
-                    },
-                    {
-                        "insuranceProvider": "Bharti AXA Life Insurance  ",
-                        "grieviencesSolved": "99.82%",
-                        "claimSettlement": "92.37% ",
-                        "maxCover": "50 crores ",
-                        "newBuisnessPremium": "539.49 Crs",
-                        "maxMaurityAge": "75 Years"
-                    },
-                    {
-                        "insuranceProvider": "IDBI Federal Life Insurance  ",
-                        "grieviencesSolved": "100.00% ",
-                        "claimSettlement": "90.33% ",
-                        "maxCover": "30 crores  ",
-                        "newBuisnessPremium": "588.40 Crs",
-                        "maxMaurityAge": "80 Years"
-                    },
-                    {
-                        "insuranceProvider": "Reliance Life Insurance ",
-                        "grieviencesSolved": "99.98%",
-                        "claimSettlement": "96.69% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "1558.33 Crs",
-                        "maxMaurityAge": "75 Years"
+                        "Two wheeler Insurance provider": "ICICI LOMBARD Two Wheeler Insurance",
+                        "Cashless Network Garages": "Available",
+                        "Third Party Insurance Cover": "Available",
+                        "Personal Accident Coverage": "Available",
+                        "Incurred Claim Ratio - Motor Insurance": "78.91%",
+                        "Policy Term": "1-3 years",
+                        "No Claim Bonus": "NCB benefits",
+                        "Bike Insurance Online Renewal": "Available"
                     }
                 ]
             }
@@ -147,7 +105,7 @@
 </script>
 
 <style scoped>
-    .twowheeler {
+    .life {
         margin-top: 60px;
     }
     .container {
