@@ -1,23 +1,36 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div id="app" class="app">
+    <auth-layout v-if="isAuth"></auth-layout>
+    <layout v-else></layout>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  import Layout from 'components/layout/Layout'
+  import AuthLayout from 'components/layout/AuthLayout'
+  import VuesticPreLoader from 'vuestic-components/vuestic-preloader/VuesticPreLoader.vue'
+
+  export default {
+    name: 'app',
+    components: {
+      VuesticPreLoader,
+      AuthLayout,
+      Layout
+    },
+    computed: {
+      isAuth () {
+        return this.$route.path.match('auth')
+      }
+    }
+  }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import "sass/main";
+  body {
+    height: 100%;
+    #app {
+      height: 100%;
+    }
+  }
 </style>
