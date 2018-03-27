@@ -96,11 +96,11 @@ let loadControllers = () => {
 
 let loadStaticRoutes = () => new Promise((resolve, reject) => {
     //static files to be added here Ex. server.app.use('/admin', express.static(BuiltDistributablePath));
-    server.app.use('/welcome', express.static(process.cwd()+"/index.html"));
-    server.app.use('/static', express.static(process.cwd()+"/front-end/dist" + "/static"));
-    server.app.use('/login', express.static(process.cwd()+"/front-end/dist"));
+    // server.app.use('/welcome', express.static(process.cwd()+"/index.html"));
+    // server.app.use('/static', express.static(process.cwd()+"/front-end/dist" + "/static"));
+    // server.app.use('/login', express.static(process.cwd()+"/front-end/dist"));
     server.app.use('/404',express.static(process.cwd()+'/404.html'))
-    server.app.get('/', (req,res)=>{res.redirect('/login')});
+    server.app.get('/', (req,res)=>{res.redirect('/404')});
     server.app.get('*',(req,res)=>{res.redirect('/404')})
     resolve();
 });

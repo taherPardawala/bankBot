@@ -1,4 +1,3 @@
-
-        let server = require('./server/server');
-        server();
+let server = require('./server/server');
+server();
     

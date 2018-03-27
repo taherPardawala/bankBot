@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>404 Nothing here</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="https://assets-9gag-fun.9cache.com/s/fab0aa49/8306a06245dd95bbf3135d7fe438dd9b2a36dc78/static/dist/web6/css/error.css" media="screen,projection" type="text/css" />
+        <link rel="shortcut icon" href="https://assets-9gag-fun.9cache.com/s/fab0aa49/8306a06245dd95bbf3135d7fe438dd9b2a36dc78/static/dist/core/img/favicon.ico" />
+        <script type="text/javascript">
+
+    function getLocalStorage(lsKey, lsIndex) {
+        var ls = localStorage;
+        if(ls && ls.getItem(lsKey) ) {
+            var lsValue = ls.getItem(lsKey);
+            var lsArray = JSON.parse(lsValue);
+            if( lsArray['data'] != undefined && lsArray['data'][lsIndex] != undefined){
+                return lsArray['data'][lsIndex];
+            }
+        }
+        return '';
+    }
+
+</script>
+        
+    </head>
+    <body>
+
+        <div class="background">
+        </div><!-- / background -->
+
+        
+
+        <div class="toast badge-toast-container" style="display:none">
+    <p class="close">
+    <span class="badge-toast-message"></span>
+<a class="btn-close badge-toast-close" href="#">&#10006;</a>
+</p>
+</div>
+
+        <div class="message">
+            <h1>404</h1>
+            <h2>There's nothing here.</h2>
+        </div><!-- / message -->
+
+        
+<!-- Ads targeting for page -->
+<script type="text/javascript">
+    window.googletag = window.googletag || {};
+    window.googletag.cmd = window.googletag.cmd || [];
+    window.googletag.cmd.push(function() {
+        
+        if (typeof getLocalStorage != 'undefined') {
+            var safeMode = getLocalStorage('cacheableUserPreference', 'isSafeModeOn');
+            window.googletag.pubads().setTargeting('work_safe', safeMode !== false ? 'on' : 'off');
+        }
+    });
+</script>
+<script type="text/javascript">
+    if (!window.WeakSet || !Array.prototype.includes || navigator.userAgent.match(/iPhone OS [7-8]|UCBrowser/i)) {
+        document.write('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"><\/script>');
+        document.write('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"><\/script>');
+    }
+</script><script type="text/javascript" src="https://assets-9gag-fun.9cache.com/s/fab0aa49/8306a06245dd95bbf3135d7fe438dd9b2a36dc78/static/dist/web6/js/manifest.js"></script>
+<script type="text/javascript" src="https://assets-9gag-fun.9cache.com/s/fab0aa49/8306a06245dd95bbf3135d7fe438dd9b2a36dc78/static/dist/web6/js/vendor.js"></script>
+<script type="text/javascript" src="https://assets-9gag-fun.9cache.com/s/fab0aa49/8306a06245dd95bbf3135d7fe438dd9b2a36dc78/static/dist/web6/js/gag.js"></script>
+
+
+
+<noscript>
+    <img src="http://b.scorecardresearch.com/p?c1=2&c2=22471533&cv=2.0&cj=1" />
+</noscript>    </body>
+</html>
