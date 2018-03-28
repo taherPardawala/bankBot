@@ -30,5 +30,14 @@ module.exports = {
             "locale": "zh_CN",
             "composer_input_disabled": false
         }
-    ]
+    ],
+    askLocationAttachment: {
+        //structured attachment for the get location quick reply
+        "text": "",
+        "quick_replies": [
+            {
+                "content_type": "location",
+            }
+        ]
+    }
 }

@@ -30,9 +30,13 @@ module.exports = function(controller, bot){
     }).action('input.unknown', function (message, resp, bot) {
         bot.replyWithTyping(message, "Sorry, I don't understand");
     }).action('bankLocator', function(message,resp,bot){
-        console.log("BANKLOCATOr",resp);
-        //bot.replyWithTyping(message,resp.fulfillment.speech);
-        
+        if(resp.result.fulfillment.speech == 'Which bank are you looking for?') bot.replyWithTyping(message,resp.result.fulfillment.speech);
+        else if(resp.result.parameters.bankName != ''){
+            let template = string.askLocationAttachment;
+            template.text = resp.result.fulfillment.speech;
+            template.payload = '{"text":"locate_bank"}'
+            bot.replyWithTyping(message,{attachment:template})
+        }
     })
 
 }
