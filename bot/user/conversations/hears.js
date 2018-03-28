@@ -31,6 +31,7 @@ module.exports = function(controller, bot){
         bot.replyWithTyping(message, "Sorry, I don't understand");
     }).action('bankLocator', function(message,resp,bot){
         let template = string.askLocationAttachment;
+        template.text = null;
         template.text = resp.result.fulfillment.speech;
         bot.startConversation(message, function (err, convo) {
             if (!err) {
@@ -42,6 +43,7 @@ module.exports = function(controller, bot){
         });
     }).action('atmLocator', function(message,resp,bot){
         let template = string.askLocationAttachment;
+        template.text = null;
         template.text = resp.result.fulfillment.speech;
         bot.startConversation(message, function (err, convo) {
             if (!err) {
