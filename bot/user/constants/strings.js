@@ -30,5 +30,13 @@ module.exports = {
             "locale": "zh_CN",
             "composer_input_disabled": false
         }
-    ]
+    ],
+    askLocationAttachment: {
+        "text": "asdasdadsasd",
+        "quick_replies": [
+            {
+                "content_type": "location"
+            }
+        ]
+    }
 }

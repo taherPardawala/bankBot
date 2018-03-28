@@ -2,6 +2,7 @@ const string = require('../constants/strings');
 
 module.exports = function(controller ,bot){
     controller.on('facebook_postback', function (bot, message) {
+        console.log("***********POSTBACK",message);
         var payload = {};
         try {
           payload = JSON.parse(message.payload);

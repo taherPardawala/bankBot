@@ -3,5 +3,5 @@ module.exports = {
     VERIFY_TOKEN : "beprojectbro",
     PORT: 6000,
     url : 'mongodb://admin:admin@ds133077.mlab.com:33077/bank-bot',
-    dialogFlowApiKey:''
+    dialogFlowApiKey:'d11252405f8148c8b710b8e640a4c1a9'
 }
