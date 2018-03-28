@@ -35,6 +35,7 @@ module.exports = function(controller, bot){
             let template = string.askLocationAttachment;
             template.text = resp.result.fulfillment.speech;
             template.payload = '{"text":"locate_bank"}'
+            console.log(template);
             bot.replyWithTyping(message,{attachment:template})
         }
     })
