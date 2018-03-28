@@ -32,6 +32,7 @@ module.exports = function(controller, bot){
     }).action('bankLocator', function(message,resp,bot){
         let template = string.askLocationAttachment;
         template.text = null;
+        console.log(resp.result.fulfillment.speech)
         template.text = resp.result.fulfillment.speech;
         bot.startConversation(message, function (err, convo) {
             if (!err) {
@@ -44,6 +45,7 @@ module.exports = function(controller, bot){
     }).action('atmLocator', function(message,resp,bot){
         let template = string.askLocationAttachment;
         template.text = null;
+        console.log(resp.result.fulfillment.speech)
         template.text = resp.result.fulfillment.speech;
         bot.startConversation(message, function (err, convo) {
             if (!err) {
