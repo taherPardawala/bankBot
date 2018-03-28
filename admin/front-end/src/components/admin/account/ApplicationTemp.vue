@@ -1,0 +1,104 @@
+<template>
+    <li class="table-row">
+        <div class="col col-1" data-label="Applicant's Name">dsds</div>
+        <div class="col col-2" data-label="Pan Number">dssd</div>
+        <div class="col col-3" data-label="Adhar Number">dssd</div>
+        <div class="col col-4" data-label="Update Status">
+            <v-layout row justify-center>
+                <v-dialog v-model="dialog" persistent max-width="290">
+                    <v-btn class="position" color="primary" dark fab slot="activator">
+                        <v-icon>add</v-icon>
+                    </v-btn>
+                    <v-card>
+                        <v-card-title class="headline">Application Details</v-card-title>
+                        <v-card-text>
+                            <v-select :items="items" v-model="e1" label="Select" single-line></v-select>
+                            <span class="title">Click the following <a>link</a> to download Adhar Image</span><br>
+                            <span class="title">Click the following <a>link</a> to download Pan Image</span>
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn color="green darken-1" flat @click="addJob">Update</v-btn>
+                            <v-btn color="green darken-1" flat @click.native="dialog = false">Close</v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </v-dialog>
+            </v-layout>
+        </div>
+    </li>
+</template>
+
+<script>
+    export default {
+        name: 'ApplicationTemp',
+        data() {
+            return {
+                dialog: false,
+                valid: true,
+                items: [1,2,3,4,5,6,7,8,9],
+                e1: ''
+            }
+        },
+        methods: {
+            addJob() {
+                if (this.$refs.form.validate()) {} else {}
+            }
+        },
+        created() {}
+    }
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+    .responsive-table li {
+        border-radius: 3px;
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+    .responsive-table .table-header {
+        background-color: #95a5a6;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+    .responsive-table .table-row {
+        background-color: #ffffff;
+        box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+    }
+    .responsive-table .col-1 {
+        flex-basis: 10%;
+    }
+    .responsive-table .col-2 {
+        flex-basis: 40%;
+    }
+    .responsive-table .col-3 {
+        flex-basis: 25%;
+    }
+    .responsive-table .col-4 {
+        flex-basis: 25%;
+    }
+    @media all and (max-width: 767px) {
+        .responsive-table .table-header {
+            display: none;
+        }
+        .responsive-table li {
+            display: block;
+        }
+        .responsive-table .col {
+            flex-basis: 100%;
+        }
+        .responsive-table .col {
+            display: flex;
+            padding: 10px 0;
+        }
+        .responsive-table .col:before {
+            color: #6c7a89;
+            padding-right: 10px;
+            content: attr(data-label);
+            flex-basis: 50%;
+            text-align: right;
+        }
+    }
+</style>
