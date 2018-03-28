@@ -14,9 +14,9 @@ module.exports = function(controller, bot){
                     if(body.results.length == 0) bot.replyWithTyping("Sorry no "+type+"s were found near your location");
                     else {
                         let template = string.locationsCarousel;
-                        template.attachment.payload.elements = [];
+                        template.payload.elements = [];
                         for(i of body.results.slice(0,9)){
-                            template.attachment.payload.elements.push({
+                            template.payload.elements.push({
                                 "title": i.name,
                                 "subtitle": i.vicinity,
                                 "image_url": `https://www.google.com/maps/place/?q=place_id:${i.place_id}`

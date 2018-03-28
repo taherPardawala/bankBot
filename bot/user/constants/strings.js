@@ -40,12 +40,10 @@ module.exports = {
         ]
     },
     locationsCarousel: {
-        "attachment": {
             "type": "template",
             "payload": {
               "template_type": "generic",
               "elements": []
             }
-        }   
     }
 }
