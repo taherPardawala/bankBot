@@ -35,7 +35,7 @@ module.exports = {
         "text": "asdasdadsasd",
         "quick_replies": [
             {
-                "content_type": "location",
+                "content_type": "location"
             }
         ]
     }
