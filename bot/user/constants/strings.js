@@ -32,7 +32,7 @@ module.exports = {
         }
     ],
     askLocationAttachment: {
-        "text": "asdasdadsasd",
+        "text": "",
         "quick_replies": [
             {
                 "content_type": "location"

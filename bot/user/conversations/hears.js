@@ -32,8 +32,7 @@ module.exports = function(controller, bot){
     }).action('bankLocator', function(message,resp,bot){
         let template = string.askLocationAttachment;
         template.text = null;
-        console.log(resp.result.fulfillment.speech)
-        template.text = resp.result.fulfillment.speech;
+        template.text = "Please share your location.";
         bot.startConversation(message, function (err, convo) {
             if (!err) {
                 getNearBy(message, convo, resp.result.parameters.bankName, template, "bank");
@@ -45,8 +44,7 @@ module.exports = function(controller, bot){
     }).action('atmLocator', function(message,resp,bot){
         let template = string.askLocationAttachment;
         template.text = null;
-        console.log(resp.result.fulfillment.speech)
-        template.text = resp.result.fulfillment.speech;
+        template.text = "Please share your location.";
         bot.startConversation(message, function (err, convo) {
             if (!err) {
                 getNearBy(message, convo, resp.result.parameters.bankName, template, "atm");
