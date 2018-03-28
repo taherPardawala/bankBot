@@ -11,12 +11,12 @@
                     <div class="col col-6">Exclusions</div>
                 </li>
                 <li class="table-row" v-for="(item, key) in data" :key=key>
-                    <div class="col col-1" data-label="Job Id">{{item.insuranceProvider}}</div>
-                    <div class="col col-2" data-label="Customer Name">{{item.thirdPartyCover}}</div>
-                    <div class="col col-3" data-label="Amount">{{item.cashlessNetworkGarages}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{item.claimRatio}}</div>
-                    <div class="col col-5" data-label="Payment Status">{{item.specialFeatures}}</div>
-                    <div class="col col-6" data-label="Payment Status">{{item.Exclusions}}</div>
+                    <div class="col col-1" data-label="Insurance Provider">{{item.insuranceProvider}}</div>
+                    <div class="col col-2" data-label="Third Party Cover">{{item.thirdPartyCover}}</div>
+                    <div class="col col-3" data-label="Cashless Network Garages">{{item.cashlessNetworkGarages}}</div>
+                    <div class="col col-4" data-label="Claim Ratio">{{item.claimRatio}}</div>
+                    <div class="col col-5" data-label="Special Features">{{item.specialFeatures}}</div>
+                    <div class="col col-6" data-label="Exclusions">{{item.Exclusions}}</div>
                 </li>
             </ul>
         </div>

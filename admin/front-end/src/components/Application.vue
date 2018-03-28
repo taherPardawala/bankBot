@@ -7,7 +7,64 @@
         </v-toolbar>
         <v-navigation-drawer temporary v-model="drawer" absolute class="blue lighten-3" dark>
             <v-list>
-                <v-list-group prepend-icon="restaurant" no-action>
+                <!-- Filer list item start >
+                <v-list-tile @click="updatePath('/app/hello')">
+                    <v-list-tile-action>
+                        <v-icon>restaurant</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Home</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile><v-list-tile @click="updatePath('/app/hello')">
+                    <v-list-tile-action>
+                        <v-icon>restaurant</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Home</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+                <v-list-tile @click="updatePath('/app/hello')">
+                    <v-list-tile-action>
+                        <v-icon>restaurant</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Home</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+                <v-list-tile @click="updatePath('/app/hello')">
+                    <v-list-tile-action>
+                        <v-icon>restaurant</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Home</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+                < Filer list item end -->
+                <v-list-tile @click="updatePath('/app/hello')">
+                    <v-list-tile-action>
+                        <v-icon>home</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Home</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+                <v-list-tile @click="updatePath('/app/careers')">
+                    <v-list-tile-action>
+                        <v-icon>work</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Careers</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+                <v-list-tile @click="updatePath('/app/createaccount')">
+                    <v-list-tile-action>
+                        <v-icon>account_balance</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Create Bank Account</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+                <v-list-group prepend-icon="security" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
                             <v-list-tile-title>Insurance</v-list-tile-title>
@@ -34,75 +91,57 @@
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list-group>
-                <v-list-group prepend-icon="school" no-action>
+                <v-list-group prepend-icon="transfer_within_a_station" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
                             <v-list-tile-title>Loans</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="">
+                    <v-list-tile @click="updatePath('/app/homeloan')">
                         <v-list-tile-content>
                             <v-list-tile-title>Home Loan</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="">
+                    <v-list-tile @click="updatePath('/app/carloan')">
                         <v-list-tile-content>
                             <v-list-tile-title>Car Loan</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="">
+                    <v-list-tile @click="updatePath('/app/usedcarloan')">
                         <v-list-tile-content>
                             <v-list-tile-title>Used Car Loan</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="">
+                    <v-list-tile @click="updatePath('/app/personalloan')">
                         <v-list-tile-content>
                             <v-list-tile-title>Personal Loan</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list-group>
-                <v-list-group prepend-icon="school" no-action>
+                <v-list-group prepend-icon="credit_card" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
                             <v-list-tile-title>Card</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="">
+                    <v-list-tile @click="updatePath('/app/creditcard')">
                         <v-list-tile-content>
                             <v-list-tile-title>Credit Card</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list-group>
-            </v-list>
-            <v-list>
-                <v-list-tile @click="">
-                    <v-list-tile-action>
-                        <v-icon>restaurant</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title>Careers</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-            </v-list>
-            <v-list>
-                <v-list-group prepend-icon="school" no-action>
+                <v-list-group prepend-icon="account_box" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
                             <v-list-tile-title>Account</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="">
-                        <v-list-tile-action>
-                            <v-icon></v-icon>
-                        </v-list-tile-action>
+                    <v-list-tile @click="updatePath('/app/creditcard')">
                         <v-list-tile-content>
                             <v-list-tile-title>Change Password</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="">
-                        <v-list-tile-action>
-                            <v-icon></v-icon>
-                        </v-list-tile-action>
+                    <v-list-tile @click="updatePath('/app/creditcard')">
                         <v-list-tile-content>
                             <v-list-tile-title>Logout</v-list-tile-title>
                         </v-list-tile-content>
@@ -136,7 +175,7 @@
                 this.title = data;
             },
             updatePath(path) {
-                router.replace(path);    
+                router.replace(path);
             }
         },
         created() {

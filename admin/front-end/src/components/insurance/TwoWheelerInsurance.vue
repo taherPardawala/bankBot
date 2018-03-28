@@ -11,12 +11,12 @@
                     <div class="col col-6">Policy Term</div>
                 </li>
                 <li class="table-row" v-for="(item, key) in data" :key=key>
-                    <div class="col col-1" data-label="Job Id">{{item['Two wheeler Insurance provider']}}</div>
-                    <div class="col col-2" data-label="Customer Name">{{item['Cashless Network Garages']}}</div>
-                    <div class="col col-3" data-label="Amount">{{item['Third Party Insurance Cover']}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{item['Personal Accident Coverage']}}</div>
-                    <div class="col col-5" data-label="Payment Status">{{item['Incurred Claim Ratio - Motor Insurance']}}</div>
-                    <div class="col col-6" data-label="Payment Status">{{item['Policy Term']}}</div>
+                    <div class="col col-1" data-label="Two wheeler Insurance provider">{{item['Two wheeler Insurance provider']}}</div>
+                    <div class="col col-2" data-label="Cashless Network Garages">{{item['Cashless Network Garages']}}</div>
+                    <div class="col col-3" data-label="Third Party Insurance Cover">{{item['Third Party Insurance Cover']}}</div>
+                    <div class="col col-4" data-label="Personal Accident Coverage">{{item['Personal Accident Coverage']}}</div>
+                    <div class="col col-5" data-label="Incurred Claim Ratio - Motor Insurance">{{item['Incurred Claim Ratio - Motor Insurance']}}</div>
+                    <div class="col col-6" data-label="Policy Term">{{item['Policy Term']}}</div>
                 </li>
             </ul>
         </div>

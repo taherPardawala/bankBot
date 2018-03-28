@@ -11,12 +11,12 @@
                     <div class="col col-6">Number of Persons Covered</div>
                 </li>
                 <li class="table-row" v-for="(item, key) in data" :key=key>
-                    <div class="col col-1" data-label="Job Id">{{item['Health Insurance Companies']}}</div>
-                    <div class="col col-2" data-label="Customer Name">{{item['Incurred Claim Ratio']}}</div>
-                    <div class="col col-3" data-label="Amount">{{item['Grievances Solved']}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{item['Network Hospitals']}}</div>
-                    <div class="col col-5" data-label="Payment Status">{{item['Number of Policies Issued']}}</div>
-                    <div class="col col-6" data-label="Payment Status">{{item['Number of Persons Covered']}}</div>
+                    <div class="col col-1" data-label="Health Insurance Companies">{{item['Health Insurance Companies']}}</div>
+                    <div class="col col-2" data-label="Incurred Claim Ratio">{{item['Incurred Claim Ratio']}}</div>
+                    <div class="col col-3" data-label="Grievances Solved">{{item['Grievances Solved']}}</div>
+                    <div class="col col-4" data-label="Network Hospitals">{{item['Network Hospitals']}}</div>
+                    <div class="col col-5" data-label="Number of Policies Issued">{{item['Number of Policies Issued']}}</div>
+                    <div class="col col-6" data-label="Number of Persons Covered">{{item['Number of Persons Covered']}}</div>
                 </li>
             </ul>
         </div>
