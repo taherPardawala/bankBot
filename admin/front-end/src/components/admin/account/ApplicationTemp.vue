@@ -6,7 +6,7 @@
         <div class="col col-4" data-label="Update Status">
             <v-layout row justify-center>
                 <v-dialog v-model="dialog" persistent max-width="290">
-                    <v-btn class="position" color="primary" dark fab slot="activator">
+                    <v-btn class="position" color="primary" dark slot="activator">
                         <v-icon>add</v-icon>
                     </v-btn>
                     <v-card>
