@@ -9,4 +9,5 @@ db.connect(config.url, function(err, db) {
     require('./user/conversations/postback')(controller,bot);// call postback
     require('./user/conversations/hears')(controller,bot);// call hears
     require('./user/conversations/triggers')(controller,bot);// call triggers
+    require('./user/conversations/locatorConvo')(controller,bot);
 });

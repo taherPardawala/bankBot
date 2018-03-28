@@ -32,11 +32,30 @@ module.exports = function(controller, bot){
     }).action('bankLocator', function(message,resp,bot){
         if(resp.result.fulfillment.speech == 'Which bank are you looking for?') bot.replyWithTyping(message,resp.result.fulfillment.speech);
         else if(resp.result.parameters.bankName != ''){
-            //let template = ;
-            //template.text = resp.result.fulfillment.speech;
-            //template.quick_replies[0].payload = '{"text":"locate_bank"}'
-            //console.log(template);
-            bot.reply(message,{attachment:string.askLocationAttachment})
+            let template = string.askLocationAttachment;
+            template.text = resp.result.fulfillment.speech;
+            bot.startConversation(message, function (err, convo) {
+                if (!err) {
+                    getNearBy(message, convo, resp.result.parameters.bankName, template, "BANK");
+                    convo.next();
+                } else {
+                    console.error(err);
+                }
+            });
+        }
+    }).action('atmLocator', function(message,resp,bot){
+        if(resp.result.fulfillment.speech == 'Which bank ATM are you looking for?') bot.replyWithTyping(message,resp.result.fulfillment.speech);
+        else if(resp.result.parameters.bankName != ''){
+            let template = string.askLocationAttachment;
+            template.text = resp.result.fulfillment.speech;
+            bot.startConversation(message, function (err, convo) {
+                if (!err) {
+                    getNearBy(message, convo, resp.result.parameters.bankName, template, "ATM");
+                    convo.next();
+                } else {
+                    console.error(err);
+                }
+            });
         }
     })
 
