@@ -36,7 +36,7 @@ module.exports = function(controller, bot){
             template.text = resp.result.fulfillment.speech;
             bot.startConversation(message, function (err, convo) {
                 if (!err) {
-                    getNearBy(message, convo, resp.result.parameters.bankName, template, "BANK");
+                    getNearBy(message, convo, resp.result.parameters.bankName, template, "bank");
                     convo.next();
                 } else {
                     console.error(err);
@@ -50,7 +50,7 @@ module.exports = function(controller, bot){
             template.text = resp.result.fulfillment.speech;
             bot.startConversation(message, function (err, convo) {
                 if (!err) {
-                    getNearBy(message, convo, resp.result.parameters.bankName, template, "ATM");
+                    getNearBy(message, convo, resp.result.parameters.bankName, template, "atm");
                     convo.next();
                 } else {
                     console.error(err);

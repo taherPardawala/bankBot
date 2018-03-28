@@ -38,5 +38,14 @@ module.exports = {
                 "content_type": "location"
             }
         ]
+    },
+    locationsCarousel: {
+        "attachment": {
+            "type": "template",
+            "payload": {
+              "template_type": "generic",
+              "elements": []
+            }
+        }   
     }
 }
