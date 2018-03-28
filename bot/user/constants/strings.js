@@ -32,11 +32,18 @@ module.exports = {
         }
     ],
     askLocationAttachment: {
-        "text": "asdasdadsasd",
+        "text": "",
         "quick_replies": [
             {
                 "content_type": "location"
             }
         ]
+    },
+    locationsCarousel: {
+            "type": "template",
+            "payload": {
+              "template_type": "generic",
+              "elements": []
+            }
     }
 }
