@@ -3,20 +3,18 @@
         <div class="container">
             <ul class="responsive-table">
                 <li class="table-header">
-                    <div class="col col-1">Insurance Provider</div>
-                    <div class="col col-2">Grieviences Solved</div>
-                    <div class="col col-3">Claim Settlement</div>
-                    <div class="col col-4">Max Cover</div>
-                    <div class="col col-5">New Buisness Premium</div>
-                    <div class="col col-6">Max MaurityAge</div>
+                    <div class="col col-1">Bank Name</div>
+                    <div class="col col-2">Job Title</div>
+                    <div class="col col-3">Pay</div>
+                    <div class="col col-4">Job Description</div>
+                    <div class="col col-5">Contact Details</div>
                 </li>
                 <li class="table-row" v-for="(item, key) in data" :key=key>
-                    <div class="col col-1" data-label="Job Id">{{item.insuranceProvider}}</div>
-                    <div class="col col-2" data-label="Customer Name">{{item.grieviencesSolved}}</div>
-                    <div class="col col-3" data-label="Amount">{{item.claimSettlement}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{item.maxCover}}</div>
-                    <div class="col col-5" data-label="Payment Status">{{item.newBuisnessPremium}}</div>
-                    <div class="col col-6" data-label="Payment Status">{{item.maxMaurityAge}}</div>
+                    <div class="col col-1" data-label="Bank Name">{{item.bankName}}</div>
+                    <div class="col col-2" data-label="Job Title">{{item.jobTitle}}</div>
+                    <div class="col col-3" data-label="Pay">{{item.pay}}</div>
+                    <div class="col col-4" data-label="Job Description">{{item.jobDescription}}</div>
+                    <div class="col col-5" data-label="Contact Details">{{item.contactDetails}}</div>
                 </li>
             </ul>
         </div>
@@ -27,119 +25,7 @@
     export default {
         data() {
             return {
-                data: [{
-                        "insuranceProvider": "ICICI Prudential Life Insurance  ",
-                        "grieviencesSolved": "99.96% ",
-                        "claimSettlement": "96.68% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "6765.75 Crs",
-                        "maxMaurityAge": "75 Years"
-                    },
-                    {
-                        "insuranceProvider": "PNB Metlife Insurance  ",
-                        "grieviencesSolved": "98.41%",
-                        "claimSettlement": "87.14% ",
-                        "maxCover": "10 crores  ",
-                        "newBuisnessPremium": "1003.71 Crs",
-                        "maxMaurityAge": "75 Years"
-                    },
-                    {
-                        "insuranceProvider": "Aegon Life Insurance  ",
-                        "grieviencesSolved": "100.00%",
-                        "claimSettlement": "97.11% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "136.33Crs",
-                        "maxMaurityAge": "80 Years"
-                    },
-                    {
-                        "insuranceProvider": "HDFC Life Insurance  ",
-                        "grieviencesSolved": "99.89%",
-                        "claimSettlement": "97.62% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "6487.22 Crs",
-                        "maxMaurityAge": "75 Years"
-                    },
-                    {
-                        "insuranceProvider": "Max Life Insurance  ",
-                        "grieviencesSolved": "100.00%",
-                        "claimSettlement": "97.81% ",
-                        "maxCover": "100 crores ",
-                        "newBuisnessPremium": "2881.71 Crs",
-                        "maxMaurityAge": "75 Years"
-                    },
-                    {
-                        "insuranceProvider": "Bajaj Allianz Life Insurance  ",
-                        "grieviencesSolved": "100.00%",
-                        "claimSettlement": "91.67% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "2884.52 Crs",
-                        "maxMaurityAge": "75 Years"
-                    },
-                    {
-                        "insuranceProvider": "Birla Sun Life Insurance  ",
-                        "grieviencesSolved": "99.84% ",
-                        "claimSettlement": "94.69% ",
-                        "maxCover": "10 crores ",
-                        "newBuisnessPremium": "2220.31 Crs",
-                        "maxMaurityAge": "80Years"
-                    },
-                    {
-                        "insuranceProvider": "Edelweiss Tokio Life Insurance  ",
-                        "grieviencesSolved": "100.00% ",
-                        "claimSettlement": "93.29% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "183.59 Crs",
-                        "maxMaurityAge": "80Years"
-                    },
-                    {
-                        "insuranceProvider": "Future Generali Life Insurance  ",
-                        "grieviencesSolved": "99.70% ",
-                        "claimSettlement": "89.53% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "255.59 Crs",
-                        "maxMaurityAge": "75Years"
-                    },
-                    {
-                        "insuranceProvider": "SBI Life Insurance  ",
-                        "grieviencesSolved": "99.98%",
-                        "claimSettlement": "96.69% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "7106.58 Crs",
-                        "maxMaurityAge": "70 Years"
-                    },
-                    {
-                        "insuranceProvider": "Aviva Life Insurance.  ",
-                        "grieviencesSolved": "100.00%",
-                        "claimSettlement": "90.60% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "320.80 Crs",
-                        "maxMaurityAge": "70 Years"
-                    },
-                    {
-                        "insuranceProvider": "Bharti AXA Life Insurance  ",
-                        "grieviencesSolved": "99.82%",
-                        "claimSettlement": "92.37% ",
-                        "maxCover": "50 crores ",
-                        "newBuisnessPremium": "539.49 Crs",
-                        "maxMaurityAge": "75 Years"
-                    },
-                    {
-                        "insuranceProvider": "IDBI Federal Life Insurance  ",
-                        "grieviencesSolved": "100.00% ",
-                        "claimSettlement": "90.33% ",
-                        "maxCover": "30 crores  ",
-                        "newBuisnessPremium": "588.40 Crs",
-                        "maxMaurityAge": "80 Years"
-                    },
-                    {
-                        "insuranceProvider": "Reliance Life Insurance ",
-                        "grieviencesSolved": "99.98%",
-                        "claimSettlement": "96.69% ",
-                        "maxCover": "No upper limit ",
-                        "newBuisnessPremium": "1558.33 Crs",
-                        "maxMaurityAge": "75 Years"
-                    }
-                ]
+                data:[],
             }
         },
         created() {
