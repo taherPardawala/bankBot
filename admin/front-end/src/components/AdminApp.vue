@@ -11,10 +11,10 @@
                         <v-icon>home</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
-                        <v-list-tile-title>Home</v-list-tile-title>
+                        <v-list-tile-title>Appointments</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
-                <v-list-tile @click="updatePath('/app/careers')">
+                <v-list-tile @click="updatePath('/app/admincareers')">
                     <v-list-tile-action>
                         <v-icon>work</v-icon>
                     </v-list-tile-action>
@@ -27,7 +27,7 @@
                         <v-icon>account_balance</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
-                        <v-list-tile-title>Create Bank Account</v-list-tile-title>
+                        <v-list-tile-title>New Account Applications</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
                 <v-list-group prepend-icon="security" no-action>

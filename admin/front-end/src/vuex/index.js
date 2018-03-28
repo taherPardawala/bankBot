@@ -23,16 +23,6 @@ let mutations = {
   accountType(state,payload){
     state.accountType = payload;
   },
-  sessionId(state, payload) {
-    state.session.id = payload;
-  },
-  sessionEmail(state, payload) {
-    state.session.email = payload;
-  },
-  endSession(state, payload) {
-    console.log("Session Destroyed");
-    state.session = null
-  },
   logout(state, payload) {
     console.log("AUTH VUEX");
     state.auth = null;
@@ -41,9 +31,6 @@ let mutations = {
 let getters = {
   auth: state => state.auth,
   accountType: state => state.accountType,
-  session: state => state.session,
-  sessionId: state => state.session.id,
-  sessionEmail: state => state.session.email,
 };
 
 export default new Vuex.Store({
@@ -53,10 +40,6 @@ export default new Vuex.Store({
   getters,
   state: {
     auth: {},
-    session: {
-      email: "",
-      id: ""
-  },
   accountType:''
   },
   modules: {

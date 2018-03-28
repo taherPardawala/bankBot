@@ -1,7 +1,7 @@
 <template>
     <div class="create-account">
         <v-form v-model="valid" ref="form" lazy-validation>
-            <v-select :items="banks" v-model="bankName" label="Select Bank Name" single-line></v-select>
+            <v-select :items="banks" v-model="bankName" label="Select Bank Name" single-line required></v-select>
             <v-text-field label="First Name" v-model="firstname" :rules="nameRules" :counter="20" required></v-text-field>
             <v-text-field label="Last Name" v-model="lastname" :rules="nameRules" :counter="20" required></v-text-field>
             <v-text-field label="Middle Name" v-model="middlename" :rules="nameRules" :counter="20" required></v-text-field>
@@ -9,11 +9,11 @@
             <!-- Filer -->
             <v-text-field label="Adhar Number" v-model="adharNumber" type="number" :counter="16" required></v-text-field>
             <h3>Upload Scan copy of Adhar</h3>
-            <input type="file" @change="onFileChange()" accept="image/jpeg" name="adharImage" value="Adhar Image" />
+            <input type="file" @change="onFileChange()" accept="image/jpeg" name="adharImage" value="Adhar Image" required/>
             <!-- Filer -->
             <v-text-field label="Pan Number" v-model="panNumber" type="number" :counter="16" required></v-text-field>
             <h3>Upload Scaned Copy of Pan</h3>
-            <input type="file" @change="onFileChange" accept="image/jpeg" name="panImage" value="Pan Image" />
+            <input type="file" @change="onFileChange" accept="image/jpeg" name="panImage" value="Pan Image" required/>
             <br>
             <br>
             <v-btn @click="submit" :disabled="!valid">submit</v-btn>
