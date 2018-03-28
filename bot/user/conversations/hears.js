@@ -32,11 +32,11 @@ module.exports = function(controller, bot){
     }).action('bankLocator', function(message,resp,bot){
         if(resp.result.fulfillment.speech == 'Which bank are you looking for?') bot.replyWithTyping(message,resp.result.fulfillment.speech);
         else if(resp.result.parameters.bankName != ''){
-            let template = string.askLocationAttachment;
-            template.text = resp.result.fulfillment.speech;
+            //let template = ;
+            //template.text = resp.result.fulfillment.speech;
             //template.quick_replies[0].payload = '{"text":"locate_bank"}'
-            console.log(template);
-            bot.reply(message,{attachment:JSON.stringify(template)})
+            //console.log(template);
+            bot.reply(message,{attachment:string.askLocationAttachment})
         }
     })
 
