@@ -36,7 +36,7 @@ module.exports = function(controller, bot){
             template.text = resp.result.fulfillment.speech;
             //template.quick_replies[0].payload = '{"text":"locate_bank"}'
             console.log(template);
-            bot.replyWithTyping(message,{attachment:template})
+            bot.reply(message,{attachment:JSON.stringify(template)})
         }
     })
 

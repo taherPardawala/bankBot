@@ -32,7 +32,6 @@ module.exports = {
         }
     ],
     askLocationAttachment: {
-        //structured attachment for the get location quick reply
         "text": "",
         "quick_replies": [
             {
