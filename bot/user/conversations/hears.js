@@ -23,7 +23,7 @@ module.exports = function(controller, bot){
         getUserName(message.user,function(err,response){
             if(err) console.log(err)
             else{
-                let responseText = "I am "+"BankBot"+" "+resp.result.fulfillment.speech+" "+response.first_name;
+                let responseText = "I am "+"BankBot"+"..... "+resp.result.fulfillment.speech+" "+response.first_name+".";
                 bot.replyWithTyping(message, responseText);
             }
         });

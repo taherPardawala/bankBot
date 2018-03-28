@@ -10,7 +10,11 @@ module.exports = function(controller ,bot){
           payload.text = "undefined payload";
         }
         if (payload.text === string.getStarted) {
-            bot.replyWithTyping(message,"Type in 'hi'");
+            getUserName(message.user,function(err,response){
+                bot.replyWithTyping(message,"Hey there "+response.first_name+"!",function(err){
+                    bot.replyWithTyping(message,"Just type in to locate atms or banks near you!");
+                });
+            })
         }
     });
 }
