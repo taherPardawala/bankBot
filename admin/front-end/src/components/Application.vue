@@ -7,7 +7,7 @@
         </v-toolbar>
         <v-navigation-drawer temporary v-model="drawer" absolute class="blue lighten-3" dark>
             <v-list>
-                <!-- Filer list item start -->
+                <!-- Filer list item start >
                 <v-list-tile @click="updatePath('/app/hello')">
                     <v-list-tile-action>
                         <v-icon>restaurant</v-icon>
@@ -39,10 +39,10 @@
                         <v-list-tile-title>Home</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
-                <!-- Filer list item end -->
+                < Filer list item end -->
                 <v-list-tile @click="updatePath('/app/hello')">
                     <v-list-tile-action>
-                        <v-icon>restaurant</v-icon>
+                        <v-icon>home</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                         <v-list-tile-title>Home</v-list-tile-title>
@@ -50,7 +50,7 @@
                 </v-list-tile>
                 <v-list-tile @click="updatePath('/app/careers')">
                     <v-list-tile-action>
-                        <v-icon>restaurant</v-icon>
+                        <v-icon>work</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                         <v-list-tile-title>Careers</v-list-tile-title>
@@ -58,13 +58,13 @@
                 </v-list-tile>
                 <v-list-tile @click="updatePath('/app/createaccount')">
                     <v-list-tile-action>
-                        <v-icon>restaurant</v-icon>
+                        <v-icon>account_balance</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                         <v-list-tile-title>Create Bank Account</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
-                <v-list-group prepend-icon="restaurant" no-action>
+                <v-list-group prepend-icon="security" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
                             <v-list-tile-title>Insurance</v-list-tile-title>
@@ -91,7 +91,7 @@
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list-group>
-                <v-list-group prepend-icon="school" no-action>
+                <v-list-group prepend-icon="transfer_within_a_station" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
                             <v-list-tile-title>Loans</v-list-tile-title>
@@ -118,7 +118,7 @@
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list-group>
-                <v-list-group prepend-icon="school" no-action>
+                <v-list-group prepend-icon="credit_card" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
                             <v-list-tile-title>Card</v-list-tile-title>
@@ -130,7 +130,7 @@
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list-group>
-                <v-list-group prepend-icon="school" no-action>
+                <v-list-group prepend-icon="account_box" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
                             <v-list-tile-title>Account</v-list-tile-title>
