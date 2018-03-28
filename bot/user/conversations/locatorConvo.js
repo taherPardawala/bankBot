@@ -11,7 +11,7 @@ module.exports = function(controller, bot){
                     json: true
                 }, (err, response, body) => {
                         if(err) console.error(err);
-                        if(body.results.length == 0) bot.replyWithTyping("Sorry no "+type+"s were found near your location");
+                        if(body.results.length == 0) bot.replyWithTyping(message,"Sorry no "+type+"s were found near your location");
                         else {
                             let template = string.locationsCarousel;
                             template.payload.elements = [];
