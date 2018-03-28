@@ -12,7 +12,7 @@ module.exports = function(controller, bot){
     });
 
     apiai.all(function (message, resp, bot) {
-        console.log(resp);
+        console.log(resp.result.action);
         if (resp.result.action.match('smalltalk') && resp.result.action !== 'smalltalk.greetings.hello') {
             let responseText = resp.result.fulfillment.speech;
             bot.replyWithTyping(message, responseText);
