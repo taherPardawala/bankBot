@@ -1,20 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import HelloWorld from '@/components/user/HelloWorld'
 import Application from '@/components/Application'
+import AdminApplication from '@/components/AdminApp'
 import Login from '@/components/Login'
 import Signup from '@/components/Signup'
-import LifeInsurance from '@/components/insurance/LifeInsurance'
-import HealthInsurance from '@/components/insurance/HealthInsurance'
-import TwoWheelerInsurance from '@/components/insurance/TwoWheelerInsurance'
-import CarInsurance from '@/components/insurance/CarInsurance'
-import CarLoan from '@/components/loan/CarLoan'
-import HomeLoan from '@/components/loan/HomeLoan'
-import PersonalLoan from '@/components/loan/PersonalLoan'
-import UsedCarLoan from '@/components/loan/UsedCarLoan'
-import CreditCard from '@/components/card/CreditCard'
-import NewAccount from '@/components/create-account/NewAccount'
-import Career from '@/components/Career'
+import LifeInsurance from '@/components/user/insurance/LifeInsurance'
+import HealthInsurance from '@/components/user/insurance/HealthInsurance'
+import TwoWheelerInsurance from '@/components/user/insurance/TwoWheelerInsurance'
+import CarInsurance from '@/components/user/insurance/CarInsurance'
+import CarLoan from '@/components/user/loan/CarLoan'
+import HomeLoan from '@/components/user/loan/HomeLoan'
+import PersonalLoan from '@/components/user/loan/PersonalLoan'
+import UsedCarLoan from '@/components/user/loan/UsedCarLoan'
+import CreditCard from '@/components/user/card/CreditCard'
+import NewAccount from '@/components/user/create-account/NewAccount'
+import Career from '@/components/user/Career'
 
 
 Vue.use(Router)
@@ -85,6 +86,17 @@ export default new Router({
           name: 'Career',
           component: Career,
         }    
+      ]
+    },
+    {
+      path: '/admin',
+      component: AdminApplication,
+      children:[
+        {
+          path: '/admin/home',
+          name: 'HelloWorld',
+          component: HelloWorld,
+        }
       ]
     },
     {
