@@ -30,6 +30,7 @@ module.exports = function(controller, bot){
     }).action('input.unknown', function (message, resp, bot) {
         bot.replyWithTyping(message, "Sorry, I don't understand");
     }).action('bankLocator', function(message,resp,bot){
+        bot.replyWithTyping(message,resp.fulfillment.speech);
         console.log("BANKLOCATOr",resp);
     })
 
