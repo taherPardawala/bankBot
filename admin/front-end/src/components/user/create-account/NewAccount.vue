@@ -114,14 +114,13 @@
             }
         },
         created() {
-            this.$emit('title', 'Create Bank Account');
+            // this.$emit('title', 'Create Bank Account');
         }
     }
 </script>
 
 <style scoped>
     .create-account {
-        margin-top: 60px;
         padding-right: 5%;
         padding-left: 5%;
         padding-bottom: 5%;

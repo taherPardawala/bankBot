@@ -9,12 +9,19 @@
                     <div class="col col-4">Job Description</div>
                     <div class="col col-5">Contact Details</div>
                 </li>
-                <li class="table-row" v-for="(item, key) in data" :key=key>
+                <!--li class="table-row" v-for="(item, key) in data" :key=key>
                     <div class="col col-1" data-label="Bank Name">{{item.bankName}}</div>
                     <div class="col col-2" data-label="Job Title">{{item.jobTitle}}</div>
                     <div class="col col-3" data-label="Pay">{{item.pay}}</div>
                     <div class="col col-4" data-label="Job Description">{{item.jobDescription}}</div>
                     <div class="col col-5" data-label="Contact Details">{{item.contactDetails}}</div>
+                </li-->
+                <li class="table-row">
+                    <div class="col col-1" data-label="Bank Name">sdsd</div>
+                    <div class="col col-2" data-label="Job Title">dsds</div>
+                    <div class="col col-3" data-label="Pay">dssd</div>
+                    <div class="col col-4" data-label="Job Description">dssd</div>
+                    <div class="col col-5" data-label="Contact Details">dssd</div>
                 </li>
             </ul>
         </div>

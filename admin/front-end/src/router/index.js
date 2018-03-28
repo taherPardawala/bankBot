@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/user/HelloWorld'
-import Application from '@/components/Application'
-import AdminApplication from '@/components/AdminApp'
+// Common Files
 import Login from '@/components/Login'
 import Signup from '@/components/Signup'
+// User Files
+import Application from '@/components/Application'
+import HelloWorld from '@/components/user/HelloWorld'
 import LifeInsurance from '@/components/user/insurance/LifeInsurance'
 import HealthInsurance from '@/components/user/insurance/HealthInsurance'
 import TwoWheelerInsurance from '@/components/user/insurance/TwoWheelerInsurance'
@@ -14,9 +15,13 @@ import HomeLoan from '@/components/user/loan/HomeLoan'
 import PersonalLoan from '@/components/user/loan/PersonalLoan'
 import UsedCarLoan from '@/components/user/loan/UsedCarLoan'
 import CreditCard from '@/components/user/card/CreditCard'
-import NewAccount from '@/components/user/create-account/NewAccount'
+import CreateAccount from '@/components/user/create-account/CreateAccount'
 import Career from '@/components/user/Career'
-
+// Admin Files
+import AdminApplication from '@/components/AdminApp'
+import AdminCareers from '@/components/admin/career/Careers'
+import AdminNewAccounts from '@/components/admin/account/NewAccounts'
+import AdminAppointments from '@/components/admin/appointment/Appointments'
 
 Vue.use(Router)
 
@@ -78,8 +83,8 @@ export default new Router({
         },    
         {
           path: '/app/createaccount',
-          name: 'NewAccount',
-          component: NewAccount,
+          name: 'CreateAccount',
+          component: CreateAccount,
         },    
         {
           path: '/app/careers',
@@ -93,9 +98,19 @@ export default new Router({
       component: AdminApplication,
       children:[
         {
-          path: '/admin/home',
-          name: 'HelloWorld',
-          component: HelloWorld,
+          path: '/admin/careers',
+          name: 'AdminCareers',
+          component: AdminCareers,
+        },
+        {
+          path: '/admin/accounts',
+          name: 'AdminNewAccounts',
+          component: AdminNewAccounts,
+        },
+        {
+          path: '/admin/appointments',
+          name: 'HelloAdminAppointmentsWorld',
+          component: AdminAppointments,
         }
       ]
     },
