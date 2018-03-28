@@ -1,6 +1,7 @@
 <template>
     <div class="create-account">
         <v-form v-model="valid" ref="form" lazy-validation>
+            <v-select :items="banks" v-model="bankName" label="Select Bank Name" single-line></v-select>
             <v-text-field label="First Name" v-model="firstname" :rules="nameRules" :counter="20" required></v-text-field>
             <v-text-field label="Last Name" v-model="lastname" :rules="nameRules" :counter="20" required></v-text-field>
             <v-text-field label="Middle Name" v-model="middlename" :rules="nameRules" :counter="20" required></v-text-field>
@@ -42,7 +43,52 @@
                 adharNumber: '',
                 panNumber: '',
                 adharImage: null,
-                panImage: null
+                panImage: null,
+                bankName: null,
+                banks: [
+                    'State Bank of India',
+                    'IDBI Bank',
+                    'Allahabad Bank',
+                    'Indian Overseas Bank',
+                    'Andhra Bank',
+                    'Oriental Bank of Commerce',
+                    'Bank of Baroda',
+                    'Punjab National Bank',
+                    'Bank of India',
+                    'Syndicate Bank',
+                    'Bank of Maharashtra',
+                    'Union Bank of India',
+                    'Canara Bank',
+                    'United Bank of India',
+                    'Central Bank of India',
+                    'Punjab & Sind Bank',
+                    'Corporation Bank',
+                    'UCO Bank',
+                    'Dena Bank',
+                    'Vijaya Bank',
+                    'Indian Bank',
+                    'Axis Bank Limited',
+                    'Bandhan Bank Limited',
+                    'Catholic Syrian Bank Limited',
+                    'City Union Bank Limited',
+                    'DCB Bank Limited',
+                    'Dhanlaxmi Bank Limited',
+                    'Federal Bank Limited',
+                    'HDFC Bank Limited',
+                    'ICICI Bank Limited',
+                    'IndusInd Bank Limited',
+                    'IDFC Bank Limited',
+                    'Jammu & Kashmir Bank Limited',
+                    'Karnataka Bank Limited',
+                    'Karur Vysya Bank Limited',
+                    'Kotak Mahindra Bank Limited',
+                    'Lakshmi Vilas Bank Limited',
+                    'Nainital Bank Limited',
+                    'RBL Bank Limited',
+                    'South Indian Bank Limited',
+                    'Tamilnad Mercantile Bank Limited',
+                    'YES Bank Limited'
+                ]
             }
         },
         methods: {
