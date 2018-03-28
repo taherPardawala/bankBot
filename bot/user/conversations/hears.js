@@ -30,33 +30,27 @@ module.exports = function(controller, bot){
     }).action('input.unknown', function (message, resp, bot) {
         bot.replyWithTyping(message, "Sorry, I don't understand");
     }).action('bankLocator', function(message,resp,bot){
-        if(resp.result.fulfillment.speech == 'Which bank are you looking for?') bot.replyWithTyping(message,resp.result.fulfillment.speech);
-        else if(resp.result.parameters.bankName != ''){
-            let template = string.askLocationAttachment;
-            template.text = resp.result.fulfillment.speech;
-            bot.startConversation(message, function (err, convo) {
-                if (!err) {
-                    getNearBy(message, convo, resp.result.parameters.bankName, template, "bank");
-                    convo.next();
-                } else {
-                    console.error(err);
-                }
-            });
-        }
+        let template = string.askLocationAttachment;
+        template.text = resp.result.fulfillment.speech;
+        bot.startConversation(message, function (err, convo) {
+            if (!err) {
+                getNearBy(message, convo, resp.result.parameters.bankName, template, "bank");
+                convo.next();
+            } else {
+                console.error(err);
+            }
+        });
     }).action('atmLocator', function(message,resp,bot){
-        if(resp.result.fulfillment.speech == 'Which bank ATM are you looking for?') bot.replyWithTyping(message,resp.result.fulfillment.speech);
-        else if(resp.result.parameters.bankName != ''){
-            let template = string.askLocationAttachment;
-            template.text = resp.result.fulfillment.speech;
-            bot.startConversation(message, function (err, convo) {
-                if (!err) {
-                    getNearBy(message, convo, resp.result.parameters.bankName, template, "atm");
-                    convo.next();
-                } else {
-                    console.error(err);
-                }
-            });
-        }
+        let template = string.askLocationAttachment;
+        template.text = resp.result.fulfillment.speech;
+        bot.startConversation(message, function (err, convo) {
+            if (!err) {
+                getNearBy(message, convo, resp.result.parameters.bankName, template, "atm");
+                convo.next();
+            } else {
+                console.error(err);
+            }
+        });
     })
 
 }
