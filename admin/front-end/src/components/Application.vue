@@ -146,7 +146,11 @@
             }
         },
         created() {
-            router.replace('/app/hello');
+            if (typeof this.$store.getters.auth == 'string') {
+                this.updatePath('/app/hello')
+            } else {
+                this.updatePath('/login')
+            }
         }
     }
 </script>

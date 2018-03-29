@@ -7,5 +7,8 @@ module.exports.routes = {
         } else {
             res.json({ok:false,message:"Missing params"})
         }
+    },
+    'GET /bankNames': async (req,res) => {
+        res.json(await Services.bank.getBankNames());
     }
 }

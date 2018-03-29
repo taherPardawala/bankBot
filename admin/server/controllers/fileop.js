@@ -1,16 +1,34 @@
 var Busboy = require('busboy');
 module.exports.routes = {
-    'POST /upload': async (req, res) => {
+    'POST /adhar': async (req, res) => {
         var busboy = new Busboy({ headers: req.headers });
+        var name = '';
         busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
-            let upload = db.grid.openUploadStreamWithId(''+filename.split('.')[1]); //uniquely name the file with user's id
+            name = 'adhar-'+(new Date().getTime())+'.'+filename.split('.')[1];
+            let upload = db.grid.openUploadStreamWithId(name); //uniquely name the file with user's id
             upload.on('finish',function(){
                 busboy.emit('uploadComplete')
             })
             file.pipe(upload);
         });
         busboy.on('uploadComplete', function () {
-            res.json({message:"Upload Complete"});
+            res.json({ok:true,message:"Upload Complete", fileName: name});
+        });
+        return req.pipe(busboy);
+    },
+    'POST /pan': async (req, res) => {
+        var busboy = new Busboy({ headers: req.headers });
+        var name = '';
+        busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
+            name = 'pan-'+(new Date().getTime())+'.'+filename.split('.')[1];
+            let upload = db.grid.openUploadStreamWithId(name); //uniquely name the file with user's id
+            upload.on('finish',function(){
+                busboy.emit('uploadComplete')
+            })
+            file.pipe(upload);
+        });
+        busboy.on('uploadComplete', function () {
+            res.json({ok:true,message:"Upload Complete", fileName: name});
         });
         return req.pipe(busboy);
     },

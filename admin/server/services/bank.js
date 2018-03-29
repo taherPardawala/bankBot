@@ -132,6 +132,14 @@ module.exports = {
             console.log('Mongo issue ', err);
             return ({ ok: false, message: 'unknown db issue' });
         }
+    },
+    getBankNames: async () => {
+        try{
+            return(await db.auth.find({accountType:1},{_id:0, name:1}).toArray());
+        } catch (err) {
+            console.log('Mongo issue ', err);
+            return ({ ok: false, message: 'unknown db issue' });
+        }
     }
 }
     

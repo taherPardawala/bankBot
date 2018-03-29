@@ -45,5 +45,5 @@ export default new Vuex.Store({
   modules: {
 
   },
-  strict: true,
+  strict: false,
 });
