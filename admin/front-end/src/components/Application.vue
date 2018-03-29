@@ -7,39 +7,6 @@
         </v-toolbar>
         <v-navigation-drawer temporary v-model="drawer" absolute class="blue lighten-3" dark>
             <v-list>
-                <!-- Filer list item start >
-                <v-list-tile @click="updatePath('/app/hello')">
-                    <v-list-tile-action>
-                        <v-icon>restaurant</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title>Home</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile><v-list-tile @click="updatePath('/app/hello')">
-                    <v-list-tile-action>
-                        <v-icon>restaurant</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title>Home</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="updatePath('/app/hello')">
-                    <v-list-tile-action>
-                        <v-icon>restaurant</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title>Home</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="updatePath('/app/hello')">
-                    <v-list-tile-action>
-                        <v-icon>restaurant</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title>Home</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                < Filer list item end -->
                 <v-list-tile @click="updatePath('/app/hello')">
                     <v-list-tile-action>
                         <v-icon>home</v-icon>

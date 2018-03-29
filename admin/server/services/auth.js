@@ -1,3 +1,4 @@
+let jwt = require('jsonwebtoken'); 
 module.exports = {
     generateUUID: () => {
         var d = new Date().getTime();

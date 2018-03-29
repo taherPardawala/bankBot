@@ -42,7 +42,9 @@
                                         <v-spacer></v-spacer>
                                         <v-btn @click="clear" style="width:25%" color="indigo lighten-1 white--text">Clear</v-btn>
                                         <v-spacer></v-spacer>
-                                        <v-btn @click="updateRoute('/')" style="width:25%" color="indigo lighten-1 white--text">Login</v-btn>
+                                        <v-btn @click="createAccount" color="indigo lighten-1 white--text">Create Account</v-btn>
+                                        <v-spacer></v-spacer>
+                                        <v-btn @click="updateRoute('/login')" style="width:25%" color="indigo lighten-1 white--text">Login</v-btn>
                                         <v-spacer></v-spacer>
                                     </v-card-actions>
                                 </v-form>
@@ -56,6 +58,8 @@
 </template>
 
 <script>
+    import http from '../services/http'
+    import router from '../router'
     export default {
         name: 'Signup',
         data() {
@@ -102,6 +106,25 @@
             },
             updateRoute(path) {
                 router.replace(path);
+            },
+            async createAccount() {
+                let result = await http.signupUser(
+                    {
+                        id:this.email,
+                        email:this.email,
+                        firstName: this.firstName,
+                        lastName: this.lastName,
+                        mobileNumber: this.mobileNumber,
+                        password: this.password
+                    }
+                );
+
+                if ( result.ok ) {
+                    alert(result.message);
+                    router.replace('/login');
+                } else {
+                    alert(result.message);
+                }
             }
         }
     }
