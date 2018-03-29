@@ -1,8 +1,8 @@
 <template>
     <li class="table-row">
-        <div class="col col-1" data-label="Applicant's Name">dsds</div>
-        <div class="col col-2" data-label="Pan Number">dssd</div>
-        <div class="col col-3" data-label="Adhar Number">dssd</div>
+        <div class="col col-1" data-label="Applicant's Name">{{application.firstname+" "+application.middlename+" "+application.lastname}}</div>
+        <div class="col col-2" data-label="Pan Number">{{application.adharNumber}}</div>
+        <div class="col col-3" data-label="Adhar Number">{{application.panNumber}}</div>
         <div class="col col-4" data-label="Update Status">
             <v-layout row justify-center>
                 <v-dialog v-model="dialog" persistent max-width="290">
@@ -18,7 +18,7 @@
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn color="green darken-1" flat @click="addJob">Update</v-btn>
+                            <v-btn color="green darken-1" flat @click="updateStatus">Update Status</v-btn>
                             <v-btn color="green darken-1" flat @click.native="dialog = false">Close</v-btn>
                         </v-card-actions>
                     </v-card>
@@ -29,22 +29,28 @@
 </template>
 
 <script>
+    import http from '../../../services/http'
     export default {
         name: 'ApplicationTemp',
         data() {
             return {
                 dialog: false,
                 valid: true,
-                items: [1,2,3,4,5,6,7,8,9],
-                e1: ''
+                items: ['pending','processing','approved'],
+                e1:''
             }
         },
         methods: {
-            addJob() {
-                if (this.$refs.form.validate()) {} else {}
+            async updateStatus() {
+                let result = await http.updateSavingsAccountStatus(this.application.refNo,{status:this.e1})
+                
             }
         },
-        created() {}
+        created() {
+        },
+        props:[
+            'application'
+        ]
     }
 </script>
 

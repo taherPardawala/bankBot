@@ -2,7 +2,7 @@ module.exports.policies= [Services.middleware.isLoggedIn,Services.middleware.isB
 
 module.exports.routes = {
     'GET /careers': async (req,res) => {
-        if(req.body && req.body.auth){
+        if(req.auth){
             res.json(await Services.bank.getCareers(req.auth.id));
         } else {
             res.json({ok:false,message:"missing params"})
@@ -23,7 +23,7 @@ module.exports.routes = {
         }
     },
     'GET /appointments': async (req,res) => {
-        if(req.body && req.body.auth){
+        if(req.auth){
             res.json(await Services.bank.getAppointments(req.auth.id));
         } else {
             res.json({ok:false,message:"missing params"})
@@ -37,7 +37,7 @@ module.exports.routes = {
         }
     },
     'GET /savingsApplications': async (req,res) => {
-        if(req.body && req.body.auth){
+        if(req.auth){
             res.json(await Services.bank.getSavingsApplications(req.auth.id));
         } else {
             res.json({ok:false,message:"missing params"})

@@ -8,18 +8,20 @@
                     <div class="col col-3">Pan Number</div>
                     <div class="col col-4">Update Status</div>
                 </li>
-                <application-temp v-for="(i,key) in 5" :key=key></application-temp>
+                <application-temp v-for="(i,key) in applications" :key=key :application="i"></application-temp>
             </ul>
         </div>
     </div>
 </template>
 
 <script>
+    import http from '../../../services/http'
     import ApplicationTemp from './ApplicationTemp.vue'
     export default {
         name: 'Careers',
         data() {
             return {
+                applications:[]
             }
         },
         methods: {
@@ -27,8 +29,15 @@
         components: {
             'application-temp': ApplicationTemp
         },
-        created() {
+        async created() {
             this.$emit('title', 'New Account Applications');
+            let result = await http.getSavingsApplications();
+            if(result.ok){
+                this.applications = result.accountApplications;
+            } else {
+                console.error(result);
+                alert("Something went wrong")
+            }
         }
     }
 </script>

@@ -94,6 +94,46 @@ export default {
                 console.error(error);
             });
     },
+    getSavingsApplications: () => {
+        return axios.get(baseUri + '/bank/v0.1/savingsApplications', {
+            headers: {
+                auth: store.getters.auth
+            }
+        }).then(function (response) {
+            console.log(response.data);
+            return response.data;
+        }).catch(function (error) {
+            console.error(error)
+        })
+    },
+    updateSavingsAccountStatus: (refNo,update) => {
+        return axios.post(baseUri + '/bank/v0.1/savingsApplications', { refNo:refNo,update: update }, {
+            headers: {
+                auth: store.getters.auth
+            }
+        })
+            .then(function (response) {
+                console.log(response);
+                return response.data;
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+    },
+    deleteSavingsAccountApplication: (update) => {
+        return axios.delete(baseUri + '/bank/v0.1/savingsApplications', { refNo: update }, {
+            headers: {
+                auth: store.getters.auth
+            }
+        })
+            .then(function (response) {
+                console.log(response);
+                return response.data;
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+    },
     getProfile: () => {
         return axios.get(baseUri + '/user/v0.1/getProfile', {
             headers: {
