@@ -1,6 +1,5 @@
 import axios from 'axios';
 import store from '@/vuex';
-
 // const baseUri = window.location.protocol+"//"+window.location.host; //production url
 const baseUri = 'http://localhost:5000';
 
@@ -106,6 +105,18 @@ export default {
             console.error(error)
         })
     },
+    getAppointments: () => {
+        return axios.get(baseUri + '/bank/v0.1/appointments', {
+            headers: {
+                auth: store.getters.auth
+            }
+        }).then(function (response) {
+            console.log(response.data);
+            return response.data;
+        }).catch(function (error) {
+            console.error(error)
+        })
+    },
     updateSavingsAccountStatus: (refNo,update) => {
         return axios.post(baseUri + '/bank/v0.1/savingsApplications', { refNo:refNo,update: update }, {
             headers: {
@@ -122,6 +133,20 @@ export default {
     },
     deleteSavingsAccountApplication: (update) => {
         return axios.delete(baseUri + '/bank/v0.1/savingsApplications', { refNo: update }, {
+            headers: {
+                auth: store.getters.auth
+            }
+        })
+            .then(function (response) {
+                console.log(response);
+                return response.data;
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+    },
+    deleteAppointment: (userId) => {
+        return axios.delete(baseUri + '/bank/v0.1/appointments', { userId: userId }, {
             headers: {
                 auth: store.getters.auth
             }
@@ -160,4 +185,9 @@ export default {
                 console.error(error);
             });
     },
+    postFile: (id) => {
+        
+        return axios.post(baseUri + '/fileop/v0.1/getFile', { id: id },{responseType:'stream'})
+    },
+
 }

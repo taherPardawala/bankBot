@@ -36,14 +36,18 @@
             return {
                 dialog: false,
                 valid: true,
-                items: ['pending','processing','approved'],
+                items: ['pending','processing','approved','rejected'],
                 e1:''
             }
         },
         methods: {
             async updateStatus() {
                 let result = await http.updateSavingsAccountStatus(this.application.refNo,{status:this.e1})
-                
+                if(result.ok){
+                    alert(result.message);
+                } else {
+                    alert(result.message);
+                }
             }
         },
         created() {

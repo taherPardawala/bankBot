@@ -8,25 +8,35 @@
                     <div class="col col-3">Contact Details</div>
                     <div class="col col-4">Dismiss</div>
                 </li>
-                <appointment v-for="(i, key) in 5" :key=key></appointment>
+                <appointment v-for="(i, key) in appointments" :appointment="i" :key=key></appointment>
             </ul>
         </div>
     </div>
 </template>
 
 <script>
+    import http from '../../../services/http'
     import Appointment from './Appointment.vue'
     export default {
         name: 'Appointments',
         data() {
-            return {}
+            return {
+                appointments:[]
+            }
         },
         methods: {},
         components: {
             'appointment': Appointment 
         },
-        created() {
+        async created() {
             this.$emit('title', 'Appointments');
+            let result = await http.getAppointments();
+            if(result.ok){
+                this.appointments = result.appointments;
+            } else {
+                console.error(result);
+                alert("Something went wrong")
+            }
         }
     }
 </script>

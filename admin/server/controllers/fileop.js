@@ -32,8 +32,9 @@ module.exports.routes = {
         });
         return req.pipe(busboy);
     },
-    'GET /file': async (req,res) => {
-        let download = db.grid.openDownloadStream('jpg')
+    'POST /getFile': async (req,res) => {
+        let download = db.grid.openDownloadStream(req.body.id)
+        console.log(download);
         download.pipe(res);
     }
     /*

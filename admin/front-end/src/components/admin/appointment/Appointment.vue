@@ -1,11 +1,11 @@
 <template>
     <div class="appointment">
         <li class="table-row">
-            <div class="col col-1" data-label="Name">dsds</div>
-            <div class="col col-2" data-label="Prefered Date">dssd</div>
-            <div class="col col-3" data-label="Contact Details">dssd</div>
+            <div class="col col-1" data-label="Name">appointment.name</div>
+            <div class="col col-2" data-label="Prefered Date">appointment.date</div>
+            <div class="col col-3" data-label="Contact Details">appointment.contact</div>
             <div class="col col-4" data-label="Dismiss">
-                <v-btn small color="primary" dark>
+                <v-btn small color="primary" dark @click="deleteAppointment">
                     <v-icon>remove</v-icon>
                 </v-btn>
             </div>
@@ -14,13 +14,26 @@
 </template>
 
 <script>
+    import http from '../../../services/http'
     export default {
         name: 'ApplicationTemp',
         data() {
             return {}
         },
-        methods: {},
-        created() {}
+        methods: {
+            async deleteAppointment(){
+                let result = await http.deleteAppointment(appointment.userId);
+                if(result.ok){
+                    alert(result.message);
+                } else {
+                    alert(result.message);
+                }
+            }
+        },
+        created() {},
+        props:[
+            'appointment'
+        ]
     }
 </script>
 
