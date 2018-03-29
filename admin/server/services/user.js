@@ -2,6 +2,7 @@ module.exports = {
     createSavingsAccount: async (id,data) => {
         try {
             data.refNo = await Services.auth.generateUUID();
+            data.status = 'pending';
             let result = await db.bank.update({name:data.bankName},{$push:{accountApplications:data}});
             if (result.result.ok == 1 && result.result.n == 1) {
                 let result1 = await db.auth.update({id:id ,accountType:10},{$push:{referenceNumbers:{refNo:data.refNo,bankName:data.bankName}}});

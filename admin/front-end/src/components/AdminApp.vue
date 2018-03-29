@@ -79,7 +79,11 @@
             }
         },
         created() {
-            router.replace('/admin/careers');
+            if (typeof this.$store.getters.auth == 'string') {
+                this.updatePath('/admin/careers')
+            } else {
+                this.updatePath('/login')
+            }
         }
     }
 </script>
