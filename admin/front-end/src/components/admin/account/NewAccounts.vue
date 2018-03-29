@@ -35,16 +35,6 @@
             this.$emit('title', 'New Account Applications');
             let result = await http.getSavingsApplications();
             if(result.ok){
-                for(let i in result.accountApplications){
-                    console.log(i)
-                    let result1 = await http.postFile(result.accountApplications[i].adharImageFileName);
-                    let result2 = await http.postFile(result.accountApplications[i].panImageFileName);
-                    console.log(result1,result2)
-                    //this.imgdata = result1
-                    //result.accountApplications[i].panImage = result2;
-                    //result.accountApplications[i].adharImage = result1;
-                }
-                console.log(result.accountApplications)
                 this.applications = result.accountApplications;
             } else {
                 console.error(result);

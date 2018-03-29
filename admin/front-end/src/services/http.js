@@ -184,10 +184,5 @@ export default {
             .catch(function (error) {
                 console.error(error);
             });
-    },
-    postFile: (id) => {
-        
-        return axios.post(baseUri + '/fileop/v0.1/getFile', { id: id },{responseType:'stream'})
-    },
-
+    }
 }

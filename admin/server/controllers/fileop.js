@@ -21,7 +21,7 @@ module.exports.routes = {
         var name = '';
         busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
             name = 'pan-'+(new Date().getTime())+'.'+filename.split('.')[1];
-            let upload = db.grid.openUploadStreamWithId(name); //uniquely name the file with user's id
+            let upload = db.grid.openUploadStreamWithId(name,name,{contentType:'image/'+filename.split('.')[1]}); //uniquely name the file with user's id
             upload.on('finish',function(){
                 busboy.emit('uploadComplete')
             })
@@ -32,10 +32,17 @@ module.exports.routes = {
         });
         return req.pipe(busboy);
     },
-    'POST /getFile': async (req,res) => {
-        let download = db.grid.openDownloadStream(req.body.id)
-        console.log(download);
-        download.pipe(res);
+    'GET /getFile': async (req,res) => {
+        if(req.query.hasOwnProperty('id')){
+            let download = db.grid.openDownloadStream(req.query.id)
+            let result = await db.files.findOne({_id:req.query.id},{contentType:1})
+            console.log(result)
+            res.set('Content-Type',result.contentType)
+            download.pipe(res);
+        } else {
+            res.json({ok:false,message:"Missing params"})
+        }
+        
     }
     /*
     ***How to use file upload***
