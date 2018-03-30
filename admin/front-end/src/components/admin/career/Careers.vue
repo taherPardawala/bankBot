@@ -32,7 +32,7 @@
                     <div class="col col-4">Contact Details</div>
                     <div class="col col-5">Remove Job </div>
                 </li>
-                <career v-for="(i,key) in careers" :career="i" :key=key></career>
+                <career @refresh="init" v-for="(i,key) in careers" :career="i" :key=key></career>
             </ul>
         </div>
         <h1 style="margin-top:10%" v-else>You have no Careers</h1>
@@ -47,30 +47,43 @@
         data() {
             return {
                 dialog: false,
-                title:'',
-                description:'',
-                pay:'',
-                contact:'',
+                title: '',
+                description: '',
+                pay: '',
+                contact: '',
                 valid: true,
-                careers:[]
+                careers: []
             }
         },
         methods: {
+            async init() {
+                let result = await http.getCareers();
+                if (result.ok) {
+                    this.careers = result.careers;
+                } else {
+                    console.error(result);
+                    alert("Something went wrong")
+                }
+            },
             async addJob() {
                 document.getElementById('close').click()
                 if (this.$refs.form.validate()) {
                     let careerId = new Date().getTime();
                     let result = await http.createCareer({
-                        careerId:careerId,
-                        title:this.title,
-                        description:this.description,
-                        pay:this.pay,
-                        contact:this.contact
+                        careerId: careerId,
+                        title: this.title,
+                        description: this.description,
+                        pay: this.pay,
+                        contact: this.contact
                     })
-                    if(result.ok){
+                    if (result.ok) {
+                        document.getElementById('close').click()
                         alert(result.message);
+                        this.init();
                     } else {
+                        document.getElementById('close').click()
                         alert(result.message);
+                        this.init();
                     }
                 } else {
                     alert("Fill the form correctly first")
@@ -82,13 +95,7 @@
         },
         async created() {
             this.$emit('title', 'Careers');
-            let result = await http.getCareers();
-            if(result.ok){
-                this.careers = result.careers;
-            } else {
-                console.error(result);
-                alert("Something went wrong")
-            }
+            this.init();
         }
     }
 </script>

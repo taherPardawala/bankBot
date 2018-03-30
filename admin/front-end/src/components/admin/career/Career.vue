@@ -24,6 +24,7 @@
                 let result = await http.deleteCareer(this.career.careerId);
                 if(result.ok){
                     alert(result.message);
+                    this.$emit('refresh');
                 } else {
                     alert(result.message);
                 }

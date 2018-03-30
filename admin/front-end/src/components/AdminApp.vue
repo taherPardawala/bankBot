@@ -1,10 +1,17 @@
 <template>
     <div class="adminapp">
-        <v-toolbar :flat="true" :fixed="true" class="indigo lighten-1 white--text">
+        <v-toolbar :flat="true" :fixed="true" class="cyan lighten-4">
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-title>{{title}}</v-toolbar-title>
         </v-toolbar>
         <v-navigation-drawer temporary v-model="drawer" absolute class="blue lighten-3" dark>
+            <v-list class="pa-0">
+                <v-list-tile avatar>
+                    <v-list-tile-content>
+                        <v-list-tile-title>John Leider</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+            </v-list>
             <v-list>
                 <v-list-tile @click="updatePath('/admin/appointments')">
                     <v-list-tile-action>
@@ -51,8 +58,8 @@
         </v-navigation-drawer>
         <router-view @title="updateTitle" />
         <v-footer height="auto" :fixed="true">
-            <v-card style="width:100%" flat tile class="indigo lighten-1 white--text text-xs-center">
-                <v-card-text class="white--text">
+            <v-card style="width:100%" flat tile class="cyan lighten-4 text-xs-center">
+                <v-card-text class="cyan lighten-4">
                     &copy;2018 — <strong>BankBot</strong>
                 </v-card-text>
             </v-card>
@@ -79,7 +86,7 @@
             }
         },
         created() {
-            if (typeof this.$store.getters.auth == 'string') {
+            if (typeof this.$store.getters.auth == 'string'  && typeof this.$store.getters.accountType == 'number' &&  this.$store.getters.accountType == 1) {
                 this.updatePath('/admin/careers')
             } else {
                 this.updatePath('/login')

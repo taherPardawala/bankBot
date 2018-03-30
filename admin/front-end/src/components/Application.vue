@@ -1,11 +1,21 @@
 <template>
     <div class="app">
-        <v-toolbar :flat="true" :fixed="true" class="indigo lighten-1 white--text">
+        <v-toolbar :flat="true" :fixed="true" class="cyan lighten-4">
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-title>{{title}}</v-toolbar-title>
             <!--v-spacer></v-spacer-->
         </v-toolbar>
-        <v-navigation-drawer temporary v-model="drawer" absolute class="blue lighten-3" dark>
+        <v-navigation-drawer temporary v-model="drawer" absolute class="teal darken-4" dark>
+            <v-list class="pa-0">
+                <v-list-tile avatar>
+                    <v-list-tile-avatar>
+                        <img src="https://randomuser.me/api/portraits/men/85.jpg">
+                    </v-list-tile-avatar>
+                    <v-list-tile-content>
+                        <v-list-tile-title>John Leider</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+            </v-list>
             <v-list>
                 <v-list-tile @click="updatePath('/app/hello')">
                     <v-list-tile-action>
@@ -13,14 +23,6 @@
                     </v-list-tile-action>
                     <v-list-tile-content>
                         <v-list-tile-title>Home</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="updatePath('/app/careers')">
-                    <v-list-tile-action>
-                        <v-icon>work</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title>Careers</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
                 <v-list-tile @click="updatePath('/app/createaccount')">
@@ -31,33 +33,6 @@
                         <v-list-tile-title>Create Bank Account</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
-                <v-list-group prepend-icon="security" no-action>
-                    <v-list-tile slot="activator">
-                        <v-list-tile-content>
-                            <v-list-tile-title>Insurance</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-list-tile @click="updatePath('/app/lifeinsurance')">
-                        <v-list-tile-content>
-                            <v-list-tile-title>Life Insurance</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-list-tile @click="updatePath('/app/carinsurance')">
-                        <v-list-tile-content>
-                            <v-list-tile-title>Car Insurance</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-list-tile @click="updatePath('/app/twowheelerinsurance')">
-                        <v-list-tile-content>
-                            <v-list-tile-title>Two wheeler Insurance</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-list-tile @click="updatePath('/app/healthinsurance')">
-                        <v-list-tile-content>
-                            <v-list-tile-title>Health Insurance</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                </v-list-group>
                 <v-list-group prepend-icon="transfer_within_a_station" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
@@ -97,6 +72,41 @@
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list-group>
+                <v-list-group prepend-icon="security" no-action>
+                    <v-list-tile slot="activator">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Insurance</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="updatePath('/app/lifeinsurance')">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Life Insurance</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="updatePath('/app/carinsurance')">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Car Insurance</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="updatePath('/app/twowheelerinsurance')">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Two wheeler Insurance</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="updatePath('/app/healthinsurance')">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Health Insurance</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                </v-list-group>
+                <v-list-tile @click="updatePath('/app/careers')">
+                    <v-list-tile-action>
+                        <v-icon>work</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Careers</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
                 <v-list-group prepend-icon="account_box" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
@@ -118,8 +128,8 @@
         </v-navigation-drawer>
         <router-view @title="updateTitle" />
         <v-footer height="auto" :fixed="true">
-            <v-card style="width:100%" flat tile class="indigo lighten-1 white--text text-xs-center">
-                <v-card-text class="white--text">
+            <v-card style="width:100%" flat tile class="cyan lighten-4 text-xs-center">
+                <v-card-text class="">
                     &copy;2018 — <strong>BankBot</strong>
                 </v-card-text>
             </v-card>
@@ -146,7 +156,8 @@
             }
         },
         created() {
-            if (typeof this.$store.getters.auth == 'string') {
+            console.log(typeof this.$store.getters.accountType)
+            if (typeof this.$store.getters.auth == 'string' && typeof this.$store.getters.accountType == 'number' &&  this.$store.getters.accountType == 10) {
                 this.updatePath('/app/hello')
             } else {
                 this.updatePath('/login')
