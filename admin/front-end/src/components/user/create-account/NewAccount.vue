@@ -51,6 +51,15 @@
             }
         },
         methods: {
+            async init(){
+                let result = await http.getBankNames();
+                if (result.length > 0) {
+                    for (let i of result) {
+                        this.banks.push(i.name);
+                    }
+                    console.log(this.banks);
+                }
+            },
             async submit() {
                 if (this.adharImage != null && this.panImage != null) {
                     let result = await http.createSavingsAccount({
@@ -66,18 +75,22 @@
                         panImage: this.panImage
                     })
                     if(result.ok) {
-                        alert('Your Referrence Number is ', result.refNo);
+                        console.log(result);
+                        alert('Your Referrence Number is '+result.refNo);
                         this.$refs.form.reset()
+                        this.init();
                     } else {
                         alert('We could not complete your request at the moment');
                         this.$refs.form.reset()
+                        this.init();
                     }
                 } else {
                     alert('Upload image to submit');
                 }
             },
             clear() {
-                this.$refs.form.reset()
+                this.$refs.form.reset();
+                this.init();
             },
             onAdharChange(e) {
                 this.adharImage = e.target.files[0];;
@@ -88,13 +101,7 @@
             },
         },
         async created() {
-            let result = await http.getBankNames();
-            if (result.length > 0) {
-                for (let i of result) {
-                    this.banks.push(i.name);
-                }
-                console.log(this.banks);
-            }
+            this.init();
         }
     }
 </script>

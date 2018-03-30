@@ -9,19 +9,12 @@
                     <div class="col col-4">Job Description</div>
                     <div class="col col-5">Contact Details</div>
                 </li>
-                <!--li class="table-row" v-for="(item, key) in data" :key=key>
-                    <div class="col col-1" data-label="Bank Name">{{item.bankName}}</div>
-                    <div class="col col-2" data-label="Job Title">{{item.jobTitle}}</div>
-                    <div class="col col-3" data-label="Pay">{{item.pay}}</div>
-                    <div class="col col-4" data-label="Job Description">{{item.jobDescription}}</div>
-                    <div class="col col-5" data-label="Contact Details">{{item.contactDetails}}</div>
-                </li-->
-                <li class="table-row">
-                    <div class="col col-1" data-label="Bank Name">sdsd</div>
-                    <div class="col col-2" data-label="Job Title">dsds</div>
-                    <div class="col col-3" data-label="Pay">dssd</div>
-                    <div class="col col-4" data-label="Job Description">dssd</div>
-                    <div class="col col-5" data-label="Contact Details">dssd</div>
+                <li v-for="(i,key) of careers" :key="key" class="table-row">
+                    <div class="col col-1" data-label="Bank Name">{{i.name}}</div>
+                    <div class="col col-2" data-label="Job Title">{{i.title}}</div>
+                    <div class="col col-3" data-label="Pay">{{i.pay}}</div>
+                    <div class="col col-4" data-label="Job Description">{{i.description}}</div>
+                    <div class="col col-5" data-label="Contact Details">{{i.contact}}</div>
                 </li>
             </ul>
         </div>
@@ -29,14 +22,25 @@
 </template>
 
 <script>
+    import http from '../../services/http'
     export default {
         data() {
             return {
-                data:[],
+                careers:[]
             }
         },
-        created() {
+        async created() {
             this.$emit('title', 'Careers');
+            let result = await http.getAllCareers();
+            for(let i in result.careers){
+                console.log('Test'+JSON.stringify(result.careers[i]))
+                for(let j in result.careers[i].result){
+                    result.careers[i].result[j].name = result.careers[i]._id
+                    result.careers[i] = result.careers[i].result[j]
+                    console.log(j);
+                }
+            }
+            this.careers = result.careers;
         }
     }
 </script>

@@ -50,5 +50,4 @@ module.exports.routes = {
             res.json({ok:false,message:"missing params"})
         }
     }
-
 }

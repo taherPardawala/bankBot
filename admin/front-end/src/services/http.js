@@ -56,7 +56,7 @@ export default {
                 if (response.data.ok) {
                     data.adharImageFileName = response.data.fileName;
 
-                    axios.post(baseUri + '/fileop/v0.1/pan', formData1, {
+                    return axios.post(baseUri + '/fileop/v0.1/pan', formData1, {
                         headers: {
                             'Cache-Control': 'no-cache',
                             'Content-Type': 'application/x-www-form-urlencoded',
@@ -67,7 +67,7 @@ export default {
                             if (response.data.ok) {
                                 data.panImageFileName = response.data.fileName;
                                 
-                                axios.post(baseUri + '/user/v0.1/createSavingsAccount', { data: data }, {
+                                return axios.post(baseUri + '/user/v0.1/createSavingsAccount', { data: data }, {
                                     headers: {
                                         auth: store.getters.auth
                                     }
@@ -188,12 +188,8 @@ export default {
                 console.error(error);
             });
     },
-    getProfile: () => {
-        return axios.get(baseUri + '/user/v0.1/getProfile', {
-            headers: {
-                auth: store.getters.auth
-            }
-        }).then(function (response) {
+    getAllCareers: () => {
+        return axios.get(baseUri + '/career/v0.1/allCareers').then(function (response) {
             console.log(response.data);
             return response.data;
         }).catch(function (error) {
@@ -213,5 +209,17 @@ export default {
             .catch(function (error) {
                 console.error(error);
             });
+    },
+    getRefStatus: (refno) => {
+        return axios.get(baseUri + '/status/v0.1/getRefStatus',{
+            headers:{
+                refno:refno
+            }
+        }).then(function (response) {
+            console.log(response.data);
+            return response.data;
+        }).catch(function (error) {
+            console.error(error)
+        })
     }
 }

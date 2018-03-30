@@ -109,9 +109,9 @@ module.exports = {
     },
     getAllCareers: async () => {
         try{
-            let result = await db.bank.aggregate([{$group:{_id:"$id","result":{$push:"$careers"}}}]).toArray();
+            let result = await db.bank.aggregate([{$unwind:'$careers'},{$group:{_id:"$name","result":{$push:"$careers"}}}]).toArray();
             if (result[0] != undefined) {
-                return ({ok:true, careers:result[0]});
+                return ({ok:true, careers:result});
             }
             else {
                 return ({ok:false,message:"something went wrong"});
@@ -125,6 +125,21 @@ module.exports = {
         try{
             return(await db.auth.find({accountType:1},{_id:0, name:1}).toArray());
         } catch (err) {
+            console.log('Mongo issue ', err);
+            return ({ ok: false, message: 'unknown db issue' });
+        }
+    },
+    getRefStatus: async (refNo) => {
+        console.log(refNo);
+        try{
+            let result = await db.bank.aggregate([{$unwind:'$accountApplications'},{$match:{'accountApplications.refNo':refNo}},{$group:{_id:null,status:{$push:'$accountApplications.status'}}}]).toArray()
+            if(result[0] != undefined){
+                return ({ok:true,status:result[0].status[0]});
+            } else {
+                return ({ok:true,status:""});
+            }
+            
+        }catch (err) {
             console.log('Mongo issue ', err);
             return ({ ok: false, message: 'unknown db issue' });
         }

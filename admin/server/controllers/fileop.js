@@ -5,7 +5,7 @@ module.exports.routes = {
         var name = '';
         busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
             name = 'adhar-'+(new Date().getTime())+'.'+filename.split('.')[1];
-            let upload = db.grid.openUploadStreamWithId(name); //uniquely name the file with user's id
+            let upload = db.grid.openUploadStreamWithId(name,name,{contentType:'image/'+filename.split('.')[1]}); //uniquely name the file with user's id
             upload.on('finish',function(){
                 busboy.emit('uploadComplete')
             })
