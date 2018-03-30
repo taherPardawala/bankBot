@@ -118,7 +118,7 @@
                             <v-list-tile-title>Change Password</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="updatePath('/app/creditcard')">
+                    <v-list-tile @click="logout">
                         <v-list-tile-content>
                             <v-list-tile-title>Logout</v-list-tile-title>
                         </v-list-tile-content>
@@ -156,6 +156,11 @@
             },
             updatePath(path) {
                 router.replace(path);
+            },
+            logout(){
+                this.$store.dispatch('clearAuth');
+                window.localStorage.removeItem('vuex');
+                router.replace('/login')
             }
         },
         async created() {
