@@ -53,6 +53,38 @@ module.exports = function(controller, bot){
                 console.error(err);
             }
         });
+    }).action('appointment',function(message,resp,bot){
+        if(resp.result.parameters.date == "" || resp.result.parameters.bankName == "") bot.replyWithTyping(message,resp.result.fulfillment.speech);
+        else {
+            getUserName(message.user,function(err,response){
+                if(err) console.log(err)
+                else{
+                    controller.trigger(string.getMobileNumber,[bot,message,{userName:response.first_name+" "+response.last_name,date:resp.result.parameters.date,bankName:resp.result.parameters.bankName}])
+                }
+            });
+        }
+    }).action('carInsurance',function(message,resp,bot){
+        bot.replyWithTyping(message,"For comparing and buying Car Insurance online please visit https://bankbot.tk/app/carinsurance");
+    }).action('carLoan',function(message,resp,bot){
+        bot.replyWithTyping(message,"For comparing and buying Car Loan online please visit https://bankbot.tk/app/carloan");
+    }).action('createAccount',function(message,resp,bot){
+        bot.replyWithTyping(message,"For Creating an Account online please visit https://bankbot.tk/app/createaccount");
+    }).action('creditCard',function(message,resp,bot){
+        bot.replyWithTyping(message,"For comparing and buying Credit Card online please visit https://bankbot.tk/app/creditcard");
+    }).action('healthInsurance',function(message,resp,bot){
+        bot.replyWithTyping(message,"For comparing and buying Health Insurance online please visit https://bankbot.tk/app/healthinsurance");
+    }).action('homeLoan',function(message,resp,bot){
+        bot.replyWithTyping(message,"For comparing and buying Home Loan online please visit https://bankbot.tk/app/homeloan");
+    }).action('lifeInsurance',function(message,resp,bot){
+        bot.replyWithTyping(message,"For comparing and buying Life Insurance online please visit https://bankbot.tk/app/lifeinsurance");
+    }).action('personalLoan',function(message,resp,bot){
+        bot.replyWithTyping(message,"For comparing and buying Personal Loan online please visit https://bankbot.tk/app/personalloan");
+    }).action('twoWheelerInsurance',function(message,resp,bot){
+        bot.replyWithTyping(message,"For comparing and buying Two Wheeler Insurance online please visit https://bankbot.tk/app/twowheelerinsurance");
+    }).action('usedCarLoan',function(message,resp,bot){
+        bot.replyWithTyping(message,"For comparing and buying Used Car Loan online please visit https://bankbot.tk/app/usedcarloan");
+    }).action('faqs',function(message,resp,bot){
+        
     })
 
 }

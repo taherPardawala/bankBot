@@ -54,13 +54,18 @@ module.exports = {
             return ({ ok: false, message: 'unknown db issue' });
         }
     },
-    createAppointment: async(id,data) => {
+    createAppointment: async(data) => {
         try{
-            let result = await db.bank.update({id:id },{$push:{appointments:data}});
-            if (result.result.ok == 1 && result.result.n == 1) {
-                return ({ok:true,message:"Appointment added"});
-            } else{
-                return ({ ok: false, message: 'request failed' });
+            let isBank = await db.bank.findOne({name:data.bankName},{_id:0,name:1});
+            if(isBank.hasOwnProperty('name')){
+                return ({ ok: false, message: 'This bank is not affiliated with us currently. Please try some other bank.'});
+            } else {
+                let result = await db.bank.update({name:data.bankName},{$push:{appointments:data}});
+                if (result.result.ok == 1 && result.result.n == 1) {
+                    return ({ok:true,message:"Appointment request has been registered sucessfully"});
+                } else{
+                    return ({ ok: false, message: 'Appointment request has failed, Please try again later.'});
+                }
             }
         } catch (err) {
             console.log('Mongo issue ', err);

@@ -1,6 +1,7 @@
 module.exports = {
     getStartedSetup: '{"text":"GET_STARTED"}',
     getStarted: 'GET_STARTED',
+    getMobileNumber:'getMobileNumber',
     persistentMenu: [
         { //persistent menu
             "locale": "default",
@@ -36,6 +37,19 @@ module.exports = {
         "quick_replies": [
             {
                 "content_type": "location"
+            }
+        ]
+    },
+    askConfirmAppointment: {
+        "text": "Do you want to confirm your appointment request?",
+        "quick_replies": [
+            {
+                "content_type": "text",
+                "title": "Yes",
+            },
+            {
+                "content_type": "text",
+                "title": "Cancel",
             }
         ]
     },
