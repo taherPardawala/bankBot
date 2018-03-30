@@ -43,11 +43,6 @@
                             <v-list-tile-title>Account</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-list-tile @click="updatePath('/admin/creditcard')">
-                        <v-list-tile-content>
-                            <v-list-tile-title>Change Password</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
                     <v-list-tile @click="logout">
                         <v-list-tile-content>
                             <v-list-tile-title>Logout</v-list-tile-title>
