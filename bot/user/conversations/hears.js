@@ -1,4 +1,6 @@
 const string = require('../constants/strings');
+const steps = require('../constants/stringsSteps');
+const documents = require('../constants/stringDocuments');
 const apiaibotkit = require('api-ai-botkit');
 const config = require('../../env');
 const apiai = apiaibotkit(config.dialogFlowApiKey); 
@@ -59,7 +61,7 @@ module.exports = function(controller, bot){
             getUserName(message.user,function(err,response){
                 if(err) console.log(err)
                 else{
-                    controller.trigger(string.getMobileNumber,[bot,message,{userName:response.first_name+" "+response.last_name,date:resp.result.parameters.date,bankName:resp.result.parameters.bankName}])
+                    controller.trigger(string.getMobileNumber,[bot,message,{userName:response.first_name+" "+response.last_name,date:resp.result.parameters.date,bankName:resp.result.parameters.bankName}]);
                 }
             });
         }
@@ -83,8 +85,16 @@ module.exports = function(controller, bot){
         bot.replyWithTyping(message,"For comparing and buying Two Wheeler Insurance online please visit https://bankbot.tk/app/twowheelerinsurance");
     }).action('usedCarLoan',function(message,resp,bot){
         bot.replyWithTyping(message,"For comparing and buying Used Car Loan online please visit https://bankbot.tk/app/usedcarloan");
-    }).action('faqs',function(message,resp,bot){
-        
+    }).action('stepsForProcess',function(message,resp,bot){
+        if(resp.result.parameters.serviceType == "") bot.replyWithTyping(message,resp.result.fulfillment.speech+" To know more go to the FAQ page of our website");
+        else {
+            bot.replyWithTyping(message,steps[resp.result.parameters.serviceType]);
+        }
+    }).action('documentsForProcess',function(message,resp,bot){
+        if(resp.result.parameters.serviceType == "") bot.replyWithTyping(message,resp.result.fulfillment.speech+" To know more go to the FAQ page of our website");
+        else {
+            bot.replyWithTyping(message,documents[resp.result.parameters.serviceType]);
+        }
     })
 
 }

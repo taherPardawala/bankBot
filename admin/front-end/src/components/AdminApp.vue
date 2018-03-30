@@ -57,7 +57,7 @@
             </v-list>
         </v-navigation-drawer>
         <router-view @title="updateTitle" />
-        <v-footer height="auto" :relative="true">
+        <v-footer height="auto" :fixed="true">
             <v-card style="width:100%" flat tile class="cyan lighten-4 text-xs-center">
                 <v-card-text class="cyan lighten-4">
                     &copy;2018 — <strong>BankBot</strong>
