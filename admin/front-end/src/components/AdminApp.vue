@@ -4,7 +4,7 @@
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-title>{{title}}</v-toolbar-title>
         </v-toolbar>
-        <v-navigation-drawer temporary v-model="drawer" absolute class="blue lighten-3" dark>
+        <v-navigation-drawer temporary v-model="drawer" fixed class="blue lighten-3" dark>
             <v-list class="pa-0">
                 <v-list-tile avatar>
                     <v-list-tile-content>
@@ -57,7 +57,7 @@
             </v-list>
         </v-navigation-drawer>
         <router-view @title="updateTitle" />
-        <v-footer height="auto" :fixed="true">
+        <v-footer height="auto" :relative="true">
             <v-card style="width:100%" flat tile class="cyan lighten-4 text-xs-center">
                 <v-card-text class="cyan lighten-4">
                     &copy;2018 — <strong>BankBot</strong>
