@@ -8,7 +8,7 @@
             <v-list class="pa-0">
                 <v-list-tile avatar>
                     <v-list-tile-content>
-                        <v-list-tile-title>John Leider</v-list-tile-title>
+                        <v-list-tile-title>{{bankName}}</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
             </v-list>
@@ -68,13 +68,15 @@
 </template>
 
 <script>
+    import http from '../services/http';
     import router from '../router';
     export default {
         name: 'AdminApplication',
         data() {
             return {
                 drawer: null,
-                title: ''
+                title: '',
+                bankName:''
             }
         },
         methods: {
@@ -85,8 +87,10 @@
                 router.replace(path);
             }
         },
-        created() {
+        async created() {
             if (typeof this.$store.getters.auth == 'string'  && typeof this.$store.getters.accountType == 'number' &&  this.$store.getters.accountType == 1) {
+                let result = await http.getUserName({accountType:1});
+                this.bankName = result.name;
                 this.updatePath('/admin/careers')
             } else {
                 this.updatePath('/login')

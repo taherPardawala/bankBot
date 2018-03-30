@@ -221,5 +221,18 @@ export default {
         }).catch(function (error) {
             console.error(error)
         })
+    },
+    getUserName: (userType) => {
+        return axios.get(baseUri + '/getName/v0.1/userName',{
+            headers:{
+                accounttype:userType,
+                auth: store.getters.auth
+            }
+        }).then(function (response) {
+            console.log(response.data);
+            return response.data;
+        }).catch(function (error) {
+            console.error(error)
+        })
     }
 }

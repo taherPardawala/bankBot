@@ -9,10 +9,10 @@
             <v-list class="pa-0">
                 <v-list-tile avatar>
                     <v-list-tile-avatar>
-                        <img src="https://randomuser.me/api/portraits/men/85.jpg">
+                        <img src="https://randomuser.me/api/portraits/men/86.jpg">
                     </v-list-tile-avatar>
                     <v-list-tile-content>
-                        <v-list-tile-title>John Leider</v-list-tile-title>
+                        <v-list-tile-title>{{fname+" "+lname}}</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
             </v-list>
@@ -138,13 +138,16 @@
 </template>
 
 <script>
+    import http from '../services/http'
     import router from '../router';
     export default {
         name: 'Application',
         data() {
             return {
                 drawer: null,
-                title: ''
+                title: '',
+                fname:'',
+                lname:''
             }
         },
         methods: {
@@ -155,9 +158,12 @@
                 router.replace(path);
             }
         },
-        created() {
+        async created() {
             console.log(typeof this.$store.getters.accountType)
             if (typeof this.$store.getters.auth == 'string' && typeof this.$store.getters.accountType == 'number' &&  this.$store.getters.accountType == 10) {
+                let result = await http.getUserName({accountType:10});
+                this.fname = result.firstName;
+                this.lname = result.lastName;
                 this.updatePath('/app/hello')
             } else {
                 this.updatePath('/login')

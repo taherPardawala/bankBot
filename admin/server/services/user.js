@@ -18,6 +18,18 @@ module.exports = {
             console.log('Mongo issue ', err);
             return ({ ok: false, message: 'unknown db issue' });
         }
+    },
+    getName: async(id,type) => {
+        try{
+            if(type == 10){
+                return(await db.auth.findOne({id:id},{_id:0,firstName:1,lastName:1}))
+            } else {
+                return(await db.auth.findOne({id:id},{_id:0,name:1}))
+            }
+        } catch (err){
+            console.log('Mongo issue ', err);
+            return ({ ok: false, message: 'unknown db issue' });
+        }
     }
 }
     

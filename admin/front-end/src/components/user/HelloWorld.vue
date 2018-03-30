@@ -8,9 +8,9 @@
             <h3 class="display-2 l-blue-darken-3">Welcome to BankBot</h3>
             <v-divider class="my-3"></v-divider>
             <h3 class="display-1">Get answers to all your bank queries</h3>
-            <h3 class="display-1">Talk to your personal bank assiatnt</h3>
+            <h3 class="display-1">Talk to your personal bank assistant</h3>
             <br>
-            <v-btn large color="deep-orange lighten-1" class="mx-0"><a href="#" style="text-decoration:none;color:#f4f4f4;">Talk now</a></v-btn>
+            <v-btn large color="deep-orange lighten-1" class="mx-0" @click="redirect">Talk now</v-btn>
           </v-flex>
         </v-layout>
       </v-container>
@@ -47,7 +47,7 @@
         <v-layout align-center>
           <v-flex>
             <h3 class="display-3"><span class="welcome-text-color">Know Us a Little</span></h3>
-            <span class="headline">BankBot is the world's first neutral online <strong>asistant</strong> for instant customised rate quotes on loans and credit cards. Shop for loans & cards just like you buy everything else now - online.</span>
+            <span class="headline">BankBot is the world's first neutral online <strong>assistant</strong> for instant customised rate quotes on loans and credit cards. Shop for loans & cards just like you buy everything else now - online.</span>
             <v-divider class="my-3"></v-divider>
             <div class="title mb-3">Create a new savings bank account from home!</div>
             <v-btn large color="primary" class="mx-0" @click="updatePath('/app/createaccount')">Create Account</v-btn>
@@ -59,6 +59,7 @@
 </template>
 
 <script>
+  import http from '../../services/http'
   import router from '../../router'
   export default {
     name: 'HelloWorld',
@@ -70,9 +71,12 @@
     methods: {
       updatePath(path) {
         router.replace(path);
+      },
+      redirect() {
+        window.location.href = 'http://m.me/BankBot-566352947071318'
       }
     },
-    created() {
+    async created() {
       this.$emit('title', 'BankBot')
     }
   }
