@@ -5,7 +5,7 @@
             <v-toolbar-title>{{title}}</v-toolbar-title>
             <!--v-spacer></v-spacer-->
         </v-toolbar>
-        <v-navigation-drawer temporary v-model="drawer" absolute class="teal darken-4" dark>
+        <v-navigation-drawer temporary v-model="drawer" absolute class="teal darken-1" dark>
             <v-list class="pa-0">
                 <v-list-tile avatar>
                     <v-list-tile-avatar>

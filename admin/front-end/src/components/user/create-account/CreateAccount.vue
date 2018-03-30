@@ -2,7 +2,7 @@
     <div class="create-account">
         <v-tabs color="grey lighten-5" fixed-tabs>
             <v-tab href="#tab-1">
-                New Account Form
+                New Savings Account Form
             </v-tab>
             <v-tab-item id="tab-1">
                 <new-account></new-account>
