@@ -66,34 +66,34 @@ module.exports = function(controller, bot){
             });
         }
     }).action('carInsurance',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Car Insurance online please visit https://bankbot.tk/app/carinsurance");
+        bot.replyWithTyping(message,"For comparing and buying Car Insurance online please visit https://bankbot.tk/#/app/carinsurance");
     }).action('carLoan',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Car Loan online please visit https://bankbot.tk/app/carloan");
+        bot.replyWithTyping(message,"For comparing and buying Car Loan online please visit https://bankbot.tk/#/app/carloan");
     }).action('createAccount',function(message,resp,bot){
-        bot.replyWithTyping(message,"For Creating an Account online please visit https://bankbot.tk/app/createaccount");
+        bot.replyWithTyping(message,"For Creating an Account online please visit https://bankbot.tk/#/app/createaccount");
     }).action('creditCard',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Credit Card online please visit https://bankbot.tk/app/creditcard");
+        bot.replyWithTyping(message,"For comparing and buying Credit Card online please visit https://bankbot.tk/#/app/creditcard");
     }).action('healthInsurance',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Health Insurance online please visit https://bankbot.tk/app/healthinsurance");
+        bot.replyWithTyping(message,"For comparing and buying Health Insurance online please visit https://bankbot.tk/#/app/healthinsurance");
     }).action('homeLoan',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Home Loan online please visit https://bankbot.tk/app/homeloan");
+        bot.replyWithTyping(message,"For comparing and buying Home Loan online please visit https://bankbot.tk/#/app/homeloan");
     }).action('lifeInsurance',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Life Insurance online please visit https://bankbot.tk/app/lifeinsurance");
+        bot.replyWithTyping(message,"For comparing and buying Life Insurance online please visit https://bankbot.tk/#/app/lifeinsurance");
     }).action('personalLoan',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Personal Loan online please visit https://bankbot.tk/app/personalloan");
+        bot.replyWithTyping(message,"For comparing and buying Personal Loan online please visit https://bankbot.tk/#/app/personalloan");
     }).action('twoWheelerInsurance',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Two Wheeler Insurance online please visit https://bankbot.tk/app/twowheelerinsurance");
+        bot.replyWithTyping(message,"For comparing and buying Two Wheeler Insurance online please visit https://bankbot.tk/#/app/twowheelerinsurance");
     }).action('usedCarLoan',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Used Car Loan online please visit https://bankbot.tk/app/usedcarloan");
+        bot.replyWithTyping(message,"For comparing and buying Used Car Loan online please visit https://bankbot.tk/#/app/usedcarloan");
     }).action('stepsForProcess',function(message,resp,bot){
-        if(resp.result.parameters.serviceType == "") bot.replyWithTyping(message,resp.result.fulfillment.speech+" To know more go to the FAQ page of our website");
+        if(resp.result.parameters.serviceType == "") bot.replyWithTyping(message,resp.result.fulfillment.speech);
         else {
-            bot.replyWithTyping(message,steps[resp.result.parameters.serviceType]);
+            bot.replyWithTyping(message,steps[resp.result.parameters.serviceType]+"\nTo know more go to the FAQ page of our website");
         }
     }).action('documentsForProcess',function(message,resp,bot){
-        if(resp.result.parameters.serviceType == "") bot.replyWithTyping(message,resp.result.fulfillment.speech+" To know more go to the FAQ page of our website");
+        if(resp.result.parameters.serviceType == "") bot.replyWithTyping(message,resp.result.fulfillment.speech);
         else {
-            bot.replyWithTyping(message,documents[resp.result.parameters.serviceType]);
+            bot.replyWithTyping(message,documents[resp.result.parameters.serviceType]+"\nTo know more go to the FAQ page of our website");
         }
     })
 
