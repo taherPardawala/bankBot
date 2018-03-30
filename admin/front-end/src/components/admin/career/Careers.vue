@@ -9,21 +9,21 @@
                     <v-card-title class="headline">Add Career</v-card-title>
                     <v-card-text>
                         <v-form v-model="valid" ref="form" lazy-validation>
-                            <v-text-field name="input-1" label="Title" :rules="[v => !!v || 'Item is required']" required></v-text-field>
-                            <v-text-field name="input-2" label="Description" :rules="[v => !!v || 'Item is required']" required></v-text-field>
-                            <v-text-field name="input-3" label="Pay" type="numbner" :rules="[v => !!v || 'Item is required']" required></v-text-field>
-                            <v-text-field name="input-4" label="Contact Info" :rules="[v => !!v || 'Item is required']" required></v-text-field>
+                            <v-text-field name="input-1" v-model="title" label="Title" :rules="[v => !!v || 'Item is required']" required></v-text-field>
+                            <v-text-field name="input-2" v-model="description" label="Description" :rules="[v => !!v || 'Item is required']" required></v-text-field>
+                            <v-text-field name="input-3" v-model="pay" label="Pay" type="numbner" :rules="[v => !!v || 'Item is required']" required></v-text-field>
+                            <v-text-field name="input-4" v-model="contact" label="Contact Info" :rules="[v => !!v || 'Item is required']" required></v-text-field>
                         </v-form>
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn color="green darken-1" flat @click="addJob" :disabled="!valid">Add</v-btn>
-                        <v-btn color="green darken-1" flat @click.native="dialog = false">Close</v-btn>
+                        <v-btn id="close" color="green darken-1" flat @click.native="dialog = false">Close</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-dialog>
         </v-layout>
-        <div class="container">
+        <div v-if="careers.length>0" class="container">
             <ul class="responsive-table">
                 <li class="table-header">
                     <div class="col col-1">Job Title</div>
@@ -32,36 +32,63 @@
                     <div class="col col-4">Contact Details</div>
                     <div class="col col-5">Remove Job </div>
                 </li>
-                <career v-for="(i,key) in 5" :key=key></career>
+                <career v-for="(i,key) in careers" :career="i" :key=key></career>
             </ul>
         </div>
+        <h1 style="margin-top:10%" v-else>You have no Careers</h1>
     </div>
 </template>
 
 <script>
+    import http from '../../../services/http'
     import Career from './Career.vue'
     export default {
         name: 'Careers',
         data() {
             return {
                 dialog: false,
-                valid: true
+                title:'',
+                description:'',
+                pay:'',
+                contact:'',
+                valid: true,
+                careers:[]
             }
         },
         methods: {
-            addJob() {
+            async addJob() {
+                document.getElementById('close').click()
                 if (this.$refs.form.validate()) {
-
+                    let careerId = new Date().getTime();
+                    let result = await http.createCareer({
+                        careerId:careerId,
+                        title:this.title,
+                        description:this.description,
+                        pay:this.pay,
+                        contact:this.contact
+                    })
+                    if(result.ok){
+                        alert(result.message);
+                    } else {
+                        alert(result.message);
+                    }
                 } else {
-
+                    alert("Fill the form correctly first")
                 }
             }
         },
         components: {
             'career': Career
         },
-        created() {
+        async created() {
             this.$emit('title', 'Careers');
+            let result = await http.getCareers();
+            if(result.ok){
+                this.careers = result.careers;
+            } else {
+                console.error(result);
+                alert("Something went wrong")
+            }
         }
     }
 </script>

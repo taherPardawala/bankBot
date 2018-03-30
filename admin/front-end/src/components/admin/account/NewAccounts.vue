@@ -1,7 +1,6 @@
 <template>
-    <div class="careers">
-        <img :src="imgdata">
-        <div class="container">
+    <div class="applications">
+        <div v-if="applications.length>0" class="container">
             <ul class="responsive-table">
                 <li class="table-header">
                     <div class="col col-1">Applicant's Name</div>
@@ -9,9 +8,10 @@
                     <div class="col col-3">Pan Number</div>
                     <div class="col col-4">Update Status</div>
                 </li>
-                <application-temp v-for="(i,key) in applications" :key=key :application="i"></application-temp>
+                <application-temp @refresh="refresh" v-for="(i,key) in applications" :key=key :application="i"></application-temp>
             </ul>
         </div>
+        <h1 v-else>You have no Applications</h1>
     </div>
 </template>
 
@@ -19,7 +19,7 @@
     import http from '../../../services/http'
     import ApplicationTemp from './ApplicationTemp.vue'
     export default {
-        name: 'Careers',
+        name: 'Applications',
         data() {
             return {
                 applications:[],
@@ -27,26 +27,32 @@
             }
         },
         methods: {
+            async init(){
+                let result = await http.getSavingsApplications();
+                if(result.ok){
+                    this.applications = result.accountApplications;
+                } else {
+                    console.error(result);
+                    alert("Something went wrong")
+                }
+            },
+            refresh(){
+                this.init();
+            }
         },
         components: {
             'application-temp': ApplicationTemp
         },
         async created() {
             this.$emit('title', 'New Account Applications');
-            let result = await http.getSavingsApplications();
-            if(result.ok){
-                this.applications = result.accountApplications;
-            } else {
-                console.error(result);
-                alert("Something went wrong")
-            }
+            this.init();
         }
     }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .careers {
+    .applications {
         margin-top: 60px;
     }
     .position {

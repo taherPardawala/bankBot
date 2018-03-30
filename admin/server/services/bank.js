@@ -29,7 +29,8 @@ module.exports = {
     deleteCareer: async (id,careerId) => {
         try{
             let result = await db.bank.update({id:id},{$pull:{careers:{careerId:careerId}}});
-            if (result.result.ok == 1 && result.result.n == 1) {
+            console.log(result)
+            if (result.result.ok == 1 && result.result.nModified == 1) {
                 return ({ok:true,message:"Career deleted"});
             } else{
                 return ({ ok: false, message: 'request failed' });
@@ -69,7 +70,7 @@ module.exports = {
     deleteAppointment: async (id,userId) => {
         try{
             let result = await db.bank.update({id:id },{$pull:{appointments:{user:userId}}});
-            if (result.result.ok == 1 && result.result.n == 1) {
+            if (result.result.ok == 1 && result.result.nModified == 1) {
                 return ({ok:true,message:"Appointment deleted"});
             } else{
                 return ({ ok: false, message: 'request failed' });
@@ -81,7 +82,7 @@ module.exports = {
     },
     getSavingsApplications: async (id) => {
         try {
-            let result = await db.bank.aggregate([{$unwind:"$accountApplications"},{$match:{$and:[{id:id},{"accountApplications.status":"pending"}]}},{$group:{_id:null,"result":{$push:"$accountApplications"}}}]).toArray();
+            let result = await db.bank.aggregate([{$unwind:"$accountApplications"},{$match:{id:id,$or:[{'accountApplications.status':'pending'},{'accountApplications.status':'processing'}]}},{$group:{_id:null,"result":{$push:"$accountApplications"}}}]).toArray();
             if (result[0] != undefined) {
                 return ({ ok: true, accountApplications: result[0].result });
             }
@@ -98,19 +99,6 @@ module.exports = {
             let result = await db.bank.update({id:id ,accountApplications:{"$elemMatch":{"refNo":refNo}}},{$set:{"accountApplications.$.status":update.status}});
             if (result.result.ok == 1 && result.result.n == 1) {
                 return ({ok:true,message:"Status Updated"});
-            } else{
-                return ({ ok: false, message: 'request failed' });
-            }
-        } catch (err) {
-            console.log('Mongo issue ', err);
-            return ({ ok: false, message: 'unknown db issue' });
-        }
-    },
-    deleteSavingsApplications: async (id,refNo) => {
-        try{
-            let result = await db.bank.update({id:id },{$pull:{accountApplications:{refNo:refNo}}});
-            if (result.result.ok == 1 && result.result.n == 1) {
-                return ({ok:true,message:"Application deleted"});
             } else{
                 return ({ ok: false, message: 'request failed' });
             }

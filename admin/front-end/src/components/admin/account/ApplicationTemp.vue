@@ -5,21 +5,24 @@
         <div class="col col-3" data-label="Adhar Number">{{application.panNumber}}</div>
         <div class="col col-4" data-label="Update Status">
             <v-layout row justify-center>
-                <v-dialog v-model="dialog" persistent max-width="290">
+                <v-dialog v-model="dialog" ref="kuchbhi" persistent max-width="310">
                     <v-btn class="position" color="primary" dark slot="activator">
                         <v-icon>add</v-icon>
                     </v-btn>
                     <v-card>
                         <v-card-title class="headline">Application Details</v-card-title>
                         <v-card-text>
+                            <label>Application Status</label>
                             <v-select :items="items" v-model="e1" label="Select" single-line></v-select>
-                            <span class="title">Click the following <a>link</a> to download Adhar Image</span><br>
-                            <span class="title">Click the following <a>link</a> to download Pan Image</span>
+                            <h2>Aadhar Card</h2>
+                            <img height="200px" width="auto" :src="uri+'/fileop/v0.1/getFile'+'?id='+application.adharImageFileName">
+                            <h2>Pan Card</h2>
+                            <img height="200px" width="auto" :src="uri+'/fileop/v0.1/getFile'+'?id='+application.panImageFileName">
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-btn color="green darken-1" flat @click="updateStatus">Update Status</v-btn>
-                            <v-btn color="green darken-1" flat @click.native="dialog = false">Close</v-btn>
+                            <v-btn id="close" color="green darken-1" flat @click.native="dialog = false">Close</v-btn>
                         </v-card-actions>
                     </v-card>
                 </v-dialog>
@@ -35,6 +38,7 @@
         data() {
             return {
                 dialog: false,
+                uri:http.baseUri, 
                 valid: true,
                 items: ['pending','processing','approved','rejected'],
                 e1:''
@@ -44,13 +48,17 @@
             async updateStatus() {
                 let result = await http.updateSavingsAccountStatus(this.application.refNo,{status:this.e1})
                 if(result.ok){
+                    document.getElementById('close').click()
                     alert(result.message);
+                    this.$emit('refresh');
                 } else {
+                    this.dialog = false;
                     alert(result.message);
                 }
             }
         },
         created() {
+            this.e1 = this.application.status
         },
         props:[
             'application'

@@ -4,6 +4,7 @@ import store from '@/vuex';
 const baseUri = 'http://localhost:5000';
 
 export default {
+    baseUri : baseUri,
     login: (userdata) => {
         // NOTE => userdata :{id:<user_id>,password:<user_password>}
         return axios.post(baseUri + '/auth/v0.1/user/login', { user: userdata })
@@ -117,6 +118,18 @@ export default {
             console.error(error)
         })
     },
+    getCareers: () => {
+        return axios.get(baseUri + '/bank/v0.1/careers', {
+            headers: {
+                auth: store.getters.auth
+            }
+        }).then(function (response) {
+            console.log(response.data);
+            return response.data;
+        }).catch(function (error) {
+            console.error(error)
+        })
+    },
     updateSavingsAccountStatus: (refNo,update) => {
         return axios.post(baseUri + '/bank/v0.1/savingsApplications', { refNo:refNo,update: update }, {
             headers: {
@@ -131,8 +144,8 @@ export default {
                 console.error(error);
             });
     },
-    deleteSavingsAccountApplication: (update) => {
-        return axios.delete(baseUri + '/bank/v0.1/savingsApplications', { refNo: update }, {
+    createCareer: (data) => {
+        return axios.post(baseUri + '/bank/v0.1/careers', { data:data }, {
             headers: {
                 auth: store.getters.auth
             }
@@ -146,9 +159,25 @@ export default {
             });
     },
     deleteAppointment: (userId) => {
-        return axios.delete(baseUri + '/bank/v0.1/appointments', { userId: userId }, {
+        return axios.delete(baseUri + '/bank/v0.1/appointments', {
             headers: {
+                userId: userId,
                 auth: store.getters.auth
+            }
+        })
+            .then(function (response) {
+                console.log(response);
+                return response.data;
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+    },
+    deleteCareer: (careerId) => {
+        return axios.delete(baseUri + '/bank/v0.1/careers', {
+            headers: {
+                auth: store.getters.auth,
+                'careerId':careerId
             }
         })
             .then(function (response) {

@@ -16,8 +16,8 @@ module.exports.routes = {
         }
     },
     'DELETE /careers': async (req,res) => {
-        if(req.body && req.body.hasOwnProperty('careerId')){
-            res.json(await Services.bank.createCareer(req.auth.id,req.body.careerId));
+        if(req.auth && req.headers.hasOwnProperty('careerid')){
+            res.json(await Services.bank.deleteCareer(req.auth.id,Number(req.headers.careerid)));
         } else {
             res.json({ok:false,message:"missing params"})
         }
@@ -30,8 +30,8 @@ module.exports.routes = {
         }
     },
     'DELETE /appointments': async (req,res) => {
-        if(req.body && req.body.hasOwnProperty('userId')){
-            res.json(await Services.bank.deleteAppointment(req.auth.id,req.body.userId));
+        if(req.auth && req.headers.hasOwnProperty('userid')){
+            res.json(await Services.bank.deleteAppointment(req.auth.id,Number(req.headers.userid)));
         } else {
             res.json({ok:false,message:"missing params"})
         }
@@ -46,13 +46,6 @@ module.exports.routes = {
     'POST /savingsApplications': async (req,res) => {
         if(req.body && req.body.hasOwnProperty('update') && req.body.hasOwnProperty('refNo')){
             res.json(await Services.bank.updateApplicationStatus(req.auth.id,req.body.refNo,req.body.update));
-        } else {
-            res.json({ok:false,message:"missing params"})
-        }
-    },
-    'DELETE /savingsApplications': async (req,res) => {
-        if(req.body && req.body.hasOwnProperty('refNo')){
-            res.json(await Services.bank.deleteSavingsApplications(req.auth.id,req.body.refNo));
         } else {
             res.json({ok:false,message:"missing params"})
         }

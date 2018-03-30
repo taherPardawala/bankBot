@@ -44,28 +44,4 @@ module.exports.routes = {
         }
         
     }
-    /*
-    ***How to use file upload***
-    var fs = require("fs");
-    var request = require("request");
-
-    var options = { method: 'POST',
-    url: 'http://localhost:5000/auth/v0.1/upload',
-    headers: 
-    { 'Cache-Control': 'no-cache',
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
-    formData: 
-    { '': 
-        { value: 'fs.createReadStream("/Users/rohan/Documents/fridge.jpg")',
-            options: 
-            { filename: '' //give unique file name,
-            contentType: null } } } };
-
-    request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
-    });
-    */
 }

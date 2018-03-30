@@ -1,11 +1,11 @@
 <template>
     <li class="table-row">
-        <div class="col col-1" data-label="Job Title">dsds</div>
-        <div class="col col-2" data-label="Job Description">dssd</div>
-        <div class="col col-3" data-label="Pay">dssd</div>
-        <div class="col col-4" data-label="Contact Details">dssd</div>
+        <div class="col col-1" data-label="Job Title">{{career.title}}</div>
+        <div class="col col-2" data-label="Job Description">{{career.description}}</div>
+        <div class="col col-3" data-label="Pay">{{career.pay}}</div>
+        <div class="col col-4" data-label="Contact Details">{{career.contact}}</div>
         <div class="col col-5" data-label="Remove Job">
-            <v-btn color="pink" dark>
+            <v-btn color="pink" dark @click="deleteCareer">
                 <v-icon>remove</v-icon>
             </v-btn>
         </div>
@@ -13,13 +13,26 @@
 </template>
 
 <script>
+    import http from '../../../services/http'
     export default {
         name: 'Career',
         data() {
             return {}
         },
-        methods: {},
-        created() {}
+        methods: {
+            async deleteCareer(){
+                let result = await http.deleteCareer(this.career.careerId);
+                if(result.ok){
+                    alert(result.message);
+                } else {
+                    alert(result.message);
+                }
+            }
+        },
+        created() {},
+        props:[
+            'career'
+        ]
     }
 </script>
 
