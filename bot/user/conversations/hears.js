@@ -8,6 +8,7 @@ const axios = require('axios');
 
 module.exports = function(controller, bot){
     controller.hears('.*', 'message_received', function (bot, message) {
+        console.log(message);
         if (message.type === 'user_message') {
             apiai.process(message, bot);
         }
