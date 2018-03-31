@@ -1,9 +1,9 @@
 <template>
     <div class="appointment">
         <li class="table-row">
-            <div class="col col-1" data-label="Name">appointment.name</div>
-            <div class="col col-2" data-label="Prefered Date">appointment.date</div>
-            <div class="col col-3" data-label="Contact Details">appointment.contact</div>
+            <div class="col col-1" data-label="Name">{{appointment.name}}</div>
+            <div class="col col-2" data-label="Prefered Date">{{appointment.date}}</div>
+            <div class="col col-3" data-label="Contact Details">{{appointment.contact}}</div>
             <div class="col col-4" data-label="Dismiss">
                 <v-btn small color="primary" dark @click="deleteAppointment">
                     <v-icon>remove</v-icon>
@@ -22,7 +22,7 @@
         },
         methods: {
             async deleteAppointment(){
-                let result = await http.deleteAppointment(appointment.userId);
+                let result = await http.deleteAppointment(this.appointment.userId);
                 if(result.ok){
                     alert(result.message);
                 } else {
