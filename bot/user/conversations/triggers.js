@@ -13,6 +13,7 @@ module.exports = function (controller, bot) {
                                 payload.contact = response.text;
                                 payload.user = message.user;
                                 payload.channel = message.channel;
+                                convo.next();
                                 bot.reply(message, "Got your mobile number :)", function (err) {
                                     if (err) console.error(err);
                                     convo.next();
