@@ -14,30 +14,27 @@ module.exports = function (controller, bot) {
                                 payload.user = message.user;
                                 payload.channel = message.channel;
                                 convo.next();
-                                bot.reply(message, "Got your mobile number :)", function (err) {
-                                    if (err) console.error(err);
-                                    convo.next();
-                                    convo.ask(string.askConfirmAppointment, function (response, convo) {
-                                        if (response.text == "Yes" || response.text == "yes" || response.text == "yup") {
-                                            bot.reply(message, "Processing your Appointment Request please wait....", function (err) {
-                                                if (err) console.error(err)
-                                                axios.post('https://bankbot.tk' + '/appointment/v0.1/createAppointment', { data: payload })
-                                                    .then(function (response) {
-                                                        console.log(response);
-                                                        bot.reply(message,response.data.message);
-                                                        convo.stop();
-                                                    })
-                                                    .catch(function (error) {
-                                                        console.error(error);
-                                                    });
-                                            })
+                                bot.reply(message, "Got your mobile number :)")
+                                convo.next();
+                                convo.ask(string.askConfirmAppointment, function (response, convo) {
+                                    if (response.text == "Yes" || response.text == "yes" || response.text == "yup") {
+                                        bot.reply(message, "Processing your Appointment Request please wait....", function (err) {
+                                            if (err) console.error(err)
+                                            axios.post('https://bankbot.tk' + '/appointment/v0.1/createAppointment', { data: payload })
+                                                .then(function (response) {
+                                                    console.log(response);
+                                                    bot.reply(message, response.data.message);
+                                                    convo.stop();
+                                                })
+                                                .catch(function (error) {
+                                                    console.error(error);
+                                                });
+                                        })
 
-                                        } else {
-                                            bot.reply(message, "Your appointment request has been canceled.")
-                                            convo.stop();  
-                                        }
-                                    })
-                                    convo.next();
+                                    } else {
+                                        bot.reply(message, "Your appointment request has been canceled.")
+                                        convo.stop();
+                                    }
                                 })
                                 convo.next();
                             }
