@@ -46,10 +46,12 @@ module.exports = {
             {
                 "content_type": "text",
                 "title": "Yes",
+                "payload": '{"text":"yes"}'
             },
             {
                 "content_type": "text",
                 "title": "Cancel",
+                "payload": '{"text":"cancel"}'
             }
         ]
     },
