@@ -32,6 +32,7 @@ module.exports = function (controller, bot) {
                                             bot.reply(message, "Your appointment request has been canceled.")
                                         }
                                     })
+                                    convo.next();
                                 })
                                 convo.next();
                             }
@@ -40,8 +41,7 @@ module.exports = function (controller, bot) {
                             pattern: /\bcancel|stop|reset|no\b/i,
                             callback: function (response, convo) {
                                 bot.reply(message, "Your appointment request has been canceled.");
-                                convo.repeat();
-                                convo.next();
+                                convo.stop();
                             }
                         },
                         {
@@ -56,7 +56,7 @@ module.exports = function (controller, bot) {
                             default: true,
                             callback: function (response, convo) {
                                 bot.reply(message, "Cancelling your appointment request.");
-                                convo.next();
+                                convo.stop();
                             }
                         }
                     ]
