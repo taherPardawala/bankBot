@@ -89,7 +89,7 @@
         },
         async created() {
             if (typeof this.$store.getters.auth == 'string'  && typeof this.$store.getters.accountType == 'number' &&  this.$store.getters.accountType == 1) {
-                let result = await http.getUserName({accountType:1});
+                let result = await http.getUserName(1);
                 this.bankName = result.name;
                 this.updatePath('/admin/careers')
             } else {

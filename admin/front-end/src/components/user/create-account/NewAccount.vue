@@ -54,9 +54,10 @@
             async init(){
                 let result = await http.getBankNames();
                 if (result.length > 0) {
-                    for (let i of result) {
-                        this.banks.push(i.name);
-                    }
+                    this.banks = result.reduce((acc,next)=>{
+                        acc.push(next.name);
+                        return acc;
+                    })
                     console.log(this.banks);
                 }
             },

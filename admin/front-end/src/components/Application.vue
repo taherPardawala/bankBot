@@ -161,7 +161,7 @@
         async created() {
             console.log(typeof this.$store.getters.accountType)
             if (typeof this.$store.getters.auth == 'string' && typeof this.$store.getters.accountType == 'number' &&  this.$store.getters.accountType == 10) {
-                let result = await http.getUserName({accountType:10});
+                let result = await http.getUserName(10);
                 this.fname = result.firstName;
                 this.lname = result.lastName;
                 this.updatePath('/app/hello')

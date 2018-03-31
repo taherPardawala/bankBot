@@ -21,7 +21,7 @@ module.exports = {
     },
     getName: async(id,type) => {
         try{
-            if(type == 10){
+            if(type == '10'){
                 return(await db.auth.findOne({id:id},{_id:0,firstName:1,lastName:1}))
             } else {
                 return(await db.auth.findOne({id:id},{_id:0,name:1}))
