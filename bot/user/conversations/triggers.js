@@ -12,6 +12,7 @@ module.exports = function (controller, bot) {
                             callback: function (response, convo) {
                                 payload.contact = response.text;
                                 payload.user = message.user;
+                                payload.appointmentId = new Date().getTime();
                                 payload.channel = message.channel;
                                 convo.next();
                                 bot.reply(message, "Got your mobile number :)")

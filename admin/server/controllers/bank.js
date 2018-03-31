@@ -30,8 +30,8 @@ module.exports.routes = {
         }
     },
     'DELETE /appointments': async (req,res) => {
-        if(req.auth && req.headers.hasOwnProperty('userid')){
-            res.json(await Services.bank.deleteAppointment(req.auth.id,Number(req.headers.userid)));
+        if(req.auth && req.headers.hasOwnProperty('appointmentid')){
+            res.json(await Services.bank.deleteAppointment(req.auth.id,req.headers.appointmentid));
         } else {
             res.json({ok:false,message:"missing params"})
         }

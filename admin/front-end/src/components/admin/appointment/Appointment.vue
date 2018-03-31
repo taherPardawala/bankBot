@@ -22,7 +22,7 @@
         },
         methods: {
             async deleteAppointment(){
-                let result = await http.deleteAppointment(this.appointment.userId);
+                let result = await http.deleteAppointment(this.appointment.appointmentId);
                 if(result.ok){
                     alert(result.message);
                 } else {

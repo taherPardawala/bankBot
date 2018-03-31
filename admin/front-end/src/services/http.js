@@ -1,7 +1,7 @@
 import axios from 'axios';
 import store from '@/vuex';
-const baseUri = window.location.protocol+"//"+window.location.host; //production url
-//const baseUri = 'http://localhost:5000';
+//const baseUri = window.location.protocol+"//"+window.location.host; //production url
+const baseUri = 'http://localhost:5000';
 
 export default {
     baseUri : baseUri,
@@ -158,10 +158,10 @@ export default {
                 console.error(error);
             });
     },
-    deleteAppointment: (userId) => {
+    deleteAppointment: (appointmentId) => {
         return axios.delete(baseUri + '/bank/v0.1/appointments', {
             headers: {
-                userId: userId,
+                appointmentId: appointmentId,
                 auth: store.getters.auth
             }
         })

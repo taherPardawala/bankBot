@@ -72,9 +72,11 @@ module.exports = {
             return ({ ok: false, message: 'unknown db issue' });
         }
     },
-    deleteAppointment: async (id,userId) => {
+    deleteAppointment: async (id,appointmentid) => {
         try{
-            let result = await db.bank.update({id:id },{$pull:{appointments:{user:userId}}});
+            console.log(id,appointmentid);
+            let result = await db.bank.update({id:id},{$pull:{appointments:{appointmentId:appointmentid}}});
+            console.log(result.result.ok,result.result.nModified);
             if (result.result.ok == 1 && result.result.nModified == 1) {
                 return ({ok:true,message:"Appointment deleted"});
             } else{
