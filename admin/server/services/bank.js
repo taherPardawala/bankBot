@@ -57,7 +57,7 @@ module.exports = {
     createAppointment: async(data) => {
         try{
             let isBank = await db.bank.findOne({name:data.bankName},{_id:0,name:1});
-            if(isBank.hasOwnProperty('name')){
+            if(!isBank.hasOwnProperty('name')){
                 return ({ ok: false, message: 'This bank is not affiliated with us currently. Please try some other bank.'});
             } else {
                 let result = await db.bank.update({name:data.bankName},{$push:{appointments:data}});

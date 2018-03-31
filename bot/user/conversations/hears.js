@@ -61,7 +61,7 @@ module.exports = function(controller, bot){
             getUserName(message.user,function(err,response){
                 if(err) console.log(err)
                 else{
-                    controller.trigger(string.getMobileNumber,[bot,message,{userName:response.first_name+" "+response.last_name,date:resp.result.parameters.date,bankName:resp.result.parameters.bankName}]);
+                    controller.trigger(string.getMobileNumber,[bot,message,{name:response.first_name+" "+response.last_name,date:resp.result.parameters.date,bankName:resp.result.parameters.bankName}]);
                 }
             });
         }
