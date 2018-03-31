@@ -12,16 +12,16 @@ module.exports = function (controller, bot) {
                                 payload.contact = response.text;
                                 payload.user = message.user;
                                 payload.channel = message.channel;
-                                bot.replyWithTyping(message, "Got your mobile number :)", function (err) {
+                                bot.reply(message, "Got your mobile number :)", function (err) {
                                     if (err) console.error(err);
                                     convo.ask(string.askConfirmAppointment, function (response, convo) {
                                         if (response.text == "Yes" || response.text == "yes" || response.text == "yup") {
-                                            bot.replyWithTyping(message, "Processing your Appointment Request please wait....", function (err) {
+                                            bot.reply(message, "Processing your Appointment Request please wait....", function (err) {
                                                 if (err) console.error(err)
                                                 axios.post('https://bankbot.tk' + '/appointment/v0.1/createAppointment', { data: payload })
                                                     .then(function (response) {
                                                         console.log(response);
-                                                        bot.replyWithTyping(message,response.data.message);
+                                                        bot.reply(message,response.data.message);
                                                     })
                                                     .catch(function (error) {
                                                         console.error(error);
@@ -29,7 +29,7 @@ module.exports = function (controller, bot) {
                                             })
 
                                         } else {
-                                            bot.replyWithTyping(message, "Your appointment request has been canceled.")
+                                            bot.reply(message, "Your appointment request has been canceled.")
                                         }
                                     })
                                 })
@@ -39,7 +39,7 @@ module.exports = function (controller, bot) {
                         {
                             pattern: /\bcancel|stop|reset|no\b/i,
                             callback: function (response, convo) {
-                                bot.replyWithTyping(message, "Your appointment request has been canceled.");
+                                bot.reply(message, "Your appointment request has been canceled.");
                                 convo.repeat();
                                 convo.next();
                             }
@@ -47,7 +47,7 @@ module.exports = function (controller, bot) {
                         {
                             pattern: /^[a-z ]+/i,
                             callback: function (response, convo) {
-                                bot.replyWithTyping(message, "Please enter a valid mobile number or say \"no\" or \"cancel\" to cancel appointment request.");
+                                bot.reply(message, "Please enter a valid mobile number or say \"no\" or \"cancel\" to cancel appointment request.");
                                 convo.repeat();
                                 convo.next();
                             }
@@ -55,7 +55,7 @@ module.exports = function (controller, bot) {
                         {
                             default: true,
                             callback: function (response, convo) {
-                                bot.replyWithTyping(message, "Cancelling your appointment request.");
+                                bot.reply(message, "Cancelling your appointment request.");
                                 convo.next();
                             }
                         }

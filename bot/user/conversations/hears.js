@@ -18,7 +18,7 @@ module.exports = function(controller, bot){
         console.log(resp.result.action);
         if (resp.result.action.match('smalltalk') && resp.result.action !== 'smalltalk.greetings.hello') {
             let responseText = resp.result.fulfillment.speech;
-            bot.replyWithTyping(message, responseText);
+            bot.reply(message, responseText);
         }
     });
 
@@ -27,11 +27,11 @@ module.exports = function(controller, bot){
             if(err) console.log(err)
             else{
                 let responseText = "I am "+"BankBot"+"..... "+resp.result.fulfillment.speech+" "+response.first_name+".";
-                bot.replyWithTyping(message, responseText);
+                bot.reply(message, responseText);
             }
         });
     }).action('input.unknown', function (message, resp, bot) {
-        bot.replyWithTyping(message, "Sorry, I don't understand");
+        bot.reply(message, "Sorry, I don't understand");
     }).action('bankLocator', function(message,resp,bot){
         let template = string.askLocationAttachment;
         template.text = null;
@@ -57,7 +57,8 @@ module.exports = function(controller, bot){
             }
         });
     }).action('appointment',function(message,resp,bot){
-        if(resp.result.parameters.date == "" || resp.result.parameters.bankName == "") bot.replyWithTyping(message,resp.result.fulfillment.speech);
+        console.log(resp);
+        if(resp.result.parameters.date == "" || resp.result.parameters.bankName == "") bot.reply(message,resp.result.fulfillment.speech);
         else {
             getUserName(message.user,function(err,response){
                 if(err) console.log(err)
@@ -67,34 +68,34 @@ module.exports = function(controller, bot){
             });
         }
     }).action('carInsurance',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Car Insurance online please visit https://bankbot.tk/#/app/carinsurance");
+        bot.reply(message,"For comparing and buying Car Insurance online please visit https://bankbot.tk/#/app/carinsurance");
     }).action('carLoan',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Car Loan online please visit https://bankbot.tk/#/app/carloan");
+        bot.reply(message,"For comparing and buying Car Loan online please visit https://bankbot.tk/#/app/carloan");
     }).action('createAccount',function(message,resp,bot){
-        bot.replyWithTyping(message,"For Creating an Account online please visit https://bankbot.tk/#/app/createaccount");
+        bot.reply(message,"For Creating an Account online please visit https://bankbot.tk/#/app/createaccount");
     }).action('creditCard',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Credit Card online please visit https://bankbot.tk/#/app/creditcard");
+        bot.reply(message,"For comparing and buying Credit Card online please visit https://bankbot.tk/#/app/creditcard");
     }).action('healthInsurance',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Health Insurance online please visit https://bankbot.tk/#/app/healthinsurance");
+        bot.reply(message,"For comparing and buying Health Insurance online please visit https://bankbot.tk/#/app/healthinsurance");
     }).action('homeLoan',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Home Loan online please visit https://bankbot.tk/#/app/homeloan");
+        bot.reply(message,"For comparing and buying Home Loan online please visit https://bankbot.tk/#/app/homeloan");
     }).action('lifeInsurance',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Life Insurance online please visit https://bankbot.tk/#/app/lifeinsurance");
+        bot.reply(message,"For comparing and buying Life Insurance online please visit https://bankbot.tk/#/app/lifeinsurance");
     }).action('personalLoan',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Personal Loan online please visit https://bankbot.tk/#/app/personalloan");
+        bot.reply(message,"For comparing and buying Personal Loan online please visit https://bankbot.tk/#/app/personalloan");
     }).action('twoWheelerInsurance',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Two Wheeler Insurance online please visit https://bankbot.tk/#/app/twowheelerinsurance");
+        bot.reply(message,"For comparing and buying Two Wheeler Insurance online please visit https://bankbot.tk/#/app/twowheelerinsurance");
     }).action('usedCarLoan',function(message,resp,bot){
-        bot.replyWithTyping(message,"For comparing and buying Used Car Loan online please visit https://bankbot.tk/#/app/usedcarloan");
+        bot.reply(message,"For comparing and buying Used Car Loan online please visit https://bankbot.tk/#/app/usedcarloan");
     }).action('stepsForProcess',function(message,resp,bot){
-        if(resp.result.parameters.serviceType == "") bot.replyWithTyping(message,resp.result.fulfillment.speech);
+        if(resp.result.parameters.serviceType == "") bot.reply(message,resp.result.fulfillment.speech);
         else {
-            bot.replyWithTyping(message,steps[resp.result.parameters.serviceType]+"\nTo know more go to the FAQ page of our website");
+            bot.reply(message,steps[resp.result.parameters.serviceType]+"\nTo know more go to the FAQ page of our website");
         }
     }).action('documentsForProcess',function(message,resp,bot){
-        if(resp.result.parameters.serviceType == "") bot.replyWithTyping(message,resp.result.fulfillment.speech);
+        if(resp.result.parameters.serviceType == "") bot.reply(message,resp.result.fulfillment.speech);
         else {
-            bot.replyWithTyping(message,documents[resp.result.parameters.serviceType]+"\nTo know more go to the FAQ page of our website");
+            bot.reply(message,documents[resp.result.parameters.serviceType]+"\nTo know more go to the FAQ page of our website");
         }
     })
 
