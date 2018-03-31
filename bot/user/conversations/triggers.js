@@ -4,6 +4,7 @@ module.exports = function (controller, bot) {
     controller.on(string.getMobileNumber, function (bot, message, payload) {
         bot.startConversation(message, function (err, convo) {
             if (!err) {
+                convo.next();
                 convo.ask("Please share your mobile number with me.",
                     [
                         {
@@ -14,6 +15,7 @@ module.exports = function (controller, bot) {
                                 payload.channel = message.channel;
                                 bot.reply(message, "Got your mobile number :)", function (err) {
                                     if (err) console.error(err);
+                                    convo.next();
                                     convo.ask(string.askConfirmAppointment, function (response, convo) {
                                         if (response.text == "Yes" || response.text == "yes" || response.text == "yup") {
                                             bot.reply(message, "Processing your Appointment Request please wait....", function (err) {
@@ -35,7 +37,7 @@ module.exports = function (controller, bot) {
                                             
                                         }
                                     })
-                                    convo.next();
+                                    
                                 })
                                 convo.next();
                             }
