@@ -22,6 +22,7 @@ module.exports = function (controller, bot) {
                                                     .then(function (response) {
                                                         console.log(response);
                                                         bot.reply(message,response.data.message);
+                                                        convo.stop();
                                                     })
                                                     .catch(function (error) {
                                                         console.error(error);
@@ -30,6 +31,8 @@ module.exports = function (controller, bot) {
 
                                         } else {
                                             bot.reply(message, "Your appointment request has been canceled.")
+                                            convo.stop();
+                                            
                                         }
                                     })
                                     convo.next();
