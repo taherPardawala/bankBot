@@ -33,11 +33,10 @@ module.exports = function (controller, bot) {
 
                                         } else {
                                             bot.reply(message, "Your appointment request has been canceled.")
-                                            convo.stop();
-                                            
+                                            convo.stop();  
                                         }
                                     })
-                                    
+                                    convo.next();
                                 })
                                 convo.next();
                             }
