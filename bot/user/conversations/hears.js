@@ -8,13 +8,13 @@ const axios = require('axios');
 
 module.exports = function(controller, bot){
     controller.hears('.*', 'message_received', function (bot, message) {
-        console.log(message);
         if (message.type === 'user_message') {
             apiai.process(message, bot);
         }
     });
 
     apiai.all(function (message, resp, bot) {
+        console.log(message);
         console.log(resp.result.action);
         if (resp.result.action.match('smalltalk') && resp.result.action !== 'smalltalk.greetings.hello') {
             let responseText = resp.result.fulfillment.speech;
