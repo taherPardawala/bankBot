@@ -3,7 +3,7 @@
         <v-layout row justify-center>
             <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay="false">
                 <v-card>
-                    <v-toolbar dark color="primary">
+                    <v-toolbar dark color="cyan lighten-4">
                         <v-btn icon @click.native="closeDialog" dark>
                             <v-icon>close</v-icon>
                         </v-btn>
