@@ -57,7 +57,7 @@
                     this.banks = result.reduce((acc,next)=>{
                         acc.push(next.name);
                         return acc;
-                    })
+                    },[]);
                     console.log(this.banks);
                 }
             },
