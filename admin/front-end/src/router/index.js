@@ -3,6 +3,7 @@ import Router from 'vue-router'
 // Common Files
 import Login from '@/components/Login'
 import Signup from '@/components/Signup'
+import FAQs from '@/components/FAQs'
 // User Files
 import Application from '@/components/Application'
 import HelloWorld from '@/components/user/HelloWorld'
@@ -123,6 +124,11 @@ export default new Router({
       path: '/signup',
       name: 'Signup',
       component: Signup,
+    },
+    {
+      path: '/faqs',
+      name: 'FAQs',
+      component: FAQs,
     }
   ]
 })

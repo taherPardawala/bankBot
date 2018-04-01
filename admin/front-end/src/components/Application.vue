@@ -107,6 +107,14 @@
                         <v-list-tile-title>Careers</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
+                <v-list-tile @click="updatePath('/faqs')">
+                    <v-list-tile-action>
+                        <v-icon>question_answer</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>FAQs</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
                 <v-list-group prepend-icon="account_box" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
