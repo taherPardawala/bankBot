@@ -1,15 +1,12 @@
 # bankBot Your Virtual Bank Assistant
 Documentation for BankBot
 
-•	Installations: (see online tutorials for the following)
+- 	Installations: (see online tutorials for the following)
 - node (https://nodejs.org/en/) Preferrably install latest 9.10.1 = (as of creation of this document.)
 - npm (auto installed when installed node)
 - git (See tutorial)
 
-
-
-
-•	Clone the git repository from github (requirements git)
+- Clone the git repository from github (requirements git)
     - Steps (to clone and view the files)
         - git clone https://github.com/taherPardawala/bankBot.git
         - cd bankbot
@@ -19,7 +16,7 @@ Documentation for BankBot
         - cd server  // To view the backend code folder
         - cd frontend  // to view the front end code folder
 
-•	Install all the dependencies (requirements node and npm)
+- Install all the dependencies (requirements node and npm)
     - For Bot (initialization)
         - Enter the bot folder from the terminal
         - cd path/to/the/bankBot/folder
@@ -49,7 +46,7 @@ Documentation for BankBot
         - and user), banks collection which contains data collected by banks such as appointments, 			- careers added, new account applications
         - fs.files and fs.chunks collections are NOT TO BE DELETED OR MUTATED AT ALL because all these collections handle the FileSystem for the image upload feature integrated.
 
-•	To run the front end locally do the following
+- To run the front end locally do the following
     - Run the server first 
         - Enter the admin folder i.e bankBot/admin
         - Run the following command
@@ -67,7 +64,7 @@ Documentation for BankBot
         - The above command will build all static files and one "index.html" in the directory bankBot/admin/front-end/dist
 
 Files and working
-•	Front end file structure
+- Front end file structure
     - All the main front end files are in the components folder
     - Path for the components file is 
     - front-end/src/components
