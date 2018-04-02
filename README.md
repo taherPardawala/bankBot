@@ -2,13 +2,13 @@
 ## Documentation for BankBot
 
 ## Installations: (see online tutorials for the following)
-    - node [https://nodejs.org/en/](https://nodejs.org/en/) Preferrably install latest 9.10.1 = (as of creation of this document.)
+    - node https://nodejs.org/en Preferrably install latest 9.10.1 = (as of creation of this document.)
     - npm (auto installed when installed node)
     - git (See tutorial)
 
 ## Clone the git repository from github (requirements git)
     - Steps (to clone and view the files)
-        - git clone [link]https://github.com/taherPardawala/bankBot.git
+        - git clone https://github.com/taherPardawala/bankBot.git
         - cd bankbot
         - ls  // To see a list of all the folders
         - cd bot  // To enter bot code dir
@@ -42,7 +42,7 @@
         - npm i
 
     - For Visualizing the Database (Aldready hosted no need to run or initialize)
-        - Visit [link](https://mlab.com/login/)
+        - Visit https://mlab.com/login/
         - Login credentials username: bank-bot password: 5656.keynotes 
         - Click on ds133077/bank-bot
         - There you can see collections like accounts(contains login credentials of each bank and user), banks collection which contains data collected by banks such as appointments, careers added, new account applications
