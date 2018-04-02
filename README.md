@@ -6,7 +6,7 @@ Documentation for BankBot
     o	node (https://nodejs.org/en/) (Preferrably install latest 9.10.1)
     o	npm (auto installed when installed node)
     o	git (See tutorial)
-    
+
 •	Clone the git repository from github (requirements git)
     o	Steps (to clone and view the files)
         ♣	git clone https://github.com/taherPardawala/bankBot.git
@@ -44,7 +44,7 @@ Documentation for BankBot
         ♣	Login credentials username: bank-bot password: 5656.keynotes 
         ♣	Click on ds133077/bank-bot
         ♣	There you can see collections like accounts(contains login credentials of each bank and user), banks collection which contains data collected by banks such as appointments, careers added, new account applications
-        ♣	fs.files and fs.chunks collections are not to be mutated or deleted because all these collections handle the FileSystem for the image upload feature integrated.
+        ♣	fs.files and fs.chunks collections are NOT TO BE DELETED OR MUTATED AT ALL because all these collections handle the FileSystem for the image upload feature integrated.
 
 •	To run the front end locally do the following
     o	Run the server first 
