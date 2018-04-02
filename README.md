@@ -2,7 +2,7 @@
 ## Documentation for BankBot
 
 ## Installations: (see online tutorials for the following)
-    - node [link](https://nodejs.org/en/) Preferrably install latest 9.10.1 = (as of creation of this document.)
+    - node [https://nodejs.org/en/](https://nodejs.org/en/) Preferrably install latest 9.10.1 = (as of creation of this document.)
     - npm (auto installed when installed node)
     - git (See tutorial)
 
