@@ -1,4 +1,4 @@
-# bankBot Your Virtual Bank Assistant
+# bankBot - Your Virtual Bank Assistant.
 ## Documentation for BankBot
 
 ## Installations: (see online tutorials for the following)
