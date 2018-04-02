@@ -1,12 +1,12 @@
 # bankBot Your Virtual Bank Assistant
-Documentation for BankBot
+## Documentation for BankBot
 
-- 	Installations: (see online tutorials for the following)
-- node (https://nodejs.org/en/) Preferrably install latest 9.10.1 = (as of creation of this document.)
-- npm (auto installed when installed node)
-- git (See tutorial)
+## Installations: (see online tutorials for the following)
+    - node (https://nodejs.org/en/) Preferrably install latest 9.10.1 = (as of creation of this document.)
+    - npm (auto installed when installed node)
+    - git (See tutorial)
 
-- Clone the git repository from github (requirements git)
+- ##Clone the git repository from github (requirements git)
     - Steps (to clone and view the files)
         - git clone https://github.com/taherPardawala/bankBot.git
         - cd bankbot
@@ -42,8 +42,7 @@ Documentation for BankBot
         - Visit https://mlab.com/login/
         - Login credentials username: bank-bot password: 5656.keynotes 
         - Click on ds133077/bank-bot
-        - There you can see collections like accounts(contains login credentials of each bank 
-        - and user), banks collection which contains data collected by banks such as appointments, 			- careers added, new account applications
+        - There you can see collections like accounts(contains login credentials of each bank and user), banks collection which contains data collected by banks such as appointments, careers added, new account applications
         - fs.files and fs.chunks collections are NOT TO BE DELETED OR MUTATED AT ALL because all these collections handle the FileSystem for the image upload feature integrated.
 
 - To run the front end locally do the following
