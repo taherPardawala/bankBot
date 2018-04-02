@@ -9,6 +9,18 @@
                     <v-icon>remove</v-icon>
                 </v-btn>
             </div>
+            <div class="col col-5" data-label="Confirm Appointment">
+                <v-btn small color="secondary" dark @click.native.stop="modal2 = true">
+                    <v-icon>add</v-icon>
+                </v-btn>
+            </div>
+            <v-dialog ref="dialog" persistent v-model="modal2" lazy full-width width="290px" :return-value.sync="time">
+                <v-time-picker v-model="time" actions>
+                    <v-spacer></v-spacer>
+                    <v-btn flat id="cancel" color="primary" @click="modal2 = false">Cancel</v-btn>
+                    <v-btn flat color="primary" @click="sendConfirmation">Confirm</v-btn>
+                </v-time-picker>
+            </v-dialog>
         </li>
     </div>
 </template>
@@ -18,20 +30,32 @@
     export default {
         name: 'ApplicationTemp',
         data() {
-            return {}
+            return {
+                time: null,
+                modal2: false
+            }
         },
         methods: {
-            async deleteAppointment(){
+            async deleteAppointment() {
                 let result = await http.deleteAppointment(this.appointment.appointmentId);
-                if(result.ok){
+                if (result.ok) {
                     alert(result.message);
                 } else {
                     alert(result.message);
                 }
+            },
+            async sendConfirmation() {
+                // time variable has the time 
+                // close the dialog after result success or failure 
+                // show alert that message has been send 
+                // keep appointment here till dismiss is pressed
+                // Dont forget to change baseuri before you build
+                console.log(this.time);
+                document.getElementById('cancel').click();
             }
         },
         created() {},
-        props:[
+        props: [
             'appointment'
         ]
     }

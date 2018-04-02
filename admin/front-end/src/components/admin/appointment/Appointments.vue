@@ -7,6 +7,7 @@
                     <div class="col col-2">Prefered Date</div>
                     <div class="col col-3">Contact Details</div>
                     <div class="col col-4">Dismiss</div>
+                    <div class="col col-5">Confirm Appointment</div>
                 </li>
                 <appointment v-for="(i, key) in appointments" :appointment="i" :key=key></appointment>
             </ul>
