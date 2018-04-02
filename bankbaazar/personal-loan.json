@@ -1,0 +1,202 @@
+[
+  {
+    "value": "1568",
+    "data-popularity": "4.0",
+    "data-interest-rate-range": "12,18",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Capital First",
+    "data-processing-fee-range": "0,15000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "10710",
+    "data-popularity": "4.0",
+    "data-interest-rate-range": "15.95,18.95",
+    "data-interest-rate-type": "",
+    "data-bank-website": "HDB FINANCIAL SERVICES",
+    "data-processing-fee-range": "40000,40000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1008",
+    "data-popularity": "4.0",
+    "data-interest-rate-range": "13,13.05",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Allahabad Bank",
+    "data-processing-fee-range": "1228,9150",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1016",
+    "data-popularity": "4.0",
+    "data-interest-rate-range": "11.35,16.35",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Bank Of Baroda",
+    "data-processing-fee-range": "1000,10000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1020",
+    "data-popularity": "4.0",
+    "data-interest-rate-range": "12.70,12.75",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Bank of Maharashtra",
+    "data-processing-fee-range": "1000,10000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1018",
+    "data-popularity": "4.5",
+    "data-interest-rate-range": "12.90,13.90",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Bank of India",
+    "data-processing-fee-range": "1000,10000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1032",
+    "data-popularity": "4.0",
+    "data-interest-rate-range": "12.7,12.75",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Canara Bank",
+    "data-processing-fee-range": "1000,5000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1034",
+    "data-popularity": "4.5",
+    "data-interest-rate-range": "11.3,11.35",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Central Bank of India",
+    "data-processing-fee-range": "500,500",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1044",
+    "data-popularity": "3.0",
+    "data-interest-rate-range": "13.00,14.00",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Dena Bank",
+    "data-processing-fee-range": "150,1000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1058",
+    "data-popularity": "4.5",
+    "data-interest-rate-range": "12.55,12.6",
+    "data-interest-rate-type": "",
+    "data-bank-website": "IDBI",
+    "data-processing-fee-range": "500,1000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1060",
+    "data-popularity": "4.5",
+    "data-interest-rate-range": "",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Indian Bank",
+    "data-processing-fee-range": "255,510",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1061",
+    "data-popularity": "4.5",
+    "data-interest-rate-range": "13.55,13.60",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Indian Overseas Bank",
+    "data-processing-fee-range": "1010,16500",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1066",
+    "data-popularity": "4.0",
+    "data-interest-rate-range": "12.95,15.45",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Karur Vysya Bank",
+    "data-processing-fee-range": "40000,40000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1091",
+    "data-popularity": "4.5",
+    "data-interest-rate-range": "13,13.05",
+    "data-interest-rate-type": "",
+    "data-bank-website": "South Indian Bank",
+    "data-processing-fee-range": "1500,1500",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1096",
+    "data-popularity": "4.5",
+    "data-interest-rate-range": "12.75,14.75",
+    "data-interest-rate-type": "",
+    "data-bank-website": "SBI",
+    "data-processing-fee-range": "2500,15000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1105",
+    "data-popularity": "4.0",
+    "data-interest-rate-range": "13.75,15.75",
+    "data-interest-rate-type": "",
+    "data-bank-website": "TamilNad Mercantile Bank",
+    "data-processing-fee-range": "1000,10000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1107",
+    "data-popularity": "4.5",
+    "data-interest-rate-range": "11.20,11.45",
+    "data-interest-rate-type": "",
+    "data-bank-website": "UCO Bank",
+    "data-processing-fee-range": "750,10000",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1108",
+    "data-popularity": "5.0",
+    "data-interest-rate-range": "14.4,14.45",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Union Bank",
+    "data-processing-fee-range": "500,2500",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1112",
+    "data-popularity": "4.5",
+    "data-interest-rate-range": "13.50,13.55",
+    "data-interest-rate-type": "",
+    "data-bank-website": "Vijaya Bank",
+    "data-processing-fee-range": "0,7500",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  },
+  {
+    "value": "1114",
+    "data-popularity": "4.5",
+    "data-interest-rate-range": "14,14.5",
+    "data-interest-rate-type": "",
+    "data-bank-website": "YES BANK",
+    "data-processing-fee-range": "",
+    "data-interest-rate-filter": "",
+    "data-show-quotes": ""
+  }
+]

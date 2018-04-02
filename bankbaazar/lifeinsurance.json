@@ -1,0 +1,114 @@
+[
+  {
+    "insuranceProvider": "ICICI Prudential Life Insurance  ",
+    "grieviencesSolved": "99.96% ",
+    "claimSettlement": "96.68% ",
+    "maxCover": "No upper limit ",
+    "newBuisnessPremium": "6765.75 Crs",
+    "maxMaurityAge": "75 Years"
+  },
+  {
+    "insuranceProvider": "PNB Metlife Insurance  ",
+    "grieviencesSolved": "98.41%",
+    "claimSettlement": "87.14% ",
+    "maxCover": "10 crores  ",
+    "newBuisnessPremium": "1003.71 Crs",
+    "maxMaurityAge": "75 Years"
+  },
+  {
+    "insuranceProvider": "Aegon Life Insurance  ",
+    "grieviencesSolved": "100.00%",
+    "claimSettlement": "97.11% ",
+    "maxCover": "No upper limit ",
+    "newBuisnessPremium": "136.33Crs",
+    "maxMaurityAge": "80 Years"
+  },
+  {
+    "insuranceProvider": "HDFC Life Insurance  ",
+    "grieviencesSolved": "99.89%",
+    "claimSettlement": "97.62% ",
+    "maxCover": "No upper limit ",
+    "newBuisnessPremium": "6487.22 Crs",
+    "maxMaurityAge": "75 Years"
+  },
+  {
+    "insuranceProvider": "Max Life Insurance  ",
+    "grieviencesSolved": "100.00%",
+    "claimSettlement": "97.81% ",
+    "maxCover": "100 crores ",
+    "newBuisnessPremium": "2881.71 Crs",
+    "maxMaurityAge": "75 Years"
+  },
+  {
+    "insuranceProvider": "Bajaj Allianz Life Insurance  ",
+    "grieviencesSolved": "100.00%",
+    "claimSettlement": "91.67% ",
+    "maxCover": "No upper limit ",
+    "newBuisnessPremium": "2884.52 Crs",
+    "maxMaurityAge": "75 Years"
+  },
+  {
+    "insuranceProvider": "Birla Sun Life Insurance  ",
+    "grieviencesSolved": "99.84% ",
+    "claimSettlement": "94.69% ",
+    "maxCover": "10 crores ",
+    "newBuisnessPremium": "2220.31 Crs",
+    "maxMaurityAge": "80Years"
+  },
+  {
+    "insuranceProvider": "Edelweiss Tokio Life Insurance  ",
+    "grieviencesSolved": "100.00% ",
+    "claimSettlement": "93.29% ",
+    "maxCover": "No upper limit ",
+    "newBuisnessPremium": "183.59 Crs",
+    "maxMaurityAge": "80Years"
+  },
+  {
+    "insuranceProvider": "Future Generali Life Insurance  ",
+    "grieviencesSolved": "99.70% ",
+    "claimSettlement": "89.53% ",
+    "maxCover": "No upper limit ",
+    "newBuisnessPremium": "255.59 Crs",
+    "maxMaurityAge": "75Years"
+  },
+  {
+    "insuranceProvider": "SBI Life Insurance  ",
+    "grieviencesSolved": "99.98%",
+    "claimSettlement": "96.69% ",
+    "maxCover": "No upper limit ",
+    "newBuisnessPremium": "7106.58 Crs",
+    "maxMaurityAge": "70 Years"
+  },
+  {
+    "insuranceProvider": "Aviva Life Insurance.  ",
+    "grieviencesSolved": "100.00%",
+    "claimSettlement": "90.60% ",
+    "maxCover": "No upper limit ",
+    "newBuisnessPremium": "320.80 Crs",
+    "maxMaurityAge": "70 Years"
+  },
+  {
+    "insuranceProvider": "Bharti AXA Life Insurance  ",
+    "grieviencesSolved": "99.82%",
+    "claimSettlement": "92.37% ",
+    "maxCover": "50 crores ",
+    "newBuisnessPremium": "539.49 Crs",
+    "maxMaurityAge": "75 Years"
+  },
+  {
+    "insuranceProvider": "IDBI Federal Life Insurance  ",
+    "grieviencesSolved": "100.00% ",
+    "claimSettlement": "90.33% ",
+    "maxCover": "30 crores  ",
+    "newBuisnessPremium": "588.40 Crs",
+    "maxMaurityAge": "80 Years"
+  },
+  {
+    "insuranceProvider": "Reliance Life Insurance ",
+    "grieviencesSolved": "99.98%",
+    "claimSettlement": "96.69% ",
+    "maxCover": "No upper limit ",
+    "newBuisnessPremium": "1558.33 Crs",
+    "maxMaurityAge": "75 Years"
+  }
+]

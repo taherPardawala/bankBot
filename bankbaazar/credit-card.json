@@ -1,0 +1,416 @@
+{
+  "0": {
+    "value": "406211",
+    "data-annual-fee": "0",
+    "data-popularity": "4.5",
+    "data-networks": "Master",
+    "data-bank": "IndusInd Bank",
+    "data-joining-perks": "65",
+    "data-rewards-type": "Fuel, Rewards"
+  },
+  "1": {
+    "value": "450002",
+    "data-annual-fee": "10000",
+    "data-popularity": "4.5",
+    "data-networks": "Diners Club International",
+    "data-bank": "HDFC",
+    "data-joining-perks": "95",
+    "data-rewards-type": "Premium, Rewards"
+  },
+  "2": {
+    "value": "50002",
+    "data-annual-fee": "1999",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "Kotak Mahindra",
+    "data-joining-perks": "86",
+    "data-rewards-type": "Rewards"
+  },
+  "3": {
+    "value": "56001",
+    "data-annual-fee": "0",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "HSBC",
+    "data-joining-perks": "45",
+    "data-rewards-type": "Rewards"
+  },
+  "4": {
+    "value": "40914",
+    "data-annual-fee": "5000",
+    "data-popularity": "4.5",
+    "data-networks": "AMEX",
+    "data-bank": "American Express",
+    "data-joining-perks": "11",
+    "data-rewards-type": "Rewards, Travel"
+  },
+  "5": {
+    "value": "403966",
+    "data-annual-fee": "1000",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "CITI",
+    "data-joining-perks": "57",
+    "data-rewards-type": "Rewards"
+  },
+  "6": {
+    "value": "403988",
+    "data-annual-fee": "500",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "CITI",
+    "data-joining-perks": "57",
+    "data-rewards-type": "Rewards"
+  },
+  "7": {
+    "value": "406215",
+    "data-annual-fee": "0",
+    "data-popularity": "4.0",
+    "data-networks": "Visa",
+    "data-bank": "IndusInd Bank",
+    "data-joining-perks": "65",
+    "data-rewards-type": "Rewards"
+  },
+  "8": {
+    "value": "4057399",
+    "data-annual-fee": "5000",
+    "data-popularity": "0.0",
+    "data-networks": "Visa",
+    "data-bank": "ICICI",
+    "data-joining-perks": "13",
+    "data-rewards-type": "Premium"
+  },
+  "9": {
+    "value": "40917",
+    "data-annual-fee": "0",
+    "data-popularity": "4.0",
+    "data-networks": "AMEX",
+    "data-bank": "American Express",
+    "data-joining-perks": "49",
+    "data-rewards-type": "Rewards"
+  },
+  "10": {
+    "value": "40439",
+    "data-annual-fee": "500",
+    "data-popularity": "4.0",
+    "data-networks": "Visa",
+    "data-bank": "ICICI",
+    "data-joining-perks": "38",
+    "data-rewards-type": "Rewards"
+  },
+  "11": {
+    "value": "403955",
+    "data-annual-fee": "1000",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "CITI",
+    "data-joining-perks": "57",
+    "data-rewards-type": "Fuel"
+  },
+  "12": {
+    "value": "50003",
+    "data-annual-fee": "999",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "Kotak Mahindra",
+    "data-joining-perks": "85",
+    "data-rewards-type": "Rewards"
+  },
+  "13": {
+    "value": "403977",
+    "data-annual-fee": "3000",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "CITI",
+    "data-joining-perks": "57",
+    "data-rewards-type": "Premium, Travel"
+  },
+  "14": {
+    "value": "406216",
+    "data-annual-fee": "0",
+    "data-popularity": "4.0",
+    "data-networks": "Master",
+    "data-bank": "IndusInd Bank",
+    "data-joining-perks": "65",
+    "data-rewards-type": "Rewards"
+  },
+  "15": {
+    "value": "48012",
+    "data-annual-fee": "1500",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "Axis",
+    "data-joining-perks": "43",
+    "data-rewards-type": "Travel"
+  },
+  "16": {
+    "value": "40912",
+    "data-annual-fee": "5000",
+    "data-popularity": "4.5",
+    "data-networks": "AMEX",
+    "data-bank": "American Express",
+    "data-joining-perks": "9",
+    "data-rewards-type": "Rewards, Premium"
+  },
+  "17": {
+    "value": "424006",
+    "data-annual-fee": "1000",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "HDFC",
+    "data-joining-perks": "100",
+    "data-rewards-type": "Fuel, Premium"
+  },
+  "18": {
+    "value": "4057397",
+    "data-annual-fee": "1250",
+    "data-popularity": "4.0",
+    "data-networks": "Visa",
+    "data-bank": "ICICI",
+    "data-joining-perks": "37",
+    "data-rewards-type": "Travel"
+  },
+  "19": {
+    "value": "4057409",
+    "data-annual-fee": "499",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "ICICI",
+    "data-joining-perks": "38",
+    "data-rewards-type": "Rewards"
+  },
+  "20": {
+    "value": "490121",
+    "data-annual-fee": "3500",
+    "data-popularity": "4.0",
+    "data-networks": "Master",
+    "data-bank": "Axis",
+    "data-joining-perks": "25",
+    "data-rewards-type": "Premium, Travel"
+  },
+  "21": {
+    "value": "405097",
+    "data-annual-fee": "1499",
+    "data-popularity": "4.0",
+    "data-networks": "Visa",
+    "data-bank": "Kotak Mahindra",
+    "data-joining-perks": "63",
+    "data-rewards-type": "Rewards"
+  },
+  "22": {
+    "value": "40913",
+    "data-annual-fee": "1000",
+    "data-popularity": "4.5",
+    "data-networks": "AMEX",
+    "data-bank": "American Express",
+    "data-joining-perks": "31",
+    "data-rewards-type": "Rewards"
+  },
+  "23": {
+    "value": "50004",
+    "data-annual-fee": "499",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "Kotak Mahindra",
+    "data-joining-perks": "87",
+    "data-rewards-type": "Rewards"
+  },
+  "24": {
+    "value": "421098",
+    "data-annual-fee": "500",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "SBI Cards",
+    "data-joining-perks": "80",
+    "data-rewards-type": "Travel"
+  },
+  "25": {
+    "value": "40961",
+    "data-annual-fee": "4999",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "SBI Cards",
+    "data-joining-perks": "25",
+    "data-rewards-type": "Fuel, Premium, Rewards"
+  },
+  "26": {
+    "value": "40967",
+    "data-annual-fee": "499",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "SBI Cards",
+    "data-joining-perks": "44",
+    "data-rewards-type": "Fuel, Rewards"
+  },
+  "27": {
+    "value": "414002",
+    "data-annual-fee": "1000",
+    "data-popularity": "4.0",
+    "data-networks": "Diners Club International",
+    "data-bank": "HDFC",
+    "data-joining-perks": "50",
+    "data-rewards-type": "Premium, Rewards"
+  },
+  "28": {
+    "value": "43012",
+    "data-annual-fee": "500",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "Axis",
+    "data-joining-perks": "46",
+    "data-rewards-type": "Premium, Rewards"
+  },
+  "29": {
+    "value": "46012",
+    "data-annual-fee": "250",
+    "data-popularity": "4.0",
+    "data-networks": "Visa",
+    "data-bank": "Axis",
+    "data-joining-perks": "44",
+    "data-rewards-type": "Rewards"
+  },
+  "30": {
+    "value": "40964",
+    "data-annual-fee": "4999",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "SBI Cards",
+    "data-joining-perks": "3",
+    "data-rewards-type": "Premium, Travel"
+  },
+  "31": {
+    "value": "421099",
+    "data-annual-fee": "499",
+    "data-popularity": "4.5",
+    "data-networks": "Master",
+    "data-bank": "SBI Cards",
+    "data-joining-perks": "14",
+    "data-rewards-type": "Travel"
+  },
+  "32": {
+    "value": "421004",
+    "data-annual-fee": "499",
+    "data-popularity": "4.5",
+    "data-networks": "",
+    "data-bank": "SBI Cards",
+    "data-joining-perks": "43",
+    "data-rewards-type": "Rewards"
+  },
+  "33": {
+    "value": "40966",
+    "data-annual-fee": "499",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "SBI Cards",
+    "data-joining-perks": "39",
+    "data-rewards-type": "Fuel, Rewards"
+  },
+  "34": {
+    "value": "40962",
+    "data-annual-fee": "2999",
+    "data-popularity": "4.0",
+    "data-networks": "Visa",
+    "data-bank": "SBI Cards",
+    "data-joining-perks": "33",
+    "data-rewards-type": "Premium"
+  },
+  "35": {
+    "value": "430121",
+    "data-annual-fee": "750",
+    "data-popularity": "4.0",
+    "data-networks": "Master",
+    "data-bank": "Axis",
+    "data-joining-perks": "41",
+    "data-rewards-type": "Premium"
+  },
+  "36": {
+    "value": "40965",
+    "data-annual-fee": "1499",
+    "data-popularity": "4.0",
+    "data-networks": "Visa",
+    "data-bank": "SBI Cards",
+    "data-joining-perks": "25",
+    "data-rewards-type": "Travel"
+  },
+  "37": {
+    "value": "40412",
+    "data-annual-fee": "6500",
+    "data-popularity": "4.0",
+    "data-networks": "Master",
+    "data-bank": "ICICI",
+    "data-joining-perks": "38",
+    "data-rewards-type": "Premium"
+  },
+  "38": {
+    "value": "419002",
+    "data-annual-fee": "500",
+    "data-popularity": "4.5",
+    "data-networks": "Master",
+    "data-bank": "HDFC",
+    "data-joining-perks": "42",
+    "data-rewards-type": "Fuel, Rewards"
+  },
+  "39": {
+    "value": "424002",
+    "data-annual-fee": "500",
+    "data-popularity": "4.5",
+    "data-networks": "Master",
+    "data-bank": "HDFC",
+    "data-joining-perks": "62",
+    "data-rewards-type": "Fuel, Rewards"
+  },
+  "40": {
+    "value": "424003",
+    "data-annual-fee": "500",
+    "data-popularity": "4.5",
+    "data-networks": "Visa",
+    "data-bank": "HDFC",
+    "data-joining-perks": "44",
+    "data-rewards-type": "Fuel, Rewards"
+  },
+  "41": {
+    "value": "4057398",
+    "data-annual-fee": "2500",
+    "data-popularity": "0.0",
+    "data-networks": "Visa",
+    "data-bank": "ICICI",
+    "data-joining-perks": "25",
+    "data-rewards-type": "Travel"
+  },
+  "42": {
+    "value": "4057400",
+    "data-annual-fee": "1250",
+    "data-popularity": "4.5",
+    "data-networks": "AMEX",
+    "data-bank": "ICICI",
+    "data-joining-perks": "37",
+    "data-rewards-type": "Travel"
+  },
+  "43": {
+    "value": "4057402",
+    "data-annual-fee": "5000",
+    "data-popularity": "0.0",
+    "data-networks": "AMEX",
+    "data-bank": "ICICI",
+    "data-joining-perks": "13",
+    "data-rewards-type": "Premium"
+  },
+  "44": {
+    "value": "4057408",
+    "data-annual-fee": "3999",
+    "data-popularity": "5.0",
+    "data-networks": "Visa",
+    "data-bank": "ICICI",
+    "data-joining-perks": "38",
+    "data-rewards-type": "Premium"
+  },
+  "45": {
+    "value": "420002",
+    "data-annual-fee": "1000",
+    "data-popularity": "4.5",
+    "data-networks": "Master",
+    "data-bank": "HDFC",
+    "data-joining-perks": "42",
+    "data-rewards-type": "Fuel, Premium"
+  }
+}
