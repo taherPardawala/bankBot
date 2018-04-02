@@ -1,9 +1,8 @@
-# bankBot
-virtual bank assistant
+# bankBot Your Virtual Bank Assistant
 Documentation for BankBot
 
 •	Installations: (see online tutorials for the following)
-    o	node (https://nodejs.org/en/) (Preferrably install latest 9.10.1)
+    o	node (https://nodejs.org/en/) Preferrably install latest 9.10.1 = (as of creation of this document.)
     o	npm (auto installed when installed node)
     o	git (See tutorial)
 
