@@ -74,8 +74,7 @@ module.exports = {
     },
     deleteAppointment: async (id,appointmentid) => {
         try{
-            console.log(id,appointmentid);
-            let result = await db.bank.update({id:id},{$pull:{appointments:{appointmentId:appointmentid}}});
+            let result = await db.bank.update({id:id},{$pull:{appointments:{appointmentId:Number(appointmentid)}}});
             console.log(result.result.ok,result.result.nModified);
             if (result.result.ok == 1 && result.result.nModified == 1) {
                 return ({ok:true,message:"Appointment deleted"});
