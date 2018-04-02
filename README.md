@@ -6,7 +6,7 @@
     - npm (auto installed when installed node)
     - git (See tutorial)
 
-- ##Clone the git repository from github (requirements git)
+## Clone the git repository from github (requirements git)
     - Steps (to clone and view the files)
         - git clone https://github.com/taherPardawala/bankBot.git
         - cd bankbot
@@ -16,7 +16,7 @@
         - cd server  // To view the backend code folder
         - cd frontend  // to view the front end code folder
 
-- Install all the dependencies (requirements node and npm)
+## Install all the dependencies (requirements node and npm)
     - For Bot (initialization)
         - Enter the bot folder from the terminal
         - cd path/to/the/bankBot/folder
@@ -24,6 +24,7 @@
         - cd bot
         - and run the following instruction
         - npm i
+
     - For Admin server (initialization)
         - Enter the bot folder from the terminal
         - cd path/to/the/bankBot/folder
@@ -31,6 +32,7 @@
         - cd admin
         - and run the following instruction
         - npm i
+
     - For Front end (initialization)
         - Enter the bot folder from the terminal
         - cd path/to/the/bankBot/folder
@@ -38,6 +40,7 @@
         - cd admin/front-end
         - and run the following instruction
         - npm i
+
     - For Visualizing the Database (Aldready hosted no need to run or initialize)
         - Visit https://mlab.com/login/
         - Login credentials username: bank-bot password: 5656.keynotes 
@@ -45,7 +48,7 @@
         - There you can see collections like accounts(contains login credentials of each bank and user), banks collection which contains data collected by banks such as appointments, careers added, new account applications
         - fs.files and fs.chunks collections are NOT TO BE DELETED OR MUTATED AT ALL because all these collections handle the FileSystem for the image upload feature integrated.
 
-- To run the front end locally do the following
+## To run the front end locally do the following
     - Run the server first 
         - Enter the admin folder i.e bankBot/admin
         - Run the following command
@@ -62,8 +65,7 @@
         - npm run build
         - The above command will build all static files and one "index.html" in the directory bankBot/admin/front-end/dist
 
-Files and working
-- Front end file structure
+## Front end file structure
     - All the main front end files are in the components folder
     - Path for the components file is 
     - front-end/src/components
