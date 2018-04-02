@@ -52,6 +52,11 @@
                 // Dont forget to change baseuri before you build
                 console.log(this.time);
                 document.getElementById('cancel').click();
+                if( this.time != null) {
+                    
+                } else {
+                    alert('Please select a time to confirm the appointment');
+                }
             }
         },
         created() {},
