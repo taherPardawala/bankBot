@@ -19,6 +19,7 @@ import CreditCard from '@/components/user/card/CreditCard'
 import CreateAccount from '@/components/user/create-account/CreateAccount'
 import Career from '@/components/user/Career'
 import News from '@/components/user/News'
+import CreditScore from '@/components/user/CreditScore'
 // Admin Files
 import AdminApplication from '@/components/AdminApp'
 import AdminCareers from '@/components/admin/career/Careers'
@@ -97,6 +98,11 @@ export default new Router({
           path: '/app/news',
           name: 'News',
           component: News,
+        },    
+        {
+          path: '/app/creditscore',
+          name: 'CreditScore',
+          component: CreditScore,
         }    
       ]
     },

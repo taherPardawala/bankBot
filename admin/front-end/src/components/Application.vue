@@ -33,6 +33,14 @@
                         <v-list-tile-title>Create Bank Account</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
+                <v-list-tile @click="updatePath('/app/creditscore')">
+                    <v-list-tile-action>
+                        <v-icon>track_changes</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Check Credit Score</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
                 <v-list-group prepend-icon="transfer_within_a_station" no-action>
                     <v-list-tile slot="activator">
                         <v-list-tile-content>
