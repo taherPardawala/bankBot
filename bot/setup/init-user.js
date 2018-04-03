@@ -60,7 +60,7 @@ controller.createWebhookEndpoints = function(webserver, bot, cb) {
                 }
             }
         });
-
+        console.log("************************initializing")
         webserver.post('/facebook/sendmessage', function(req, res) {
             bot.reply(req.body.message,req.body.respString);
         });
