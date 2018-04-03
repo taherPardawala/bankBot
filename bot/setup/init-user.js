@@ -12,7 +12,7 @@ app = express();
 
 var api_host = 'graph.facebook.com';
 
-app.use(require('cors'));
+app.use(require('cors')());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
