@@ -43,12 +43,12 @@ function(err, res, body) {
 });
 controller.createWebhookEndpoints = function(webserver, bot, cb) {
 
-        facebook_botkit.log(
+        controller.log(
             '** Serving webhook endpoints for Messenger Platform at: ' +
-            'http://' + facebook_botkit.config.hostname + ':' + facebook_botkit.config.port + '/facebook/receive');
+            'http://' + controller.config.hostname + ':' + controller.config.port + '/facebook/receive');
         webserver.post('/facebook/receive', function(req, res) {
             res.send('ok');
-            facebook_botkit.handleWebhookPayload(req, res, bot);
+            controller.handleWebhookPayload(req, res, bot);
         });
 
         webserver.get('/facebook/receive', function(req, res) {
@@ -69,7 +69,7 @@ controller.createWebhookEndpoints = function(webserver, bot, cb) {
             cb();
         }
 
-        return facebook_botkit;
+        return controller;
     };
     
 //Webserver created and bot loaded.
