@@ -64,6 +64,9 @@ controller.createWebhookEndpoints = function(webserver, bot, cb) {
         webserver.post('/facebook/sendmessage', function(req, res) {
             if(req.body && req.body.hasOwnProperty('message') && req.body.hasOwnProperty('respString') && req.body.message.hasOwnProperty('user') && req.body.message.hasOwnProperty('channel') && req.body.message.hasOwnProperty('page')){
                 bot.reply(req.body.message,req.body.respString,function(err){
+                    res.header('Access-Control-Allow-Origin', '*');
+                    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+                    res.header('Access-Control-Allow-Methods', 'GET,POST');
                     if(err) res.json({error:err});
                     else res.json({ok:true});
                 });
