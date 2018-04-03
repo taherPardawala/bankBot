@@ -10,6 +10,7 @@
     "api-ai-botkit": "^1.1.1",
     "axios": "^0.16.2",
     "botkit": "^0.5.8",
+    "cors": "^2.8.4",
     "express": "^4.15.5",
     "install": "^0.10.1",
     "mongodb": "^2.2.31",
