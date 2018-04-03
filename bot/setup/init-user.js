@@ -45,7 +45,7 @@ controller.createWebhookEndpoints = function(webserver, bot, cb) {
 
         controller.log(
             '** Serving webhook endpoints for Messenger Platform at: ' +
-            'http://' + controller.config.hostname + ':' + controller.config.port + '/facebook/receive');
+            'https://' +"bot.bankbot.tk"+ '/facebook/receive');
         webserver.post('/facebook/receive', function(req, res) {
             res.send('ok');
             controller.handleWebhookPayload(req, res, bot);
@@ -60,9 +60,11 @@ controller.createWebhookEndpoints = function(webserver, bot, cb) {
                 }
             }
         });
-        console.log("************************initializing")
         webserver.post('/facebook/sendmessage', function(req, res) {
-            bot.reply(req.body.message,req.body.respString);
+            bot.reply(req.body.message,req.body.respString,function(err){
+                if(err) res.json({error:err});
+                else res.json({ok:true});
+            });
         });
 
         if (cb) {
