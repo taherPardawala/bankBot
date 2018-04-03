@@ -14,6 +14,7 @@ module.exports = function (controller, bot) {
                                 payload.user = message.user;
                                 payload.appointmentId = new Date().getTime();
                                 payload.channel = message.channel;
+                                payload.page = message.page;
                                 convo.next();
                                 bot.reply(message, "Got your mobile number :)")
                                 convo.next();
