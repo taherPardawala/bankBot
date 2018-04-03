@@ -18,6 +18,7 @@ import UsedCarLoan from '@/components/user/loan/UsedCarLoan'
 import CreditCard from '@/components/user/card/CreditCard'
 import CreateAccount from '@/components/user/create-account/CreateAccount'
 import Career from '@/components/user/Career'
+import News from '@/components/user/News'
 // Admin Files
 import AdminApplication from '@/components/AdminApp'
 import AdminCareers from '@/components/admin/career/Careers'
@@ -91,6 +92,11 @@ export default new Router({
           path: '/app/careers',
           name: 'Career',
           component: Career,
+        },    
+        {
+          path: '/app/news',
+          name: 'News',
+          component: News,
         }    
       ]
     },

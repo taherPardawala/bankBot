@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <v-toolbar :flat="true" :fixed="true" class="cyan lighten-4">
+        <v-toolbar id="toolbar" :flat="true" :fixed="true" class="cyan lighten-4">
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-title>{{title}}</v-toolbar-title>
             <!--v-spacer></v-spacer-->
@@ -99,6 +99,14 @@
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list-group>
+                <v-list-tile @click="updatePath('/app/news')">
+                    <v-list-tile-action>
+                        <v-icon>show_chart</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>News</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
                 <v-list-tile @click="updatePath('/app/careers')">
                     <v-list-tile-action>
                         <v-icon>work</v-icon>

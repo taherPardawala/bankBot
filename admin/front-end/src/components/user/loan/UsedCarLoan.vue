@@ -1,5 +1,5 @@
 <template>
-    <div class="usedcar">
+    <div id="used-car" class="usedcar">
         <div class="container">
             <ul class="responsive-table">
                 <li class="table-header">
@@ -86,6 +86,10 @@
         },
         created() {
             this.$emit('title', 'Used Car Loan');
+        },
+        mounted() {
+            document.getElementById('used-car').style.marginTop = '' + document.getElementById('toolbar').offsetHeight + 'px';
+            // console.log(window.getComputedStyle(document.getElementById('hello')).marginTop);
         }
     }
 </script>

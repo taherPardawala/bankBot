@@ -1,5 +1,5 @@
 <template>
-    <div class="car">
+    <div id="car" class="car">
         <div class="container">
             <ul class="responsive-table">
                 <li class="table-header">
@@ -136,6 +136,10 @@
         },
         created() {
             this.$emit('title', 'Car Insurance');
+        },
+        mounted() {
+            document.getElementById('car').style.marginTop = '' + document.getElementById('toolbar').offsetHeight + 'px';
+            // console.log(window.getComputedStyle(document.getElementById('hello')).marginTop);
         }
     }
 </script>

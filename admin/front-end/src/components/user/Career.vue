@@ -1,5 +1,5 @@
 <template>
-    <div class="career">
+    <div id="career" class="career">
         <div class="container">
             <ul class="responsive-table">
                 <li class="table-header">
@@ -26,21 +26,25 @@
     export default {
         data() {
             return {
-                careers:[]
+                careers: []
             }
         },
         async created() {
             this.$emit('title', 'Careers');
             let result = await http.getAllCareers();
-            for(let i in result.careers){
-                console.log('Test'+JSON.stringify(result.careers[i]))
-                for(let j in result.careers[i].result){
+            for (let i in result.careers) {
+                console.log('Test' + JSON.stringify(result.careers[i]))
+                for (let j in result.careers[i].result) {
                     result.careers[i].result[j].name = result.careers[i]._id
                     result.careers[i] = result.careers[i].result[j]
                     console.log(j);
                 }
             }
             this.careers = result.careers;
+        },
+        mounted() {
+            document.getElementById('career').style.marginTop = '' + document.getElementById('toolbar').offsetHeight + 'px';
+            // console.log(window.getComputedStyle(document.getElementById('hello')).marginTop);
         }
     }
 </script>

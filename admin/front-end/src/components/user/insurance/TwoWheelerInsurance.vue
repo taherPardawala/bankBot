@@ -1,5 +1,5 @@
 <template>
-    <div class="life">
+    <div id="twowheeler" class="twowheeler">
         <div class="twowheeler">
             <ul class="responsive-table">
                 <li class="table-header">
@@ -102,12 +102,16 @@
         },
         created() {
             this.$emit('title', 'Two Wheeler Insurance');
+        },
+        mounted() {
+            document.getElementById('twowheeler').style.marginTop = '' + document.getElementById('toolbar').offsetHeight + 'px';
+            // console.log(window.getComputedStyle(document.getElementById('hello')).marginTop);
         }
     }
 </script>
 
 <style scoped>
-    .life {
+    .twowheeler {
         margin-top: 60px;
     }
     .container {

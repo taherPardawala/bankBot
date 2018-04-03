@@ -1,5 +1,5 @@
 <template>
-    <div class="create-account">
+    <div id="create-account" class="create-account">
         <v-tabs color="grey lighten-5" fixed-tabs>
             <v-tab href="#tab-1">
                 New Savings Account Form
@@ -31,6 +31,10 @@
         components: {
             'new-account': NewAccount,
             'check-status': AccountStatus
+        },
+        mounted() {
+            document.getElementById('create-account').style.marginTop = '' + document.getElementById('toolbar').offsetHeight + 'px';
+            // console.log(window.getComputedStyle(document.getElementById('hello')).marginTop);
         }
     }
 </script>

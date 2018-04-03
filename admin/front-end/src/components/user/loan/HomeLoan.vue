@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div id="home-loan" class="home">
         <div class="container">
             <ul class="responsive-table">
                 <li class="table-header">
@@ -12,7 +12,7 @@
                 <li class="table-row" v-for="(item, key) in data" :key=key>
                     <div class="col col-1" data-label="Bank">{{item['data-bank']}}</div>
                     <div class="col col-2" data-label="Interest Rate">{{ item['data-interest-rate-range'].split(',')[0]}}% - {{ item['data-interest-rate-range'].split(',')[1]}}%</div>
-                    <div class="col col-3" data-label="Processing Fee">{{item['data-processing-fee-range'].split(',')[0]}} -  {{item['data-processing-fee-range'].split(',')[1]}}</div>
+                    <div class="col col-3" data-label="Processing Fee">{{item['data-processing-fee-range'].split(',')[0]}} - {{item['data-processing-fee-range'].split(',')[1]}}</div>
                     <div class="col col-4" data-label="Loan Amount">1l min</div>
                     <div class="col col-5" data-label="Tenure">1-20 yrs</div>
                 </li>
@@ -280,6 +280,10 @@
         },
         created() {
             this.$emit('title', 'Home Loan');
+        },
+        mounted() {
+            document.getElementById('home-loan').style.marginTop = '' + document.getElementById('toolbar').offsetHeight + 'px';
+            // console.log(window.getComputedStyle(document.getElementById('hello')).marginTop);
         }
     }
 </script>

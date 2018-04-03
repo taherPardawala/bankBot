@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div id="hello" class="hello">
     <v-jumbotron color="blue-grey lighten-2" height="500px" dark>
       <v-container fill-height>
         <v-layout align-center>
@@ -78,6 +78,12 @@
     },
     async created() {
       this.$emit('title', 'BankBot')
+      
+      // document.getElementById('toolbar').offsetHeight
+    },
+    mounted() {
+      document.getElementById('hello').style.marginTop = ''+document.getElementById('toolbar').offsetHeight+'px';
+      // console.log(window.getComputedStyle(document.getElementById('hello')).marginTop);
     }
   }
 </script>
@@ -85,7 +91,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .hello {
-    margin-top: 48px;
+    margin-top: 100px;
   }
   .welcome-text-color {
     color: #c0b283 !important;
