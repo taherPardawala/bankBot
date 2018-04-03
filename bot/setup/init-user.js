@@ -41,7 +41,37 @@ function(err, res, body) {
         controller.startTicking();
     }
 });
+controller.createWebhookEndpoints = function(webserver, bot, cb) {
 
+        facebook_botkit.log(
+            '** Serving webhook endpoints for Messenger Platform at: ' +
+            'http://' + facebook_botkit.config.hostname + ':' + facebook_botkit.config.port + '/facebook/receive');
+        webserver.post('/facebook/receive', function(req, res) {
+            res.send('ok');
+            facebook_botkit.handleWebhookPayload(req, res, bot);
+        });
+
+        webserver.get('/facebook/receive', function(req, res) {
+            if (req.query['hub.mode'] == 'subscribe') {
+                if (req.query['hub.verify_token'] == configuration.verify_token) {
+                    res.send(req.query['hub.challenge']);
+                } else {
+                    res.send('OK');
+                }
+            }
+        });
+
+        webserver.post('/facebook/sendmessage', function(req, res) {
+            bot.reply(req.body.message,req.body.respString);
+        });
+
+        if (cb) {
+            cb();
+        }
+
+        return facebook_botkit;
+    };
+    
 //Webserver created and bot loaded.
 controller.createWebhookEndpoints(app, bot, function () {
     console.log('This user bot is online!!!');
