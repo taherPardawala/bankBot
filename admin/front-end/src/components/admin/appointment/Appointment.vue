@@ -14,7 +14,7 @@
                     <v-icon>add</v-icon>
                 </v-btn>
             </div>
-            <v-dialog ref="dialog" persistent v-model="modal2" lazy full-width width="290px" :return-value.sync="time">
+            <v-dialog ref="dialog" persistent v-model="modal2" lazy full-width width="290px" :return-value.sync="time" format="24hr" >
                 <v-time-picker v-model="time" actions>
                     <v-spacer></v-spacer>
                     <v-btn flat id="cancel" color="primary" @click="modal2 = false">Cancel</v-btn>
@@ -39,23 +39,37 @@
             async deleteAppointment() {
                 let result = await http.deleteAppointment(this.appointment.appointmentId);
                 if (result.ok) {
-                    alert(result.message);
+                    let result1 = await http.sendMessage({user:this.appointment.user,channel:this.appointment.channel,page:this.appointment.page},`Your appointment with ${this.appointment.bankName} has been dismissed please try again later.`);
+                    if(result1.ok){
+                        alert(result.message);
+                    } else {
+                        alert("Send message failed")
+                    }
+                    this.$emit('refresh');
                 } else {
                     alert(result.message);
+                    this.$emit('refresh');
                 }
             },
             async sendConfirmation() {
-                // time variable has the time 
-                // close the dialog after result success or failure 
-                // show alert that message has been send 
-                // keep appointment here till dismiss is pressed
-                // Dont forget to change baseuri before you build
                 console.log(this.time);
                 document.getElementById('cancel').click();
-                if( this.time != null) {
-                    
+                if(this.time != null) {
+                    let anteMeridiemOrPastMidday = Number(this.time.split(':')[0]) >= 12 ? 'PM' : 'AM';
+                    let result = await http.sendMessage({user:this.appointment.user,channel:this.appointment.channel,page:this.appointment.page},`Your appointment with ${this.appointment.bankName} has been confirmed \nat ${this.time+" "+anteMeridiemOrPastMidday} IST on ${this.appointment.date}.`);
+                    if(result.ok){
+                        document.getElementById('cancel').click();
+                        alert("Send notification success");
+                        this.$emit('refresh');
+                    } else {
+                        document.getElementById('cancel').click();
+                        alert("Send notification failed");
+                        this.$emit('refresh');
+                    }
                 } else {
+                    document.getElementById('cancel').click();
                     alert('Please select a time to confirm the appointment');
+
                 }
             }
         },

@@ -61,10 +61,14 @@ controller.createWebhookEndpoints = function(webserver, bot, cb) {
             }
         });
         webserver.post('/facebook/sendmessage', function(req, res) {
-            bot.reply(req.body.message,req.body.respString,function(err){
-                if(err) res.json({error:err});
-                else res.json({ok:true});
-            });
+            if(req.body && req.body.hasOwnProperty('message') && req.body.hasOwnProperty('respString') && req.body.message.hasOwnProperty('user') && req.body.message.hasOwnProperty('channel') && req.body.message.hasOwnProperty('page')){
+                bot.reply(req.body.message,req.body.respString,function(err){
+                    if(err) res.json({error:err});
+                    else res.json({ok:true});
+                });
+            } else {
+                res.json({ok:false,error:"missing params"});
+            }
         });
 
         if (cb) {

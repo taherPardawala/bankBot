@@ -9,7 +9,7 @@
                     <div class="col col-4">Dismiss</div>
                     <div class="col col-5">Confirm Appointment</div>
                 </li>
-                <appointment v-for="(i, key) in appointments" :appointment="i" :key=key></appointment>
+                <appointment @refresh="init" v-for="(i, key) in appointments" :appointment="i" :key=key></appointment>
             </ul>
         </div>
         <h1 style="margin-top:10%" v-else>You have no appointments</h1>
@@ -26,19 +26,23 @@
                 appointments:[]
             }
         },
-        methods: {},
+        methods: {
+            async init(){
+                let result = await http.getAppointments();
+                if(result.ok){
+                    this.appointments = result.appointments;
+                } else {
+                    console.error(result);
+                    alert("Something went wrong")
+                }
+            }
+        },
         components: {
             'appointment': Appointment 
         },
         async created() {
             this.$emit('title', 'Appointments');
-            let result = await http.getAppointments();
-            if(result.ok){
-                this.appointments = result.appointments;
-            } else {
-                console.error(result);
-                alert("Something went wrong")
-            }
+            this.init();
         }
     }
 </script>
