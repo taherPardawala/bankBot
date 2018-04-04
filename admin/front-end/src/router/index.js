@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Login from '@/components/Login'
 import Signup from '@/components/Signup'
 import FAQs from '@/components/FAQs'
+import PageNotFound from '@/components/404'
 // User Files
 import Application from '@/components/Application'
 import HelloWorld from '@/components/user/HelloWorld'
@@ -141,6 +142,11 @@ export default new Router({
       path: '/faqs',
       name: 'FAQs',
       component: FAQs,
+    },
+    {
+      path: '*',
+      name: 'PageNotFound',
+      component: PageNotFound,
     }
   ]
 })
