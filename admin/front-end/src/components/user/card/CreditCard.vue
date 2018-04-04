@@ -1,4 +1,5 @@
 <template>
+<div>
     <div id="credit" class="credit">
         <div class="container">
             <ul class="responsive-table">
@@ -21,6 +22,17 @@
             </ul>
         </div>
     </div>
+    <div>
+    <v-layout row justify-center>
+            <v-tooltip left>
+            <v-btn class="position" color="primary" dark fab slot="activator" @click="redirect">
+                <v-icon>chat</v-icon>
+            </v-btn>
+            <span>Set an appointment!</span>            
+            </v-tooltip>
+    </v-layout>
+    </div>
+</div>
 </template>
 
 <script>
@@ -145,6 +157,11 @@
         created() {
             this.$emit('title', 'Credit Cards');
         },
+        methods:{
+            redirect() {
+                window.location.replace('https://www.facebook.com/BankBot-566352947071318/');
+            }
+        },
         mounted() {
             document.getElementById('credit').style.marginTop = '' + document.getElementById('toolbar').offsetHeight + 'px';
             // console.log(window.getComputedStyle(document.getElementById('hello')).marginTop);
@@ -155,6 +172,12 @@
 <style scoped>
     .credit {
         margin-top: 60px;
+    }
+    .position {
+        position: fixed;
+        right: 5%;
+        bottom: 15%;
+        z-index: 4;
     }
     .container {
         max-width: 1000px;

@@ -1,5 +1,13 @@
 <template>
     <div id="health" class="health">
+        <v-layout row justify-center>
+            <v-tooltip left>
+            <v-btn class="position" color="primary" dark fab slot="activator" @click="redirect">
+                <v-icon>chat</v-icon>
+            </v-btn>
+            <span>Set an appointment!</span>            
+            </v-tooltip>
+    </v-layout>
         <div class="container">
             <ul class="responsive-table">
                 <li class="table-header">
@@ -225,6 +233,11 @@
         created() {
             this.$emit('title', 'Health Insurance');
         },
+        methods:{
+            redirect() {
+                window.location.replace('https://www.facebook.com/BankBot-566352947071318/');
+            }
+        },
         mounted() {
             document.getElementById('health').style.marginTop = '' + document.getElementById('toolbar').offsetHeight + 'px';
             // console.log(window.getComputedStyle(document.getElementById('hello')).marginTop);
@@ -235,6 +248,12 @@
 <style scoped>
     .health {
         margin-top: 60px;
+    }
+    .position {
+        position: fixed;
+        right: 5%;
+        bottom: 15%;
+        z-index: 4;
     }
     .container {
         max-width: 1000px;
