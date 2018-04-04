@@ -73,7 +73,7 @@
         router.replace(path);
       },
       redirect() {
-        window.location = 'https://www.facebook.com/BankBot-566352947071318/'
+        window.location.href = 'https://www.facebook.com/BankBot-566352947071318/'
       }
     },
     async created() {
