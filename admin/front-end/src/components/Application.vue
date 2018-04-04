@@ -188,11 +188,10 @@
                 let result = await http.getUserName(10);
                 this.fname = result.firstName;
                 this.lname = result.lastName;
-                console.log("/"+window.location.hash)
-                router.replace("/"+window.location.hash);
-                // console.log(window.location.hash);
                 if(window.location.hash == '#/' || window.location.hash == '/') {
                     router.replace('/app/hello');
+                } else {
+                    router.replace("/"+window.location.hash);
                 }
             } else {
                 this.updatePath('/login')
