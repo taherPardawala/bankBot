@@ -2,6 +2,9 @@ module.exports = {
     getStartedSetup: '{"text":"GET_STARTED"}',
     getStarted: 'GET_STARTED',
     getMobileNumber:'getMobileNumber',
+    show_atms:'show_atms',
+    show_banks:'show_banks',
+    set_appointment:'set_appointment',
     persistentMenu: [
         { //persistent menu
             "locale": "default",
@@ -61,5 +64,47 @@ module.exports = {
               "template_type": "generic",
               "elements": []
             }
+    },
+    getStartedCarousel: {
+            "type": "template",
+            "payload": {
+              "template_type": "generic",
+              "elements": [
+                  {
+                    "title": "",
+                    "image_url": "https://grovety.com/images/easyblog_articles/15/facebook-messenger.png",
+                    "buttons": [
+                      {
+                        "type": "postback",
+                        "title": "ATMs Near You.",
+                        "payload": '{"text":"show_atms"}' //added payload string formatting
+                      }
+                    ]
+                  },
+                  {
+                    "title": "",
+                    "image_url": "https://grovety.com/images/easyblog_articles/15/facebook-messenger.png",
+                    "buttons": [
+                      {
+                        "type": "postback",
+                        "title": "Banks Near You.",
+                        "payload": '{"text":"show_banks"}'
+                      }
+                    ]
+                  },
+                  {
+                    "title": "",
+                    "image_url": "https://grovety.com/images/easyblog_articles/15/facebook-messenger.png",
+                    "buttons": [
+                      {
+                        "type": "postback",
+                        "title": "Set Appointment",
+                        "payload": '{"text":"set_appointment"}'
+                      }
+                    ]
+                  }
+              ]
+            }
     }
+    
 }

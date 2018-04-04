@@ -8,12 +8,28 @@ module.exports = function(controller ,bot){
         } catch (err) {
           payload.text = "undefined payload";
         }
-        if (payload.text === string.getStarted) {
+        switch(payload.text){
+            case string.getStarted:
             getUserName(message.user,function(err,response){
                 bot.reply(message,"Hey there "+response.first_name+"!",function(err){
-                    bot.reply(message,"Just type in to locate atms or banks near you!");
+                    bot.reply(message,{attachment:string.getStartedCarousel});
                 });
             })
+            break;
+
+            case string.show_atms:
+            atmLocator(message,"",bot);
+            break;
+
+            case string.show_banks:
+            bankLocator(message,"",bot);
+            break;
+
+            case string.set_appointment:
+            message.type = "user_message";
+            message.text = "set an appointment";
+            apiai.process(message,bot);
+            break;
         }
     });
 }
