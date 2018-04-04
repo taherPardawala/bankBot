@@ -191,7 +191,7 @@
                 if(window.location.hash == '#/' || window.location.hash == '/') {
                     router.replace('/app/hello');
                 } else {
-                    router.replace("/"+window.location.hash);
+                    router.push("/"+window.location.hash);
                 }
             } else {
                 this.updatePath('/login')
