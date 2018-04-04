@@ -291,7 +291,7 @@
         },
         methods:{
             redirect() {
-                window.location.replace('https://www.facebook.com/BankBot-566352947071318/');
+                window.location = 'https://www.facebook.com/BankBot-566352947071318/';
             }
         },
         mounted() {
