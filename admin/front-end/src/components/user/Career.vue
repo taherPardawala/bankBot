@@ -1,6 +1,6 @@
 <template>
     <div id="career" class="career">
-        <div class="container">
+        <div v-if="careers.length>0" class="container">
             <ul class="responsive-table">
                 <li class="table-header">
                     <div class="col col-1">Bank Name</div>
@@ -18,6 +18,7 @@
                 </li>
             </ul>
         </div>
+        <h1 style="margin-top:10%" v-else>You have no Careers</h1>
     </div>
 </template>
 

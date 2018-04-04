@@ -120,7 +120,7 @@ module.exports = {
                 return ({ok:true, careers:result});
             }
             else {
-                return ({ok:false,message:"something went wrong"});
+                return ({ok:true,careers:[]});
             } 
         } catch (err) {
             console.log('Mongo issue ', err);
