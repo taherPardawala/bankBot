@@ -71,7 +71,7 @@ module.exports = {
               "template_type": "generic",
               "elements": [
                   {
-                    "title": "",
+                    "title": "Search For ATMs",
                     "image_url": "https://grovety.com/images/easyblog_articles/15/facebook-messenger.png",
                     "buttons": [
                       {
@@ -82,7 +82,7 @@ module.exports = {
                     ]
                   },
                   {
-                    "title": "",
+                    "title": "Search for Banks",
                     "image_url": "https://grovety.com/images/easyblog_articles/15/facebook-messenger.png",
                     "buttons": [
                       {
@@ -93,7 +93,7 @@ module.exports = {
                     ]
                   },
                   {
-                    "title": "",
+                    "title": "Set an Appointment",
                     "image_url": "https://grovety.com/images/easyblog_articles/15/facebook-messenger.png",
                     "buttons": [
                       {
