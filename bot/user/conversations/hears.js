@@ -30,6 +30,7 @@ module.exports = function (controller, bot) {
             else {
                 let responseText = "I am " + "BankBot" + "..... " + resp.result.fulfillment.speech + " " + response.first_name + ".";
                 bot.reply(message, responseText);
+                bot.reply(message,{attachment:string.getStartedCarousel});                
             }
         });
     }).action('input.unknown', function (message, resp, bot) {
