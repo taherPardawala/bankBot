@@ -189,6 +189,10 @@
                 this.fname = result.firstName;
                 this.lname = result.lastName;
                 window.location.replace(window.location.host+'/'+window.location.hash)
+                // console.log(window.location.hash);
+                if(window.location.hash == '#/' || window.location.hash == '/') {
+                    router.replace('/app/hello');
+                }
             } else {
                 this.updatePath('/login')
             }
