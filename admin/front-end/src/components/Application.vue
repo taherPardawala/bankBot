@@ -188,7 +188,7 @@
                 let result = await http.getUserName(10);
                 this.fname = result.firstName;
                 this.lname = result.lastName;
-                window.location.replace(window.location.host+ window.location.hash)
+                window.location.replace(window.location.host+'/'+window.location.hash)
             } else {
                 this.updatePath('/login')
             }
