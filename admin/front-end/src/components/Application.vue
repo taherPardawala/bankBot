@@ -188,7 +188,8 @@
                 let result = await http.getUserName(10);
                 this.fname = result.firstName;
                 this.lname = result.lastName;
-                this.updatePath('/app/hello')
+                // console.log(window.location.hash);
+                this.updatePath(window.location.hash);
             } else {
                 this.updatePath('/login')
             }
