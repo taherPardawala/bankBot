@@ -72,7 +72,7 @@ module.exports = {
               "elements": [
                   {
                     "title": "Search For ATMs",
-                    "image_url": "https://grovety.com/images/easyblog_articles/15/facebook-messenger.png",
+                    "image_url": "https://github.com/taherPardawala/bankBot/raw/master/carousel.jpg",
                     "buttons": [
                       {
                         "type": "postback",
@@ -83,7 +83,7 @@ module.exports = {
                   },
                   {
                     "title": "Search for Banks",
-                    "image_url": "https://grovety.com/images/easyblog_articles/15/facebook-messenger.png",
+                    "image_url": "https://github.com/taherPardawala/bankBot/raw/master/carousel.jpg",
                     "buttons": [
                       {
                         "type": "postback",
@@ -94,7 +94,7 @@ module.exports = {
                   },
                   {
                     "title": "Set an Appointment",
-                    "image_url": "https://grovety.com/images/easyblog_articles/15/facebook-messenger.png",
+                    "image_url": "https://github.com/taherPardawala/bankBot/raw/master/carousel.jpg",
                     "buttons": [
                       {
                         "type": "postback",
