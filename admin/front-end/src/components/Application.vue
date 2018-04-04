@@ -191,7 +191,8 @@
                 if(window.location.hash == '#/' || window.location.hash == '/') {
                     router.replace('/app/hello');
                 } else {
-                    router.push("/"+window.location.hash);
+                    let hash = window.location.hash.split('#/')
+                    router.replace("/"+hash[hash.length-1]);
                 }
             } else {
                 this.updatePath('/login')
