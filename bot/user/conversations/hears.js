@@ -7,8 +7,8 @@ const apiai = apiaibotkit(config.dialogFlowApiKey);
 const axios = require('axios');
 
 module.exports = function (controller, bot) {
-    apiai = apiai,
-    
+    globalapiai = apiai,
+
     controller.hears('.*', 'message_received', function (bot, message) {
         if (message.type === 'user_message') {
             apiai.process(message, bot);

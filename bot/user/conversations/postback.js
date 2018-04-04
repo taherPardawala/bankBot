@@ -28,7 +28,7 @@ module.exports = function(controller ,bot){
             case string.set_appointment:
             message.type = "user_message";
             message.text = "set an appointment";
-            apiai.process(message,bot);
+            globalapiai.process(message,bot);
             break;
         }
     });
