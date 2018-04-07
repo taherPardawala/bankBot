@@ -4,9 +4,6 @@ const documents = require('../constants/stringDocuments');
 const apiaibotkit = require('api-ai-botkit');
 const config = require('../../env');
 const fs = require('fs');
-let questions = JSON.parse(fs.readFileSync(process.cwd()+'/user/constants/questions.json')) //restart to update questions
-const fuse = new Fuse(questions, options);
-const apiai = apiaibotkit(config.dialogFlowApiKey);
 const Fuse = require('fuse.js');
 const options = {
     keys: [{
@@ -14,6 +11,10 @@ const options = {
         weight: 0.3
     }]
 };
+let questions = JSON.parse(fs.readFileSync(process.cwd()+'/user/constants/questions.json')) //restart to update questions
+const fuse = new Fuse(questions, options);
+const apiai = apiaibotkit(config.dialogFlowApiKey);
+
 const axios = require('axios');
 
 module.exports = function (controller, bot) {
