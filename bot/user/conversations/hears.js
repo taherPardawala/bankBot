@@ -7,6 +7,7 @@ const fs = require('fs');
 const Fuse = require('fuse.js');
 const options = {
     threshold: 0.6,
+    tokenize: true,
     location: 0,
     distance: 100,
     keys: ['question']
