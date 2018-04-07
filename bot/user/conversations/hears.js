@@ -3,7 +3,17 @@ const steps = require('../constants/stringsSteps');
 const documents = require('../constants/stringDocuments');
 const apiaibotkit = require('api-ai-botkit');
 const config = require('../../env');
+const fs = require('fs');
+let questions = JSON.parse(fs.readFileSync('../constants/questions.json')) //restart to update questions
+const fuse = new Fuse(questions, options);
 const apiai = apiaibotkit(config.dialogFlowApiKey);
+const Fuse = require('fuse.js');
+const options = {
+    keys: [{
+        question: 'title',
+        weight: 0.3
+    }]
+};
 const axios = require('axios');
 
 module.exports = function (controller, bot) {
@@ -80,6 +90,18 @@ module.exports = function (controller, bot) {
         else {
             bot.reply(message, documents[resp.result.parameters.serviceType] + "\nTo know more go to the FAQ page of our website");
         }
+    }).action('faqs', function (message, resp, bot) {
+        if(resp.result.resolvedQuery != ""){
+            let results = fuse.search(resp.result.resolvedQuery);
+            if(results.length != 0){
+                bot.reply(message,results[0].resp)
+            } else {
+                bot.reply(message,"Didnt get you there try asking a diffrent question.");
+            }
+        } else {
+            bot.reply(message,"Please ask a question first.");
+        }
+        
     })
 
     atmLocator = function (message, bankName, bot) {
