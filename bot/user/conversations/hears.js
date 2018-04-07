@@ -6,10 +6,10 @@ const config = require('../../env');
 const fs = require('fs');
 const Fuse = require('fuse.js');
 const options = {
-    keys: [{
-        name: 'question',
-        weight: 0.3
-    }]
+    threshold: 0.6,
+    location: 0,
+    distance: 100,
+    keys: ['question']
 };
 let questions = JSON.parse(fs.readFileSync(process.cwd()+'/user/constants/questions.json')) //restart to update questions
 const fuse = new Fuse(questions, options);
