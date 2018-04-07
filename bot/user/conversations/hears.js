@@ -94,6 +94,7 @@ module.exports = function (controller, bot) {
     }).action('faqs', function (message, resp, bot) {
         if(resp.result.resolvedQuery != ""){
             let results = fuse.search(resp.result.resolvedQuery);
+            console.log(resp.result.resolvedQuery,results)
             if(results.length != 0){
                 bot.reply(message,results[0].resp)
             } else {
