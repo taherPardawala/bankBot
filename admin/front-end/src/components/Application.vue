@@ -8,9 +8,9 @@
         <v-navigation-drawer temporary v-model="drawer" fixed class="teal darken-1" dark>
             <v-list class="pa-0">
                 <v-list-tile avatar>
-                    <v-list-tile-avatar>
+                    <!-- <v-list-tile-avatar>
                         <img src="https://randomuser.me/api/portraits/men/86.jpg">
-                    </v-list-tile-avatar>
+                    </v-list-tile-avatar> -->
                     <v-list-tile-content>
                         <v-list-tile-title>{{fname+" "+lname}}</v-list-tile-title>
                     </v-list-tile-content>

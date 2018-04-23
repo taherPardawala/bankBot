@@ -34,14 +34,11 @@
             this.$emit('title', 'Careers');
             let result = await http.getAllCareers();
             for (let i in result.careers) {
-                console.log('Test' + JSON.stringify(result.careers[i]))
-                for (let j in result.careers[i].result) {
-                    result.careers[i].result[j].name = result.careers[i]._id
-                    result.careers[i] = result.careers[i].result[j]
-                    console.log(j);
+                for (let j of result.careers[i].result) {
+                    j.name = result.careers[i]._id;
+                    this.careers.push(j);
                 }
             }
-            this.careers = result.careers;
         },
         mounted() {
             document.getElementById('career').style.marginTop = '' + document.getElementById('toolbar').offsetHeight + 'px';

@@ -36,9 +36,6 @@
           <v-flex>
             <h3 class="headline paper">BOI</h3>
           </v-flex>
-          <v-flex>
-            <h3 class="headline paper">AXIS</h3>
-          </v-flex>
         </v-layout>
       </v-container>
     </v-jumbotron>
