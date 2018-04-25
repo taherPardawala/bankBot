@@ -25,7 +25,7 @@ module.exports = function (controller, bot) {
                                             axios.post('https://bankbot.tk' + '/appointment/v0.1/createAppointment', { data: payload })
                                                 .then(function (response) {
                                                     console.log(response);
-                                                    bot.reply(message, response.data.message);
+                                                    bot.reply(message, response.data.message+" Visit your nearest "+payload.bankName+" branch for the appointment");
                                                     convo.stop();
                                                 })
                                                 .catch(function (error) {
