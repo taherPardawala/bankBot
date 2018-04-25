@@ -1,6 +1,6 @@
 <template>
     <div id="news" class="news">
-        <iframe src="https://www.cnbc.com/world/?region=world" width="100%" height="650" frameborder="0" style="position:relative;z 
+        <iframe src="https://www.financialexpress.com/industry/banking-finance/" width="100%" height="650" frameborder="0" style="position:relative;z 
         index:999" ref="frame">
       </iframe>
     </div>

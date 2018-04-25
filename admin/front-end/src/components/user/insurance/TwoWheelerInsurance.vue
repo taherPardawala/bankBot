@@ -1,13 +1,13 @@
 <template>
     <div id="twowheeler" class="twowheeler">
-        <v-layout row justify-center>
-            <v-tooltip left>
-            <v-btn class="position" color="primary" dark fab slot="activator" @click="redirect">
-                <v-icon>chat</v-icon>
-            </v-btn>
-            <span>Set an appointment!</span>            
-            </v-tooltip>
-    </v-layout>
+        <!-- <v-layout row justify-center>
+                <v-tooltip left>
+                    <v-btn class="position" color="primary" dark fab slot="activator" @click="redirect">
+                        <v-icon>chat</v-icon>
+                    </v-btn>
+                    <span>Set an appointment!</span>
+                </v-tooltip>
+            </v-layout> -->
         <div class="twowheeler">
             <ul class="responsive-table">
                 <li class="table-header">
@@ -111,7 +111,7 @@
         created() {
             this.$emit('title', 'Two Wheeler Insurance');
         },
-        methods:{
+        methods: {
             redirect() {
                 window.location.href = 'https://www.facebook.com/BankBot-566352947071318/';
             }

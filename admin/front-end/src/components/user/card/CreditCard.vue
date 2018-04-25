@@ -1,38 +1,38 @@
 <template>
-<div>
-    <div id="credit" class="credit">
-        <div class="container">
-            <ul class="responsive-table">
-                <li class="table-header">
-                    <div class="col col-1">Insurance Provider</div>
-                    <div class="col col-2">Grieviences Solved</div>
-                    <div class="col col-3">Claim Settlement</div>
-                    <div class="col col-4">Max Cover</div>
-                    <div class="col col-5">New Buisness Premium</div>
-                    <div class="col col-6">Max MaurityAge</div>
-                </li>
-                <li class="table-row" v-for="(item, key) in data" :key=key>
-                    <div class="col col-1" data-label="Job Id">{{item.insuranceProvider}}</div>
-                    <div class="col col-2" data-label="Customer Name">{{item.grieviencesSolved}}</div>
-                    <div class="col col-3" data-label="Amount">{{item.claimSettlement}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{item.maxCover}}</div>
-                    <div class="col col-5" data-label="Payment Status">{{item.newBuisnessPremium}}</div>
-                    <div class="col col-6" data-label="Payment Status">{{item.maxMaurityAge}}</div>
-                </li>
-            </ul>
-        </div>
-    </div>
     <div>
-    <v-layout row justify-center>
-            <v-tooltip left>
-            <v-btn class="position" color="primary" dark fab slot="activator" @click="redirect">
-                <v-icon>chat</v-icon>
-            </v-btn>
-            <span>Set an appointment!</span>            
-            </v-tooltip>
-    </v-layout>
+        <div id="credit" class="credit">
+            <div class="container">
+                <ul class="responsive-table">
+                    <li class="table-header">
+                        <div class="col col-1">Insurance Provider</div>
+                        <div class="col col-2">Grieviences Solved</div>
+                        <div class="col col-3">Claim Settlement</div>
+                        <div class="col col-4">Max Cover</div>
+                        <div class="col col-5">New Buisness Premium</div>
+                        <div class="col col-6">Max MaurityAge</div>
+                    </li>
+                    <li class="table-row" v-for="(item, key) in data" :key=key>
+                        <div class="col col-1" data-label="Job Id">{{item.insuranceProvider}}</div>
+                        <div class="col col-2" data-label="Customer Name">{{item.grieviencesSolved}}</div>
+                        <div class="col col-3" data-label="Amount">{{item.claimSettlement}}</div>
+                        <div class="col col-4" data-label="Payment Status">{{item.maxCover}}</div>
+                        <div class="col col-5" data-label="Payment Status">{{item.newBuisnessPremium}}</div>
+                        <div class="col col-6" data-label="Payment Status">{{item.maxMaurityAge}}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div>
+            <v-layout row justify-center>
+                <v-tooltip left>
+                    <v-btn class="position" color="primary" dark fab slot="activator" @click="redirect">
+                        <v-icon>chat</v-icon>
+                    </v-btn>
+                    <span>Set an appointment!</span>
+                </v-tooltip>
+            </v-layout>
+        </div> -->
     </div>
-</div>
 </template>
 
 <script>
@@ -157,7 +157,7 @@
         created() {
             this.$emit('title', 'Credit Cards');
         },
-        methods:{
+        methods: {
             redirect() {
                 window.location.href = 'https://www.facebook.com/BankBot-566352947071318/';
             }
