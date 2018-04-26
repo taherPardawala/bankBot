@@ -7,13 +7,13 @@
             <v-text-field label="Middle Name" v-model="middlename" :rules="nameRules" :counter="20" required></v-text-field>
             <v-text-field label="E-mail" v-model="email" :rules="emailRules" required></v-text-field>
             <!-- Filer -->
-            <v-text-field label="Adhar Number" v-model="adharNumber" type="number" :rules="[v => !!v || 'Item is required']" :counter="16" required></v-text-field>
+            <v-text-field label="Adhar Number" v-model="adharNumber" type="number" :rules="adharRules" :counter="12" required></v-text-field>
             <h3>Upload Scan copy of Adhar</h3>
             <input type="file" @change="onAdharChange" accept="image/jpeg" name="adharImage" value="Adhar Image" required/>
             <!-- Filer -->
-            <v-text-field label="Pan Number" v-model="panNumber" type="number" :rules="[v => !!v || 'Item is required']" :counter="16" required></v-text-field>
+            <v-text-field label="Pan Number" v-model="panNumber" type="text" :rules="panRules" :counter="10" required></v-text-field>
             <h3>Upload Scaned Copy of Pan</h3>
-            <input type="file" @change="onPanChange" accept="image/jpeg" name="panImage" :rules="[v => !!v || 'Item is required']" value="Pan Image" required/>
+            <input type="file" @change="onPanChange" accept="image/jpeg" name="panImage" value="Pan Image" required/>
             <br>
             <br>
             <v-btn @click="submit" :disabled="!valid">submit</v-btn>
@@ -41,6 +41,14 @@
                 emailRules: [
                     v => !!v || 'E-mail is required',
                     v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+                ],
+                adharRules: [
+                    v => !!v || 'Aadhar Number is required',
+                    v => /^[0-9]{12}$/.test(v) || 'Aadhar number must must be valid'
+                ],
+                panRules: [
+                    v => !!v || 'Pan Number is required',
+                    v => /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(v) || 'Pan number must be valid'
                 ],
                 adharNumber: '',
                 panNumber: '',
