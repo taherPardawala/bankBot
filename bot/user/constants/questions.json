@@ -127,5 +127,9 @@
   {
   "question": "what is cvv number",
   "resp": "The CVV Number ('Card Verification Value') on your credit card or debit card is a 3 digit number on VISA, MasterCard and Discover branded credit and debit cards."
+  },
+  {
+    "question": "what is demat account",
+    "resp": "A Demat Account is an account that allows investors to hold their shares in an electronic form. Stocks in Demat account remain in dematerialized form. Dematerialization is the process of converting physical shares into electronic format. A demat account number is required to enable electronic settlements of all the trades. Demat account functions like a bank account, where you hold your money and respective entries are done in bank passbook. In a similar form, securities too are held in electronic form and are debited or credited accordingly. A demat account can be opened with no balance of shares. You can have a zero balance in your account."
   }
   ]
